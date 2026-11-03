@@ -41,3 +41,10 @@ Fase 4: afzonderlijke FFmpeg-worker met wachtrij, MP4-upload en handmatige tijdc
 Start de productieversie met `npm run start -- --port 3001` na de build. Voer in een tweede terminal `npm run test:smoke` uit. De test gebruikt Playwright met `/usr/bin/chromium`; stel `CHROMIUM_PATH` in als Chromium elders staat. `SMOKE_URL` overschrijft het standaard testadres. De test controleert wedstrijden, spelers, ontwikkeldoelen, persistentie na herladen, videolinks, JSON-export, wissen, mobiele navigatie en horizontale overflow. De test gebruikt een geïsoleerde browsercontext en uitsluitend demogegevens.
 
 De npm-scripts gebruiken Webpack vanwege beperkte workerpoorten in de cloudomgeving. Laat dev-server en productiebuild achtereenvolgens draaien; beide gebruiken `.next`.
+
+
+## Videomontage (browser)
+
+Open Videomontage, download je toegestane VEO-opname via Download full game en selecteer het MP4-bestand. De bron blijft lokaal: geen upload, API, accountkoppeling of cloudopslag. ZIP-clips moeten eerst worden uitgepakt. Kies begin/einde in m:ss, voeg fragmenten toe en controleer hun volgorde. Richtduur is 180 seconden; de export gebruikt de werkelijk geselecteerde lengte (maximaal 600 seconden).
+
+De browser monteert handmatig gekozen fragmenten in realtime met Canvas, Web Audio en MediaRecorder. Chrome/Edge op desktop worden aanbevolen. Export is WebM (geen MP4), maximaal 1280 pixels breed, met bronaudio indien aanwezig en een OBW-tekstbalk. Houd het tabblad zichtbaar tijdens export. Annuleren levert geen gedeeltelijk bestand. Download de montage vóór verlaten of herladen; video en selecties worden niet blijvend opgeslagen. Automatische AI-selectie, rechtstreekse VEO-sync en gedeelde online videobewaring zijn niet aanwezig.
