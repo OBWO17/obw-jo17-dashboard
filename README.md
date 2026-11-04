@@ -52,8 +52,14 @@ De browser monteert handmatig gekozen fragmenten in realtime met Canvas, Web Aud
 
 ## Selectie, wedstrijden en samenvattingen
 
-De voorbereide uitbreiding vult bij een lege selectie de 16 aangeleverde spelers met naam en rugnummer in, plus de wedstrijden SKV–OBW en OBW–Blauw Geel. Publicatie van deze gegevens is door de gebruiker toegestaan. Er zijn geen VEO-opnamelinks opgenomen. Bestaande invoer blijft behouden. Posities blijven leeg totdat de trainer ze invult. SKV staat als ruststand 2–1, omdat alleen de eerste helft is opgenomen. In formulieren wordt de score altijd als OBW–tegenstander ingevoerd; bij uitwedstrijden wordt de weergave omgedraaid.
+De voorbereide uitbreiding vult bij een lege selectie de 16 aangeleverde spelers met naam en rugnummer in, plus de wedstrijden SKV–OBW en OBW–Blauw Geel. Publicatie van deze gegevens is door de gebruiker toegestaan. Er zijn geen VEO-opnamelinks opgenomen. Bestaande invoer blijft behouden. Posities blijven leeg totdat de trainer ze invult. SKV staat als officiële eindstand 2–1; alleen de eerste helft is opgenomen. In formulieren wordt de score altijd als OBW–tegenstander ingevoerd; bij uitwedstrijden wordt de weergave omgedraaid.
 
 Spelers en wedstrijden zijn te bewerken. De videobibliotheek koppelt HTTPS-links en lokale MP4/WebM/MOV-bestanden (maximaal 250 MB) aan een wedstrijd. Lokale bestanden worden in IndexedDB bewaard en zijn af te spelen, te downloaden en waar ondersteund via het deelmenu te delen. Browserondersteuning voor MOV verschilt. Een lokaal bestand wordt niet naar Vercel geüpload en verschijnt niet op een ander apparaat. Voor delen met ouders gebruik je een videobestand als bijlage of een gedeelde HTTPS-link. Er is geen automatische VEO-import of online bestandsopslag.
 
 JSON-export bevat alleen metadata, geen videobestanden. Download die apart. Het wissen van lokale gegevens verwijdert de metadata en lokale videobestanden. Er zijn nog geen accounts of rollen. Gebruik geen contactgegevens, medische informatie of vertrouwelijke beoordelingen.
+
+## Competitiegegevens 2026–2027
+
+De competitiepagina bevat een handmatig gecontroleerde momentopname van 4 november 2026 uit de openbare OBW-pagina’s: https://www.obw.nl/857/5039/competitie/ (fase 1) en https://www.obw.nl/857/5276/competitie/ (fase 2). Er is geen Voetbal.nl-accountkoppeling of automatische synchronisatie. Beide ranglijsten, zeven uitslagen en vijf geplande wedstrijden zijn opgenomen. Starttijden worden alleen weergegeven waar opgehaald. SKV 2–1 OBW is de officiële eindstand; het beperkte videomateriaal blijft apart vermeld.
+
+Migratie naar setupVersion 2 voegt officiële wedstrijden eenmalig toe en werkt score, fase en programma bij, met behoud van bestaande wedstrijd-ID’s, observaties, VEO-links en videokoppelingen. Spelers en videobestanden blijven behouden.
