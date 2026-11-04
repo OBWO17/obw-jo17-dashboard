@@ -73,3 +73,9 @@ Oefenwedstrijden Angerlo–OBW (25 augustus 2026, 3–1, Daan eenmaal) en DOVO O
 ## Bevestigde doelpuntenmakers
 
 De zeven aangeleverde screenshots uit Voetbal.nl zijn verwerkt: 17 competitiedoelpunten (14 in fase 1 en 3 in fase 2). Daan scoorde daarnaast het reeds opgegeven oefendoelpunt. De import gebruikt bestaande speler-ID’s en voornamen; overige profielgegevens en screenshots worden niet gepubliceerd. Migratie 4 vult alleen de doelpuntenmakers van de bijbehorende wedstrijden aan, met behoud van observaties, videolinks en wedstrijd-ID’s. Gele kaarten uit het SKV-verslag zijn niet als doelpunten verwerkt.
+
+## Seizoensoverzicht en spelersfoto’s
+
+Het overzicht toont resultaten per fase, berekend uit de geregistreerde competitiewedstrijden met een eindstand. Fase 3 is alvast zichtbaar en vult zich bij invoer van wedstrijden met fase 3; oefenwedstrijden en ruststanden tellen niet mee.
+
+Op iedere spelerskaart kan een trainer lokaal een JPG/PNG/WebP-foto (maximaal 8 MB) toevoegen, vervangen of verwijderen. Foto’s worden als bestanden in dezelfde IndexedDB-opslag als video’s bewaard. Er is geen upload naar Vercel of GitHub en geen synchronisatie tussen apparaten. JSON-back-ups bevatten de fotobestanden niet. Bewaar de originelen.
