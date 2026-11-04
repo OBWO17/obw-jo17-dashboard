@@ -69,3 +69,7 @@ Migratie naar setupVersion 2 voegt officiële wedstrijden eenmalig toe en werkt 
 Fase 1 is duidelijk gemarkeerd als afgerond met definitieve eindstand. Fase 2 ververst bij openen van Competitie en vervolgens iedere vijf minuten vanuit de openbare OBW-stand. `/api/stand` controleert het bronformaat en de poule; bij een fout blijven de laatst bekende cijfers staan met een melding. De bron kan vertraagd zijn. Programma en uitslagen blijven een gedateerde momentopname. De servercache is maximaal vijf minuten.
 
 Oefenwedstrijden Angerlo–OBW (25 augustus 2026, 3–1, Daan eenmaal) en DOVO O17-3–OBW (17 oktober 2026, 2–0) worden eenmalig toegevoegd. Topscorers telt uitsluitend geregistreerde makers en laat zien hoeveel doelpunten nog geen maker hebben. Je kunt per wedstrijd makers aanvullen; het totaal mag de OBW-score niet overschrijden. Filters scheiden competitie, fases en oefenwedstrijden. Er is nog geen automatische import van afgeschermde Voetbal.nl-verslagen.
+
+## Bevestigde doelpuntenmakers
+
+De zeven aangeleverde screenshots uit Voetbal.nl zijn verwerkt: 17 competitiedoelpunten (14 in fase 1 en 3 in fase 2). Daan scoorde daarnaast het reeds opgegeven oefendoelpunt. De import gebruikt bestaande speler-ID’s en voornamen; overige profielgegevens en screenshots worden niet gepubliceerd. Migratie 4 vult alleen de doelpuntenmakers van de bijbehorende wedstrijden aan, met behoud van observaties, videolinks en wedstrijd-ID’s. Gele kaarten uit het SKV-verslag zijn niet als doelpunten verwerkt.
