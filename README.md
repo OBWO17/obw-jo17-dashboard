@@ -48,3 +48,12 @@ De npm-scripts gebruiken Webpack vanwege beperkte workerpoorten in de cloudomgev
 Open Videomontage, download je toegestane VEO-opname via Download full game en selecteer het MP4-bestand. De bron blijft lokaal: geen upload, API, accountkoppeling of cloudopslag. ZIP-clips moeten eerst worden uitgepakt. Kies begin/einde in m:ss, voeg fragmenten toe en controleer hun volgorde. Richtduur is 180 seconden; de export gebruikt de werkelijk geselecteerde lengte (maximaal 600 seconden).
 
 De browser monteert handmatig gekozen fragmenten in realtime met Canvas, Web Audio en MediaRecorder. Chrome/Edge op desktop worden aanbevolen. Export is WebM (geen MP4), maximaal 1280 pixels breed, met bronaudio indien aanwezig en een OBW-tekstbalk. Houd het tabblad zichtbaar tijdens export. Annuleren levert geen gedeeltelijk bestand. Download de montage vóór verlaten of herladen; video en selecties worden niet blijvend opgeslagen. Automatische AI-selectie, rechtstreekse VEO-sync en gedeelde online videobewaring zijn niet aanwezig.
+
+
+## Selectie, wedstrijden en samenvattingen
+
+De voorbereide uitbreiding vult bij een lege selectie de 16 aangeleverde spelers met naam en rugnummer in, plus de wedstrijden SKV–OBW en OBW–Blauw Geel. Publicatie van deze gegevens is door de gebruiker toegestaan. Er zijn geen VEO-opnamelinks opgenomen. Bestaande invoer blijft behouden. Posities blijven leeg totdat de trainer ze invult. SKV staat als ruststand 2–1, omdat alleen de eerste helft is opgenomen. In formulieren wordt de score altijd als OBW–tegenstander ingevoerd; bij uitwedstrijden wordt de weergave omgedraaid.
+
+Spelers en wedstrijden zijn te bewerken. De videobibliotheek koppelt HTTPS-links en lokale MP4/WebM/MOV-bestanden (maximaal 250 MB) aan een wedstrijd. Lokale bestanden worden in IndexedDB bewaard en zijn af te spelen, te downloaden en waar ondersteund via het deelmenu te delen. Browserondersteuning voor MOV verschilt. Een lokaal bestand wordt niet naar Vercel geüpload en verschijnt niet op een ander apparaat. Voor delen met ouders gebruik je een videobestand als bijlage of een gedeelde HTTPS-link. Er is geen automatische VEO-import of online bestandsopslag.
+
+JSON-export bevat alleen metadata, geen videobestanden. Download die apart. Het wissen van lokale gegevens verwijdert de metadata en lokale videobestanden. Er zijn nog geen accounts of rollen. Gebruik geen contactgegevens, medische informatie of vertrouwelijke beoordelingen.
