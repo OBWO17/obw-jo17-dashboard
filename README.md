@@ -63,3 +63,9 @@ JSON-export bevat alleen metadata, geen videobestanden. Download die apart. Het 
 De competitiepagina bevat een handmatig gecontroleerde momentopname van 4 november 2026 uit de openbare OBW-pagina’s: https://www.obw.nl/857/5039/competitie/ (fase 1) en https://www.obw.nl/857/5276/competitie/ (fase 2). Er is geen Voetbal.nl-accountkoppeling of automatische synchronisatie. Beide ranglijsten, zeven uitslagen en vijf geplande wedstrijden zijn opgenomen. Starttijden worden alleen weergegeven waar opgehaald. SKV 2–1 OBW is de officiële eindstand; het beperkte videomateriaal blijft apart vermeld.
 
 Migratie naar setupVersion 2 voegt officiële wedstrijden eenmalig toe en werkt score, fase en programma bij, met behoud van bestaande wedstrijd-ID’s, observaties, VEO-links en videokoppelingen. Spelers en videobestanden blijven behouden.
+
+## Stand verversen, oefenwedstrijden en topscorers
+
+Fase 1 is duidelijk gemarkeerd als afgerond met definitieve eindstand. Fase 2 ververst bij openen van Competitie en vervolgens iedere vijf minuten vanuit de openbare OBW-stand. `/api/stand` controleert het bronformaat en de poule; bij een fout blijven de laatst bekende cijfers staan met een melding. De bron kan vertraagd zijn. Programma en uitslagen blijven een gedateerde momentopname. De servercache is maximaal vijf minuten.
+
+Oefenwedstrijden Angerlo–OBW (25 augustus 2026, 3–1, Daan eenmaal) en DOVO O17-3–OBW (17 oktober 2026, 2–0) worden eenmalig toegevoegd. Topscorers telt uitsluitend geregistreerde makers en laat zien hoeveel doelpunten nog geen maker hebben. Je kunt per wedstrijd makers aanvullen; het totaal mag de OBW-score niet overschrijden. Filters scheiden competitie, fases en oefenwedstrijden. Er is nog geen automatische import van afgeschermde Voetbal.nl-verslagen.
