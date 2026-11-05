@@ -91,3 +91,7 @@ Sponsoren bevat Slagman en Scheers Logistics, ook onderaan Overzicht. Logo’s k
 Sponsoren staan als compacte logobalk boven de laatste en komende wedstrijd. Spelers in ontwikkeling is uit het overzicht verwijderd; spelersbeheer blijft beschikbaar. Elk faseblok bevat naast de eigen resultaten de positie en ranglijst (G, P, doelsaldo), met OBW gemarkeerd. Fase 1 gebruikt de definitieve eindstand; fase 2 probeert dezelfde /api/stand-bron bij openen en iedere vijf minuten te verversen. Bij bronfouten blijft de gedateerde momentopname zichtbaar met foutstatus en bronlink. Fase 3 toont nog geen verzonnen indeling of stand.
 
 Bovenaan Overzicht staan snelkoppelingen naar https://app.veo.co/ en https://www.voetbal.nl/. Beide openen in een nieuw tabblad. Ze verwijzen naar de algemene platformomgeving (teamkeuze na eventueel inloggen), zonder accountgegevens of automatische koppeling.
+
+## Selectie en samenvattingen
+
+De blauwe seizoensbalk begint Overzicht; de sponsorstrook staat onderaan en de sponsorlogo’s bij de teamfoto blijven staan. De fototitel is Selectie OBW O17-1. De selectiepagina toont onder de spelers ook alle stafleden. Samenvattingen vervangt de trainersacties en verwijst naar de bestaande native ChatGPT-bestanden OBW-Blauw-Geel-1080p-wedstrijdklok.mp4 (versie 3) en SKV-OBW-eerste-helft-1080p-v3.mp4 (actuele versie 2). Dit zijn accountgebonden links, geen openbare videohosting of gedeelde ouderlinks. Geen videobestanden of tijdelijke download-URL’s worden gepubliceerd.
