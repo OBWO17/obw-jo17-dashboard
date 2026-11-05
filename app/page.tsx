@@ -8,6 +8,7 @@ import {playerPortraits} from './team-portraits';
 import TeamStaff from './team-staff';
 import Sponsors from './sponsors';
 import MatchSummaries from './match-summaries';
+import MatchHighlights from './match-highlights';
 import GoalScorers, {ScorersChart,type Goal} from './goal-scorers';
 import {officialMatches,friendlyMatches,applyConfirmedGoals} from './competition-data';
 import MediaLibrary, { clearMediaFiles, type MediaClip } from './media-library';
@@ -57,7 +58,3 @@ export default function Home(){
 }
 function Empty({text}:{text:string}){return <div className="empty-state"><Flag size={28}/><p>{text}</p></div>}
 function Field({label,...props}:{label:string}&React.InputHTMLAttributes<HTMLInputElement>){return <label>{label}<input required maxLength={200} {...props}/></label>}
-
-
-
-function MatchHighlights({latest,next,onOpen,onMatches}:{latest?:Match;next?:Match;onOpen:(match:Match)=>void;onMatches:()=>void}){return <div className="match-highlights">{[{match:latest,upcoming:false},{match:next,upcoming:true}].map(({match:m,upcoming})=><section className={upcoming?'match-highlight upcoming':'match-highlight recent'} key={String(upcoming)} aria-label={upcoming?'Komende wedstrijd':'Laatste wedstrijd'}><div className="highlight-label">{upcoming?<CalendarDays size={17}/>:<Trophy size={17}/>}<span>{upcoming?'KOMENDE WEDSTRIJD':'LAATSTE WEDSTRIJD'}</span><span className="highlight-badge">{m?(upcoming?m.venue:m.scoreScope||'Eindstand'):'Nog niet bekend'}</span></div>{m?<><p className="highlight-date">{new Date(m.date+'T12:00:00').toLocaleDateString('nl-NL',{weekday:'long',day:'numeric',month:'long'})}{m.kickoff&&` · ${m.kickoff} uur`}</p><div className="highlight-score"><strong>{m.venue==='Uit'?m.opponent:'OBW JO17-1'}</strong><b>{upcoming?'VS':matchScore(m).replace('-', '–')}</b><strong>{m.venue==='Uit'?'OBW JO17-1':m.opponent}</strong></div><div className="highlight-footer"><small>{m.kind==='Oefenwedstrijd'?'Oefenwedstrijd':m.phase?`Competitie · fase ${m.phase}`:'Wedstrijd'} · {m.venue}</small><button onClick={()=>onOpen(m)}>{upcoming?'Wedstrijdinformatie':'Bekijk wedstrijd'} <ArrowUpRight size={15}/></button></div></>:<div className="highlight-empty"><p>{upcoming?'Nog geen volgende wedstrijd gepland.':'Nog geen uitslag vastgelegd.'}</p><button onClick={onMatches}>Naar wedstrijden <ArrowUpRight size={15}/></button></div>}</section>)}</div>}
