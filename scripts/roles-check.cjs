@@ -1,0 +1,8 @@
+const fs=require('fs'),ts=require('typescript'),Module=require('module'),assert=require('node:assert/strict');
+const originalLoad=Module._load;let member;
+Module._load=function(name,...args){if(name==='../lib/supabase/server')return {teamMember:async()=>member};if(name==='next/navigation')return {redirect:()=>{throw Error('LOGIN_REQUIRED')}};return originalLoad.call(this,name,...args)};
+for(const ext of ['.ts','.tsx'])require.extensions[ext]=(mod,file)=>mod._compile(ts.transpileModule(fs.readFileSync(file,'utf8'),{compilerOptions:{jsx:ts.JsxEmit.ReactJSX,module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2020,esModuleInterop:true}}).outputText,file);
+(async()=>{const Page=require('../app/page.tsx').default;const render=require('react-dom/server').renderToStaticMarkup;
+member={user:{id:'test'},role:'viewer'};const view=await Page();const html=render(view);assert.equal(view.type.name,'ViewerDashboard');for(const label of ['Instellingen','Videomontage','Videobibliotheek','Speler toevoegen','Nieuwe wedstrijd','Bewerken'])assert(!html.includes(label),label);assert(html.includes('Samenvattingen'));assert(html.includes('/watch/skv-obw-eerste-helft-20261024'));assert(html.includes('Selectie OBW O17-1'));
+member={user:{id:'test'},role:'admin'};const admin=await Page();assert.equal(admin.type.name,'Home');const adminHtml=render(admin);assert(adminHtml.includes('Instellingen'));assert(adminHtml.includes('Videomontage'));
+member=null;await assert.rejects(Page(),/LOGIN_REQUIRED/);console.log('PASS: server selects read-only visitor view; admin retains tools; signed-out visitors redirected.');})();
