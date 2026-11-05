@@ -8,11 +8,11 @@ import MatchSummaries from './match-summaries';
 import MatchHighlights from './match-highlights';
 import TeamStaff from './team-staff';
 import Sponsors from './sponsors';
-import {officialMatches,friendlyMatches} from './competition-data';
+import {officialMatches,friendlyMatches,cupMatches} from './competition-data';
 import {playerPortraits} from './team-portraits';
 type Match={id:string;date:string;opponent:string;venue:string;score:string;kickoff?:string;phase?:string;kind?:string;scoreScope?:string;goals?:Goal[]};
 const roster:[number,string][]=[[1,'Loek Ploum'],[2,'Loek Prins'],[3,'Koen'],[4,'Jip'],[5,'Collin'],[6,'Boaz'],[7,'Luuk'],[8,'Daan'],[9,'Finn'],[10,'Jurre'],[11,'Chris'],[12,'Joep'],[14,'Jens'],[15,'Tim'],[16,'Dustin'],[25,'Coen Schut']];
-const matches:Match[]=[...officialMatches,...friendlyMatches].sort((a,b)=>b.date.localeCompare(a.date));
+const matches:Match[]=[...officialMatches,...friendlyMatches,...cupMatches].sort((a,b)=>b.date.localeCompare(a.date));
 const nav=[['Overzicht',LayoutDashboard],['Wedstrijden',Trophy],['Competitie',Flag],['Topscorers',Target],['Spelers',Users],['Staf',Users],['Sponsoren',Shield],['Samenvattingen',Video]] as const;
 export default function ViewerDashboard(){
  const [tab,setTab]=useState<string>('Overzicht');const [mobile,setMobile]=useState(false);const [selected,setSelected]=useState<Match|null>(null);
