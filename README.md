@@ -89,3 +89,5 @@ Sponsoren bevat Slagman en Scheers Logistics, ook onderaan Overzicht. Logo’s k
 ## Overzicht met ranglijsten
 
 Sponsoren staan als compacte logobalk boven de laatste en komende wedstrijd. Spelers in ontwikkeling is uit het overzicht verwijderd; spelersbeheer blijft beschikbaar. Elk faseblok bevat naast de eigen resultaten de positie en ranglijst (G, P, doelsaldo), met OBW gemarkeerd. Fase 1 gebruikt de definitieve eindstand; fase 2 probeert dezelfde /api/stand-bron bij openen en iedere vijf minuten te verversen. Bij bronfouten blijft de gedateerde momentopname zichtbaar met foutstatus en bronlink. Fase 3 toont nog geen verzonnen indeling of stand.
+
+Bovenaan Overzicht staan snelkoppelingen naar https://app.veo.co/ en https://www.voetbal.nl/. Beide openen in een nieuw tabblad. Ze verwijzen naar de algemene platformomgeving (teamkeuze na eventueel inloggen), zonder accountgegevens of automatische koppeling.
