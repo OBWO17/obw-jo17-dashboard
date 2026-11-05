@@ -51,3 +51,6 @@
 .summary-photo{background:radial-gradient(ellipse at 70% 20%,#2e6496,#17355b 80%)}.summary-photo:before{content:'';position:absolute;inset:14% 10%;border:1px solid #ffffff19;border-radius:3px;pointer-events:none}.summary-photo>img{position:absolute;inset:0}.summary-photo .summary-photo-caption{color:#e7effc}
 
 .storage-status{font-size:11px;color:#7a8799;margin:-10px 0 22px;line-height:1.5}.overview-season-ribbon h1{font:inherit;margin:0;color:inherit;letter-spacing:inherit}.settings>.notice{margin:18px 0 26px;line-height:1.7}
+
+/* Give the season heading more presence without restoring the introduction. */
+.overview-season-ribbon{min-height:78px;padding:22px 26px;margin-bottom:26px;border-left-width:5px;border-radius:10px;box-shadow:0 5px 18px #173b7b12}.overview-season-ribbon h1{font-size:23px;font-weight:700;letter-spacing:.3px;line-height:1.25}.overview-season-ribbon>span{font-size:13px;letter-spacing:1.2px;color:#e3edff}@media(max-width:640px){.overview-season-ribbon{min-height:76px;padding:18px 20px;align-items:flex-start;flex-direction:column;justify-content:center;gap:7px}.overview-season-ribbon h1{font-size:20px}.overview-season-ribbon>span{font-size:11px;letter-spacing:.8px}}
