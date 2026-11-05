@@ -85,3 +85,7 @@ Op iedere spelerskaart kan een trainer lokaal een JPG/PNG/WebP-foto (maximaal 8 
 Publicatie van de 18 aangeleverde portretten is expliciet toegestaan: 15 spelers en 3 stafleden (Jos Boonman trainer / coach; Ralph en René trainers). De geoptimaliseerde WebP-bestanden in public/portraits zijn openbaar, evenals de bronrepository. Koppelingen volgen bestandsnamen en bestaande speler-ID’s. Coen Schut (#25) heeft nog geen portret. Lokale vervangingen blijven in IndexedDB; verwijderen herstelt het standaardportret. Staf is zichtbaar op een eigen pagina.
 
 Sponsoren bevat Slagman en Scheers Logistics, ook onderaan Overzicht. Logo’s komen van de officiële bronnen https://www.slagmangroep.nl/templates/img/CMYK_Logo_Slagman_Payoff.svg en https://www.scheerslogistics.nl/img/logo-scheerslogistics.svg en worden lokaal geserveerd. Iedere kaart linkt naar de bedrijfswebsite.
+
+## Overzicht met ranglijsten
+
+Sponsoren staan als compacte logobalk boven de laatste en komende wedstrijd. Spelers in ontwikkeling is uit het overzicht verwijderd; spelersbeheer blijft beschikbaar. Elk faseblok bevat naast de eigen resultaten de positie en ranglijst (G, P, doelsaldo), met OBW gemarkeerd. Fase 1 gebruikt de definitieve eindstand; fase 2 probeert dezelfde /api/stand-bron bij openen en iedere vijf minuten te verversen. Bij bronfouten blijft de gedateerde momentopname zichtbaar met foutstatus en bronlink. Fase 3 toont nog geen verzonnen indeling of stand.
