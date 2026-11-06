@@ -25,7 +25,7 @@ const initialMatches:Match[]=[...officialMatches,...friendlyMatches,...cupMatche
 function matchTitle(m:Match){return m.venue==='Uit'?`${m.opponent} – OBW JO17-1`:`OBW JO17-1 – ${m.opponent}`}
 function matchScore(m:Match){const parts=m.score.split(/\s*[-:]\s*/);return m.venue==='Uit'&&parts.length===2?parts.reverse().join('–'):m.score}
 
-const nav=[['Overzicht',LayoutDashboard],['Wedstrijden',Trophy],['Competitie',Flag],['Topscorers',Target],['Spelers',Users],['Staf',Users],['Sponsoren',Shield],['Samenvattingen',Video],['Videobibliotheek',Video],['Videomontage',Video],['Teamontwikkeling',ChartNoAxesCombined],['Instellingen',Settings]] as const;
+const nav=[['Overzicht',LayoutDashboard],['Wedstrijden',Trophy],['Competitie',Flag],['Topscorers',Target],['Spelers',Users],['Staf',Users],['Samenvattingen',Video],['Teamontwikkeling',ChartNoAxesCombined],['Sponsoren',Shield],['Videomontage',Video],['Instellingen',Settings]] as const;
 export default function Home({userId,role}:{userId:string;role:'admin'|'viewer'}){
  const key=`obw-jo17-v1:${userId}`;
  const [playerSearch,setPlayerSearch]=useState('');const [editPlayer,setEditPlayer]=useState<Player|null>(null);const [editMatch,setEditMatch]=useState<Match|null>(null);

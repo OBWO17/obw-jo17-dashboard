@@ -1,10 +1,11 @@
 'use client';
 import {useState} from 'react';
-import {LayoutDashboard,Users,Trophy,Video,Flag,Target,Shield,Menu,ChevronRight,ArrowUpRight} from 'lucide-react';
+import {LayoutDashboard,Users,Trophy,Video,Flag,Target,Shield,Menu,ChevronRight,ArrowUpRight,ChartNoAxesCombined} from 'lucide-react';
 import CompetitionBoard from './competition-board';
 import PhaseOverview from './phase-overview';
 import {ScorersChart,goalTotals,type Goal} from './goal-scorers';
 import MatchSummaries from './match-summaries';
+import TeamDevelopment from './team-development';
 import MatchHighlights from './match-highlights';
 import TeamStaff from './team-staff';
 import Sponsors from './sponsors';
@@ -13,7 +14,7 @@ import {playerPortraits} from './team-portraits';
 type Match={id:string;date:string;opponent:string;venue:string;score:string;kickoff?:string;phase?:string;kind?:string;scoreScope?:string;goals?:Goal[]};
 const roster:[number,string][]=[[1,'Loek Ploum'],[2,'Loek Prins'],[3,'Koen'],[4,'Jip'],[5,'Collin'],[6,'Boaz'],[7,'Luuk'],[8,'Daan'],[9,'Finn'],[10,'Jurre'],[11,'Chris'],[12,'Joep'],[14,'Jens'],[15,'Tim'],[16,'Dustin'],[25,'Coen Schut']];
 const matches:Match[]=[...officialMatches,...friendlyMatches,...cupMatches].sort((a,b)=>b.date.localeCompare(a.date));
-const nav=[['Overzicht',LayoutDashboard],['Wedstrijden',Trophy],['Competitie',Flag],['Topscorers',Target],['Spelers',Users],['Staf',Users],['Sponsoren',Shield],['Samenvattingen',Video]] as const;
+const nav=[['Overzicht',LayoutDashboard],['Wedstrijden',Trophy],['Competitie',Flag],['Topscorers',Target],['Spelers',Users],['Staf',Users],['Samenvattingen',Video],['Teamontwikkeling',ChartNoAxesCombined],['Sponsoren',Shield]] as const;
 export default function ViewerDashboard(){
  const [tab,setTab]=useState<string>('Overzicht');const [mobile,setMobile]=useState(false);const [selected,setSelected]=useState<Match|null>(null);
  const data={matches};const latest=matches.find(m=>m.score);const next=[...matches].reverse().find(m=>!m.score&&m.date>=new Date().toISOString().slice(0,10));const scorers=goalTotals(matches);
@@ -28,6 +29,6 @@ export default function ViewerDashboard(){
  {tab==='Competitie'&&<CompetitionBoard/>}
  {tab==='Topscorers'&&<section className="card"><h2>Topscorers seizoen 2026–2027</h2><p>Bevestigde doelpunten in competitie en oefenwedstrijden.</p><div className="table-scroll"><table><thead><tr><th>Speler</th><th>Doelpunten</th></tr></thead><tbody>{scorers.map(p=><tr key={p.id}><th scope="row">{p.name}</th><td>{p.count}</td></tr>)}</tbody></table></div></section>}
  {tab==='Spelers'&&<><div className="players-grid">{roster.map(([number,name])=><article className="card player-card" key={number}><div className="player-top"><div className="number">{number}</div></div>{playerPortraits['obw-player-'+number]?<img src={playerPortraits['obw-player-'+number]} alt={'Foto van '+name} width={480} height={720} loading="lazy" style={{width:'100%',height:'auto',borderRadius:10}}/>:<p>Foto volgt</p>}<h2>{name}</h2></article>)}</div><div className="selection-staff"><TeamStaff/></div></>}
- {tab==='Staf'&&<TeamStaff/>}{tab==='Sponsoren'&&<Sponsors/>}{tab==='Samenvattingen'&&<MatchSummaries privatePlayback/>}
+ {tab==='Staf'&&<TeamStaff/>}{tab==='Sponsoren'&&<Sponsors/>}{tab==='Samenvattingen'&&<MatchSummaries privatePlayback/>}{tab==='Teamontwikkeling'&&<TeamDevelopment matches={matches}/>}
  <footer><span>OBW O17-1 · Samen groeien, elke wedstrijd opnieuw.</span><small>Seizoen 2026–2027</small></footer></main></div></div>
 }
