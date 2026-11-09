@@ -1,5 +1,5 @@
 'use client';
-import {useState} from 'react';
+import {useEffect,useState} from 'react';
 import {BookOpen,ArrowUpRight,ArrowLeft,CalendarDays} from 'lucide-react';
 type Report={id:string;date:string;title:string;score:string;subtitle:string;paragraphs:string[]};
 const reports:Report[]=[{id:'dcs-20261107',date:'2026-11-07',title:'DCS O17-1 – OBW O17-1',score:'1–2',subtitle:'Een heerlijke derbyzege: strijd, karakter en drie punten in Zevenaar',paragraphs:[
@@ -16,7 +16,7 @@ const reports:Report[]=[{id:'dcs-20261107',date:'2026-11-07',title:'DCS O17-1 �
 'Fijn weekend! 🔵⚪'
 ]}];
 const formatDate=(d:string)=>new Date(d+'T12:00:00').toLocaleDateString('nl-NL',{day:'numeric',month:'long',year:'numeric'});
-export default function MatchReports({limit,onViewAll}:{limit?:number;onViewAll?:()=>void}){const [open,setOpen]=useState<string|null>(null);const sorted=[...reports].sort((a,b)=>b.date.localeCompare(a.date));const selected=sorted.find(r=>r.id===open);
+export default function MatchReports({limit,onViewAll,onOpenReport,selectedId}:{limit?:number;onViewAll?:()=>void;onOpenReport?:(id:string)=>void;selectedId?:string|null}){const [open,setOpen]=useState<string|null>(null);useEffect(()=>{if(selectedId)setOpen(selectedId)},[selectedId]);const sorted=[...reports].sort((a,b)=>b.date.localeCompare(a.date));const selected=sorted.find(r=>r.id===open);
 return <section aria-label="Wedstrijdverslagen" style={{margin:'28px 0'}}>
 {selected?<article style={{maxWidth:850,margin:'0 auto',background:'#fff',borderRadius:18,overflow:'hidden',boxShadow:'0 12px 40px rgba(20,47,98,.1)',border:'1px solid #e2e9f4'}}>
 <div style={{background:'linear-gradient(135deg,#092b72,#1754a7)',color:'#fff',padding:'32px clamp(20px,5vw,48px)',position:'relative',borderBottom:'7px solid #f2cc32'}}>
@@ -24,7 +24,7 @@ return <section aria-label="Wedstrijdverslagen" style={{margin:'28px 0'}}>
 <div style={{letterSpacing:2,fontSize:12,fontWeight:800,color:'#ffe174'}}>OBW JO17-1 · WEDSTRIJDVERSLAG</div><h2 style={{fontSize:'clamp(24px,4vw,38px)',lineHeight:1.2,margin:'12px 0'}}>{selected.title}</h2><div style={{fontSize:52,fontWeight:900,lineHeight:1.1}}>{selected.score}</div><p style={{marginTop:14,opacity:.85}}>{formatDate(selected.date)} · Hoofdklasse, fase 2</p></div>
 <div style={{padding:'clamp(22px,5vw,50px)'}}><h3 style={{fontSize:23,color:'#123c84',lineHeight:1.4,margin:'0 0 28px'}}>{selected.subtitle}</h3>{selected.paragraphs.map((p,i)=><p key={i} style={{fontSize:16,lineHeight:1.9,color:'#253550',margin:'0 0 20px'}}>{p}</p>)}<div style={{borderTop:'1px solid #e4eaf3',paddingTop:20,marginTop:32,color:'#1c4a97',fontWeight:700}}>OBW JO17-1 · Samen sterk, samen vooruit 🔵⚪</div></div></article>:<>
 <div className="section-heading"><div><span className="eyebrow">HET VERHAAL ACHTER DE WEDSTRIJD</span><h2>Wedstrijdverslagen</h2><p>De wedstrijden, de strijd en de mooie momenten, opgeschreven na afloop.</p></div></div>
-<div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(240px,1fr))',gap:18}}>{(limit?sorted.slice(0,limit):sorted).map(r=><button key={r.id} type="button" onClick={()=>setOpen(r.id)} style={{textAlign:'left',background:'#fff',border:'1px solid #dce5f2',borderRadius:16,overflow:'hidden',padding:0,cursor:'pointer',boxShadow:'0 7px 25px rgba(17,55,112,.07)'}}>
+<div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(240px,1fr))',gap:18}}>{(limit?sorted.slice(0,limit):sorted).map(r=><button key={r.id} type="button" onClick={()=>limit&&onOpenReport?onOpenReport(r.id):setOpen(r.id)} style={{textAlign:'left',background:'#fff',border:'1px solid #dce5f2',borderRadius:16,overflow:'hidden',padding:0,cursor:'pointer',boxShadow:'0 7px 25px rgba(17,55,112,.07)'}}>
 <div style={{minHeight:170,background:'linear-gradient(145deg,#092d77,#1d58ac)',position:'relative',color:'#fff',padding:22,display:'flex',flexDirection:'column',justifyContent:'space-between',borderBottom:'6px solid #f2cd36'}}>
 <div style={{display:'flex',alignItems:'center',justifyContent:'space-between'}}><span style={{fontSize:11,letterSpacing:1.5,fontWeight:800,color:'#ffdd52'}}>WEDSTRIJDVERSLAG</span><BookOpen size={23}/></div><div><div style={{fontSize:13,opacity:.9,marginBottom:5}}>OBW JO17-1 · Fase 2</div><strong style={{fontSize:29,letterSpacing:1}}>{r.score}</strong></div></div>
 <div style={{padding:20}}><div style={{display:'flex',gap:6,alignItems:'center',fontSize:12,color:'#65738c',marginBottom:10}}><CalendarDays size={14}/>{formatDate(r.date)}</div><h3 style={{fontSize:18,color:'#133d82',margin:'0 0 10px'}}>{r.title}</h3><p style={{fontSize:14,lineHeight:1.6,color:'#4e5d72',margin:'0 0 18px'}}>{r.subtitle}</p><span style={{display:'inline-flex',gap:8,alignItems:'center',fontWeight:800,color:'#174a9a'}}>Lees het verslag <ArrowUpRight size={17}/></span></div></button>)}</div>
