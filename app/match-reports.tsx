@@ -2,7 +2,7 @@
 import {useEffect,useState} from 'react';
 import {BookOpen,ArrowUpRight,ArrowLeft,CalendarDays} from 'lucide-react';
 type Report={id:string;date:string;title:string;score:string;subtitle:string;paragraphs:string[]};
-const reports:Report[]=[{id:'dcs-20261107',date:'2026-11-07',title:'DCS O17-1 – OBW O17-1',score:'1–2',subtitle:'Een heerlijke derbyzege: strijd, karakter en drie punten in Zevenaar',paragraphs:[
+const reports:Report[]=[{id:'dcs-20261107',date:'2026-11-07',title:'DCS O17-1 – OBW O17-1',score:'1–2',subtitle:'Een heerlijke derbyzege: strijd, karakter en drie punten tegen onze geel-zwarte buren!',paragraphs:[
 'Vandaag stond de Zevenaarse derby tegen onze geel-zwarte buren op het programma. Dat zijn vaak spannende wedstrijden, waarin goed voetbal nog weleens naar de achtergrond verdwijnt en het vooral aankomt op strijd en inzet.',
 'Met de afwezigheid van Koen en Jip moesten we wat schuiven in de opstelling. Hoe fijn was het dat Jens vandaag bijna driekwart wedstrijd kon spelen en dat ook nog eens heel goed invulde. Hierdoor kon Daan centraal de plek van Koen overnemen.',
 'De wedstrijd begon licht in ons voordeel, met wat meer balbezit aan onze kant. Toch was direct merkbaar dat er over en weer net wat meer spanning op zat. Dat kwam het voetbal aan beide kanten niet echt ten goede. DCS werd vooral gevaarlijk op momenten waarop wij niet doortastend genoeg ingrepen. Aan de andere kant wisten wij onhandig uitverdedigen van DCS goed af te straffen: 0-1.',
