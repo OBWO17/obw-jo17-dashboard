@@ -1,6 +1,6 @@
 'use client';
 import {useState} from 'react';
-import {LayoutDashboard,Users,Trophy,Video,Flag,Target,Shield,Menu,ChevronRight,ArrowUpRight,ChartNoAxesCombined} from 'lucide-react';
+import {BookOpen,LayoutDashboard,Users,Trophy,Video,Flag,Target,Shield,Menu,ChevronRight,ArrowUpRight,ChartNoAxesCombined} from 'lucide-react';
 import CompetitionBoard from './competition-board';
 import PhaseOverview from './phase-overview';
 import {ScorersChart,goalTotals,type Goal} from './goal-scorers';
