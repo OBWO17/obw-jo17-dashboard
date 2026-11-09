@@ -11,7 +11,6 @@ import {goalTotals,type Goal} from './goal-scorers';
 
 export type HomeMatch={id:string;date:string;opponent:string;venue:string;score:string;scoreScope?:string;kind?:string;phase?:string;kickoff?:string;goals?:Goal[]};
 export default function TeamHomepage({matches,onNavigate,onMatch,onReport}:{matches:HomeMatch[];onNavigate:(tab:string)=>void;onMatch:(match:HomeMatch)=>void;onReport:(id:string)=>void}){
- const [teamPhotoOpen,setTeamPhotoOpen]=useState(false);
  const [standPhase,setStandPhase]=useState('2');
  const [liveRows,setLiveRows]=useState<(string|number)[][]|null>(null);
  useEffect(()=>{let active=true;async function refresh(){try{const r=await fetch('/api/stand',{cache:'no-store'});if(!r.ok)throw Error();const d=await r.json();if(active&&Array.isArray(d.rows)&&d.checkedAt)setLiveRows(d.rows)}catch{/* Use the same checked standings fallback as the competition page. */}}void refresh();const timer=setInterval(()=>void refresh(),300000);return()=>{active=false;clearInterval(timer)}},[]);
@@ -24,9 +23,8 @@ export default function TeamHomepage({matches,onNavigate,onMatch,onReport}:{matc
  const scorerGroups=[...new Set(allScorers.map(p=>p.count))].slice(0,3).map((count,i)=>({rank:i+1,count,players:allScorers.filter(p=>p.count===count)}));
  const cup=[...matches].filter(m=>m.kind==='Beker'&&!m.score).sort((a,b)=>a.date.localeCompare(b.date))[0];
  return <div className="team-homepage">
-  {teamPhotoOpen&&<div className="team-photo-lightbox" role="dialog" aria-modal="true" aria-label="Teamfoto OBW JO17-1" onClick={()=>setTeamPhotoOpen(false)}><div className="team-photo-lightbox-content" onClick={e=>e.stopPropagation()}><button type="button" className="team-photo-close" aria-label="Sluit teamfoto" onClick={()=>setTeamPhotoOpen(false)}>×</button><img src="/obw-jo17-team.webp" alt="Grote teamfoto OBW JO17-1 seizoen 2026–2027"/><div className="team-photo-caption"><h2>OBW JO17-1 · Seizoen 2026–2027</h2><div className="team-photo-roster-rows"><div className="team-photo-roster-row"><h3>Achterste rij <span>van links naar rechts</span></h3><p>Rene · Jos · Koen · Dustin · Jip · Loek · Joep · Jurre · Finn · Ralph</p></div><div className="team-photo-roster-row"><h3>Voorste rij <span>van links naar rechts</span></h3><p>Luuk · Tim · Loek · Chris · Daan · Boaz · Collin · Jens</p></div></div></div></div></div>}
   <section className="team-home-hero" aria-label="OBW JO17-1 seizoen 2026-2027">
-   <img src="/obw-jo17-team.webp" alt="Teamfoto OBW JO17-1 — klik om te vergroten" width={1440} height={960} fetchPriority="high" onClick={()=>setTeamPhotoOpen(true)} className="team-photo-clickable" title="Bekijk de teamfoto groot met spelersnamen"/>
+   <img src="/obw-jo17-team.webp" alt="Teamfoto OBW JO17-1 — klik om te vergroten" width={1440} height={960} fetchPriority="high" onClick={()=>{window.location.href="/teamfoto"}} onKeyDown={e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();window.location.href="/teamfoto"}}} role="button" tabIndex={0} className="team-photo-clickable" title="Open de teamfoto op een aparte pagina met spelersnamen"/>
    <div className="team-home-hero-copy"><span className="team-home-hero-eyebrow">SEIZOEN 2026–2027</span><h1><strong>OBW JO17-1</strong></h1><p className="team-home-hero-lead">Eén team. Eén doel.</p><p className="team-home-hero-subline">Samen het verschil maken, op en naast het veld.</p><div className="team-home-hero-action"><button onClick={()=>onNavigate('Spelers')}>Ontmoet onze selectie <ArrowUpRight size={18}/></button></div></div>
   </section>
   <MatchHighlights latest={latest} next={next} onOpen={onMatch} onMatches={()=>onNavigate('Wedstrijden')}/>
