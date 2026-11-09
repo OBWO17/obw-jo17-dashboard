@@ -13,7 +13,8 @@ const confirmedScorers:Record<string,[number,string][]>={
  '2026-09-26':[[10,'Jurre'],[9,'Finn']],
  '2026-10-03':[[15,'Tim'],[2,'Loek Prins']],
  '2026-10-24':[[7,'Luuk']],
- '2026-10-31':[[12,'Joep'],[15,'Tim']]
+ '2026-10-31':[[12,'Joep'],[15,'Tim']],
+ '2026-11-07':[[15,'Tim'],[15,'Tim']]
 };
 export function confirmedGoals(date:string){return confirmedScorers[date]?.map(([number,name])=>({playerId:`obw-player-${number}`,name,count:1}))}
 export function applyConfirmedGoals<T extends {date:string;opponent:string;id:string}>(matches:T[]):T[]{return matches.map(m=>{const fixture=fixtures.find(f=>f[0]===m.date&&(m.id===`obw-official-${m.date}`||m.id==='obw-skv-20261024'||m.id==='obw-bg-20261031'||m.opponent.toLowerCase().split(' ')[0]===f[1].toLowerCase().split(' ')[0]));const goals=fixture?confirmedGoals(m.date):undefined;return goals?{...m,goals}:m})}
