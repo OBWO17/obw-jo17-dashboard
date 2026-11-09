@@ -201,3 +201,99 @@
  .modern-player .player-top .number{width:38px;height:38px;font-size:23px}
 }
 @media(max-width:370px){.home-quick-nav{grid-template-columns:1fr 1fr}.mobile-bottom-nav button span{font-size:8px}}
+
+
+/* Team homepage redesign: visual hierarchy, compact sections and real team photography */
+.team-homepage{width:100%;max-width:1280px;margin:0 auto;font-size:14px}
+.team-homepage .eyebrow{font-size:11px;letter-spacing:1.1px}
+.team-home-hero{height:clamp(275px,30vw,410px);position:relative;overflow:hidden;border-radius:18px;background:#173f86;margin-bottom:20px;isolation:isolate}
+.team-home-hero>img{width:100%;height:100%;display:block;object-fit:cover;object-position:center 85%}
+.team-home-hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,24,66,.92),rgba(7,30,72,.55) 40%,rgba(7,30,72,.02) 78%);pointer-events:none}
+.team-home-hero-copy{position:absolute;left:clamp(22px,4vw,55px);bottom:clamp(23px,4vw,48px);z-index:1;color:white;max-width:530px}
+.team-home-hero-copy>span{display:block;font-size:12px;letter-spacing:1.5px;color:#ffdc65;font-weight:800}
+.team-home-hero-copy h1{color:white;font-size:clamp(36px,5.2vw,67px);letter-spacing:-2px;margin:10px 0 3px;line-height:1.02}
+.team-home-hero-copy p{font-size:clamp(15px,1.7vw,21px);color:#f0f5ff;font-weight:600;margin:0 0 20px}
+.team-home-hero-copy button{display:inline-flex;align-items:center;gap:8px;background:#f4d247;color:#153c83;padding:12px 18px;border-radius:9px;font-weight:900;font-size:13px}
+.team-home-hero-copy button:hover{background:#ffe57b}
+.team-homepage .match-highlights{margin:0 0 22px;gap:16px}
+.team-homepage .match-highlight{border-radius:14px}
+.team-homepage .fixture-centre b{font-size:clamp(26px,3vw,39px)}
+.team-home-section-heading{display:flex;align-items:end;justify-content:space-between;gap:15px;margin:0 0 14px}
+.team-home-section-heading .eyebrow{margin-bottom:4px}
+.team-home-section-heading h2{font-size:clamp(21px,2.4vw,28px);font-weight:850;letter-spacing:-.6px;margin:0;color:#153b7f}
+.team-home-section-heading>button{display:inline-flex;align-items:center;gap:6px;color:#194b98;font-weight:800;font-size:12px;white-space:nowrap;padding:9px 0}
+.team-home-videos{margin:22px 0 25px}
+.team-home-videos .match-summaries>.section-heading{display:none}
+.team-home-videos .match-summaries>.summary-access{display:none}
+.team-home-videos .summaries-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.team-home-videos .summary-card{border-radius:14px;overflow:hidden}
+.team-home-videos .summary-art{aspect-ratio:16/8.2;min-height:0}
+.team-home-videos .summary-caption{padding:14px 17px}
+.team-home-videos .summary-result strong{font-size:14px}
+.team-home-videos .match-summaries>div:last-of-type:has(>button){display:none}
+.team-home-shortcuts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:20px 0 30px}
+.team-home-shortcuts>button{display:flex;align-items:center;text-align:left;gap:10px;padding:18px 14px;background:#fff;border:1px solid #dbe5f2;border-radius:12px;color:#1c4c98;min-width:0}
+.team-home-shortcuts>button:hover{border-color:#e5c447;background:#f8fbff}
+.team-home-shortcuts>button>span{flex:1;min-width:0}
+.team-home-shortcuts strong{display:block;font-size:14px}
+.team-home-shortcuts small{display:block;color:#687994;font-size:11px;margin-top:4px}
+.team-home-season{margin:22px 0 26px}
+.team-home-season-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.team-home-season-card{background:#fff;border:1px solid #dae4f1;border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:8px;min-height:165px}
+.team-home-season-card:first-child{background:#fff8df;border-color:#f0d991}
+.team-home-season-card .season-symbol{font-size:26px}
+.team-home-season-card>small{color:#58729b;font-size:10px;font-weight:850;letter-spacing:1px}
+.team-home-season-card>strong{font-size:clamp(19px,2vw,26px);color:#153d82;letter-spacing:-.5px}
+.team-home-season-card p{color:#546986;font-size:13px;margin:0}
+.team-home-lower{display:grid;grid-template-columns:minmax(0,0.85fr) minmax(0,1.15fr);gap:22px;align-items:start;margin:20px 0 26px}
+.team-home-scorers,.team-home-report{min-width:0}
+.team-home-scorers ol{margin:0;padding:0;list-style:none;background:#fff;border:1px solid #dae4f1;border-radius:14px;overflow:hidden}
+.team-home-scorers li{display:flex;align-items:center;gap:12px;padding:16px;border-bottom:1px solid #edf1f6}
+.team-home-scorers li:last-child{border:0}
+.home-scorer-rank{width:32px;height:32px;display:grid;place-items:center;border-radius:50%;background:#f5d451;color:#173d83;font-weight:900;flex-shrink:0}
+.team-home-scorers li strong{flex:1;color:#193e7d;font-size:15px}
+.team-home-scorers li b{font-size:19px;color:#193e7d}
+.team-home-scorers li b small{font-size:10px;font-weight:500}
+.team-home-report .match-reports-grid{grid-template-columns:minmax(0,1fr);gap:0}
+.team-home-report .match-reports-grid>button{display:grid;grid-template-columns:38% 62%;min-width:0}
+.team-home-report .match-reports-grid .report-cover{min-height:200px}
+.team-home-report .match-reports-grid .report-body{padding:18px}
+.team-home-report .match-reports>div:last-child>button.secondary{display:none}
+.team-home-report .match-reports .section-heading{display:none}
+.team-home-footer{border-top:1px solid #e0e7f1;padding-top:18px}
+.team-home-footer .sponsors{margin:0}
+.team-home-links{display:flex;justify-content:flex-end;gap:16px;padding:14px 0}
+.team-home-links a{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:#164a96;font-weight:750}
+@media(min-width:1250px){.main main{max-width:none;padding-left:clamp(24px,3vw,52px);padding-right:clamp(24px,3vw,52px)}}
+@media(max-width:900px){.team-home-shortcuts{grid-template-columns:repeat(2,minmax(0,1fr))}.team-home-lower{grid-template-columns:1fr}.team-home-report .match-reports-grid>button{grid-template-columns:35% 65%}}
+@media(max-width:650px){
+ .team-home-hero{height:285px;margin-bottom:12px;border-radius:13px}
+ .team-home-hero>img{object-position:55% 85%}
+ .team-home-hero:after{background:linear-gradient(0deg,rgba(5,24,66,.92),rgba(7,30,72,.08) 83%)}
+ .team-home-hero-copy{left:18px;right:16px;bottom:18px}
+ .team-home-hero-copy h1{font-size:34px;letter-spacing:-1px}
+ .team-home-hero-copy p{font-size:15px;margin-bottom:13px}
+ .team-home-hero-copy button{padding:10px 12px;font-size:11px}
+ .team-homepage .match-highlights{gap:10px;margin-bottom:16px}
+ .team-home-section-heading{align-items:start}
+ .team-home-section-heading h2{font-size:20px}
+ .team-home-section-heading>button{font-size:11px;white-space:normal;text-align:right}
+ .team-home-videos .summaries-grid{grid-template-columns:1fr}
+ .team-home-videos .summary-art{aspect-ratio:16/9}
+ .team-home-videos .summary-card:nth-child(n+2){display:none}
+ .team-home-shortcuts{gap:8px;margin:15px 0 24px}
+ .team-home-shortcuts>button{padding:12px 9px;gap:7px}
+ .team-home-shortcuts>button>svg:first-child{width:19px}
+ .team-home-shortcuts>button>svg:last-child{display:none}
+ .team-home-shortcuts strong{font-size:12px}
+ .team-home-shortcuts small{font-size:10px}
+ .team-home-season-grid{grid-template-columns:1fr;gap:9px}
+ .team-home-season-card{min-height:0;padding:14px;display:grid;grid-template-columns:34px 1fr;column-gap:10px}
+ .team-home-season-card .season-symbol{grid-row:1/4}
+ .team-home-season-card strong{font-size:20px}
+ .team-home-season-card p{font-size:12px}
+ .team-home-report .match-reports-grid>button{grid-template-columns:1fr}
+ .team-home-report .match-reports-grid .report-cover{min-height:130px}
+ .team-home-scorers li{padding:12px}
+ .team-home-footer .sponsors{margin-bottom:0}
+}
