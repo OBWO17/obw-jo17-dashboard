@@ -7,7 +7,7 @@ export async function serverClient(){
  return createServerClient(config.url,config.key,{cookies:{
   getAll:()=>jar.getAll(),
   setAll:items=>{
-   try{for(const {name,value,options} of items)jar.set(name,value,{...options,httpOnly:true,secure:process.env.NODE_ENV==='production',sameSite:'lax',path:'/'});}
+   try{for(const {name,value,options} of items)jar.set(name,value,{...options,httpOnly:true,secure:process.env.NODE_ENV==='production',sameSite:'lax',path:'/',...(jar.get('obw-session-only')?.value==='1'&&name.startsWith('sb-')&&name.includes('auth-token')?{maxAge:undefined,expires:undefined}:{})});}
    catch{/* Proxy refreshes cookies when rendering Server Components. */}
   }
  }});
