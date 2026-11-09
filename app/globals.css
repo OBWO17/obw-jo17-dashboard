@@ -130,3 +130,74 @@
  .shell main{padding-bottom:90px}
  .sidebar.open{z-index:90;overflow-y:auto}
 }
+
+
+/* Final parent/player polish: compact homepage, portrait cards, responsive navigation */
+.overview-season-ribbon{padding:18px 23px;margin-bottom:12px}
+.overview-season-ribbon h1{font-size:clamp(26px,3.2vw,34px);margin:4px 0}
+.home-video-lead{margin:16px 0 20px}
+.home-video-intro{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:10px}
+.home-video-intro h2{font-size:clamp(19px,2.3vw,24px);color:#153c83;margin:4px 0}
+.home-video-intro p{margin:0;color:#586d89;font-size:12px}
+.home-video-intro .eyebrow{margin-bottom:0}
+.home-video-lead .match-summaries{margin:0}
+.home-video-lead .match-summaries>.section-heading{display:none}
+.home-video-lead .summary-art{min-height:125px}
+.home-video-lead .summary-caption{padding:12px 14px}
+.home-quick-nav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:16px 0 18px}
+.home-quick-link{display:flex;align-items:center;gap:9px;text-align:left;background:#fff;border:1px solid #dce6f4;border-radius:12px;padding:13px;color:#194687;min-width:0}
+.home-quick-link>span{flex:1;min-width:0}
+.home-quick-link strong{display:block;font-size:12px}
+.home-quick-link small{display:block;color:#687992;font-size:10px;margin-top:4px;line-height:1.3}
+.home-quick-link>svg:last-child{flex-shrink:0}
+.home-quick-link:hover{border-color:#e6c33e;background:#f9fbff}
+.home-external-links{margin:8px 0 18px}
+.modern-player{padding:0!important;display:flex;flex-direction:column}
+.modern-player .player-top{margin:0;min-height:64px;padding:12px 15px;gap:10px}
+.modern-player .player-top .number{background:#f6d34c;color:#133c87;width:51px;height:51px;font-size:29px;border-radius:10px}
+.modern-player .player-top span{color:#fff;font-size:11px}
+.player-portrait-frame{width:100%;aspect-ratio:4/5;background:linear-gradient(145deg,#e8eef9,#f8faff);overflow:hidden;display:flex;align-items:center;justify-content:center}
+.player-portrait-frame img{width:100%;height:100%;object-fit:cover;object-position:center 19%;display:block}
+.player-portrait-missing{display:flex;flex-direction:column;align-items:center;gap:10px;color:#7790b1}
+.player-card-details{padding:17px 17px 20px;display:flex;flex-direction:column;align-items:flex-start;gap:6px}
+.player-card-details h2{margin:0;font-size:19px}
+.player-goals{display:inline-flex;align-items:center;gap:7px;background:#eef4ff;border-radius:999px;padding:7px 11px;font-size:11px;font-weight:800;color:#194687;margin-top:7px}
+.player-goals-muted{background:#f5f6f8;color:#738096;font-weight:500}
+.modern-player .player-photo{padding:12px 16px 0}
+.modern-player .player-photo-frame{width:100%;height:auto;aspect-ratio:4/5;overflow:hidden;background:#edf2fa}
+.modern-player .player-photo-frame img{width:100%;height:100%;object-fit:cover;object-position:center 19%}
+.modern-player>button,.modern-player>label,.modern-player>textarea,.modern-player>small{margin-left:16px;margin-right:16px}
+.modern-player>button{align-self:flex-start}
+.modern-player>small{margin-bottom:16px}
+@media(max-width:1100px){.home-quick-nav{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:800px){
+ .main main{padding-top:15px}
+ .overview-season-ribbon{padding:16px 18px}
+ .match-highlights{margin-top:10px}
+ .home-video-lead{margin:13px 0}
+ .home-video-intro{align-items:flex-start}
+ .home-video-intro .home-featured-button{font-size:11px;padding:10px}
+ .home-external-links{margin:8px 0 16px}
+ .mobile-bottom-nav button{min-width:0;overflow:hidden}
+ .mobile-bottom-nav button span{max-width:100%;overflow:hidden;text-overflow:ellipsis}
+ .match-reports-grid,.summaries-grid{gap:10px}
+ .fixture-card{padding:12px!important}
+ .modern-player .player-top .number{width:43px;height:43px;font-size:25px}
+}
+@media(max-width:560px){
+ .home-video-intro{flex-direction:column;gap:10px}
+ .home-video-intro .home-featured-button{width:100%}
+ .home-quick-nav{gap:7px}
+ .home-quick-link{padding:11px 8px;gap:6px}
+ .home-quick-link strong{font-size:11px}
+ .home-quick-link small{font-size:9px}
+ .home-quick-link>svg:last-child{display:none}
+ .players-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+ .player-card-details{padding:12px}
+ .player-card-details h2{font-size:15px;overflow-wrap:anywhere}
+ .player-goals{font-size:10px;padding:6px 8px}
+ .modern-player .player-top{padding:9px;min-height:53px}
+ .modern-player .player-top span{font-size:9px}
+ .modern-player .player-top .number{width:38px;height:38px;font-size:23px}
+}
+@media(max-width:370px){.home-quick-nav{grid-template-columns:1fr 1fr}.mobile-bottom-nav button span{font-size:8px}}
