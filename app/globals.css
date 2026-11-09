@@ -545,3 +545,12 @@
 .player-formation-hint{font-size:10px;line-height:1.4;color:#e1eaf8;text-align:center;margin:10px 0 0}
 .player-formation-error{font-size:10px;color:#ffe14a;text-align:center;margin:8px 0 0}
 @media(max-width:650px){.collectible-player .player-formation{margin:8px 5px 10px;padding:7px 4px}.player-formation-title{font-size:8px}.player-formation-legend{gap:6px}.player-formation-legend span{font-size:8px}}
+
+
+/* Captain insignia on OBW collectible player cards. */
+.collectible-player .player-captain-badge{display:inline-flex;align-items:center;gap:7px;align-self:flex-start;margin:3px 0 10px;padding:5px 10px 5px 5px;border-radius:999px;font-size:10px;font-weight:900;letter-spacing:.65px;line-height:1.1;white-space:nowrap;box-shadow:0 3px 10px #00000020}
+.collectible-player .captain-main{color:#123769;background:linear-gradient(110deg,#ffe780,#ffc83c);border:1px solid #f6bb2a}
+.collectible-player .captain-vice{color:#fff;background:linear-gradient(110deg,#1959a6,#0c3679);border:1px solid #d9e6ff}
+.collectible-player .player-captain-letter{display:inline-flex;align-items:center;justify-content:center;width:27px;height:27px;min-width:27px;border-radius:50%;font-size:15px;font-weight:950;letter-spacing:-.7px;background:#0a3574;color:#ffe46d;border:2px solid #fff}
+.collectible-player .captain-vice .player-captain-letter{font-size:11px;background:#ffda44;color:#10376e}
+@media(max-width:650px){.collectible-player .player-captain-badge{font-size:8px;letter-spacing:0;gap:4px;padding:4px 6px 4px 4px}.collectible-player .player-captain-letter{width:23px;height:23px;min-width:23px;font-size:13px}.collectible-player .captain-vice .player-captain-letter{font-size:10px}}
