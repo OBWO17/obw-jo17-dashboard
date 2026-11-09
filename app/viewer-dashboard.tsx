@@ -1,5 +1,5 @@
-import {matchOutcome} from './match-outcome';
 'use client';
+import {matchOutcome} from './match-outcome';
 import {useState} from 'react';
 import {BookOpen,LayoutDashboard,Users,Trophy,Video,Flag,Target,Shield,Menu,ChevronRight,ArrowUpRight,ChartNoAxesCombined} from 'lucide-react';
 import CompetitionBoard from './competition-board';
