@@ -24,7 +24,7 @@ export default function TeamHomepage({matches,onNavigate,onMatch,onReport}:{matc
  return <div className="team-homepage">
   <section className="team-home-hero" aria-label="OBW JO17-1 seizoen 2026-2027">
    <img src="/obw-jo17-team.webp" alt="Teamfoto OBW JO17-1" width={1440} height={960} fetchPriority="high"/>
-   <div className="team-home-hero-copy"><span className="team-home-hero-eyebrow">SEIZOEN 2026–2027</span><h1><strong>OBW JO17-1</strong></h1><p className="team-home-hero-lead">Eén team. Eén doel.</p><p className="team-home-hero-subline">Samen groeien, samen winnen.</p><div className="team-home-hero-action"><button onClick={()=>onNavigate('Spelers')}>Ontmoet onze selectie <ArrowUpRight size={18}/></button></div></div>
+   <div className="team-home-hero-copy"><span className="team-home-hero-eyebrow">SEIZOEN 2026–2027</span><h1><strong>OBW JO17-1</strong></h1><p className="team-home-hero-lead">Eén team. Eén doel.</p><p className="team-home-hero-subline">Samen het verschil maken, op en naast het veld.</p><div className="team-home-hero-action"><button onClick={()=>onNavigate('Spelers')}>Ontmoet onze selectie <ArrowUpRight size={18}/></button></div></div>
   </section>
   <MatchHighlights latest={latest} next={next} onOpen={onMatch} onMatches={()=>onNavigate('Wedstrijden')}/>
   <section className="team-home-report team-home-report-featured"><div className="team-home-section-heading"><div><span className="eyebrow">HET VERHAAL ACHTER DE WEDSTRIJD</span><h2>Het laatste wedstrijdverslag</h2></div><button onClick={()=>onNavigate('Wedstrijdverslagen')}>Alle wedstrijdverslagen <ArrowUpRight size={16}/></button></div><MatchReports limit={1} onViewAll={()=>onNavigate('Wedstrijdverslagen')} onOpenReport={onReport}/></section>
