@@ -456,3 +456,26 @@
  .team-home-hero>img{display:block;width:100%;height:auto;object-fit:contain}
 }
 @media(max-width:450px){.team-home-hero-action button{width:100%}}
+
+
+/* Hero polish: clean title, action, and photo without side gutters. */
+.team-home-hero-copy h1{margin:0;display:flex;flex-direction:column;gap:5px;max-width:100%;line-height:1.05}
+.team-home-hero-copy h1>span{display:block;margin:0;font-size:14px;font-weight:900;letter-spacing:2.2px;color:#ffdb4c}
+.team-home-hero-copy h1>strong{display:block;font-size:clamp(29px,3.15vw,48px);font-weight:950;letter-spacing:-1.6px;line-height:1.12;white-space:nowrap;color:white}
+.team-home-hero-copy p{margin:0}
+.team-home-hero-action{display:block;width:auto}
+.team-home-hero-action button{white-space:nowrap}
+.team-home-hero>img{background:#153b7e}
+@media(min-width:800px){
+ .team-home-hero{grid-template-columns:minmax(360px,42%) minmax(0,58%);min-height:0;max-height:none}
+ .team-home-hero-copy{padding:clamp(22px,3.2vw,48px);gap:19px}
+ .team-home-hero>img{display:block;width:100%;height:100%;max-height:none;object-fit:cover;object-position:center}
+}
+@media(min-width:800px) and (max-width:1100px){
+ .team-home-hero-copy h1>strong{font-size:clamp(26px,3vw,36px);letter-spacing:-1px}
+ .team-home-hero-copy{padding:25px}
+}
+@media(max-width:799px){
+ .team-home-hero-copy h1>strong{font-size:clamp(26px,6.4vw,42px);white-space:normal}
+ .team-home-hero>img{width:100%;height:auto;object-fit:contain}
+}
