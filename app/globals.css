@@ -76,3 +76,42 @@
 .match-reports-grid .report-body{padding:15px 16px}
 @media(max-width:1050px){.summaries-grid,.match-reports-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:650px){.summaries-grid,.match-reports-grid{grid-template-columns:1fr}}
+
+
+/* OBW supporter-friendly visual refresh */
+.overview-season-ribbon{display:flex;align-items:center;justify-content:space-between;gap:18px;background:linear-gradient(120deg,#103478,#205cb2);color:white;border-radius:18px;padding:25px 28px;margin-bottom:18px;border-bottom:5px solid #f1ce38}
+.overview-season-ribbon h1{font-size:clamp(27px,4vw,40px);line-height:1.1;margin:7px 0}
+.overview-season-ribbon p{color:#e7efff;margin:0;font-weight:600}
+.overview-season-ribbon .eyebrow{color:#ffdc61}
+.home-featured{display:flex;align-items:center;justify-content:space-between;gap:22px;background:#eaf1fb;border:1px solid #d5e4f7;border-left:5px solid #f0c82e;border-radius:16px;padding:23px 26px;margin:22px 0}
+.home-featured h2{font-size:clamp(19px,2.6vw,26px);color:#153c83;margin:6px 0}
+.home-featured p{margin:0;color:#536581}
+.home-featured-button{display:inline-flex;align-items:center;justify-content:center;gap:9px;flex-shrink:0;border-radius:11px;padding:13px 17px;background:#174b9a;color:#fff;font-weight:800}
+.home-featured-button:hover{background:#103775}
+.home-section-note{margin:28px 0 12px}.home-section-note h2{font-size:22px;color:#163e83;margin-bottom:5px}.home-section-note p{margin:0}
+.archive-filters{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 20px}
+.archive-filters button{padding:9px 14px;border:1px solid #d5e1f1;border-radius:100px;background:#fff;color:#264d88;font-size:12px;font-weight:800}
+.archive-filters button.selected,.archive-filters button:hover{background:#174a9a;border-color:#174a9a;color:white}
+.match-reports-grid>button,.summary-card,.fixture-card{transition:transform .18s ease,box-shadow .18s ease}
+.match-reports-grid>button:hover,.summary-card:hover,.fixture-card:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(20,54,104,.13)!important}
+.match-reports-grid .report-cover{min-height:145px}
+.fixture-card{border:1px solid #e0e8f4!important;border-radius:12px!important;margin:8px 0!important;padding:15px!important;background:#fff!important}
+.scorers-podium{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:18px 0 24px}
+.podium-card{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:7px;background:linear-gradient(150deg,#f6f9ff,#e9f0fc);border:1px solid #d9e5f7;border-radius:14px;padding:22px 12px}
+.podium-card.podium-1{background:linear-gradient(145deg,#fff8db,#f4e5a8);border-color:#e6cb70}
+.podium-medal{font-size:32px}.podium-card strong{font-size:16px;color:#173e81}.podium-card span:last-child{color:#4c6182}.podium-card b{font-size:24px;color:#153b7c}
+.modern-player{overflow:hidden;border-radius:16px!important;box-shadow:0 7px 24px rgba(20,54,104,.08)}
+.modern-player .player-top{background:linear-gradient(120deg,#133c87,#2b65b7);color:#fff;display:flex;justify-content:space-between;align-items:center;padding:10px 14px}
+.modern-player .player-top .number{color:#ffdc55;font-size:26px;font-weight:900}
+.modern-player .player-top span{font-size:10px;letter-spacing:1px;color:#fff}
+.modern-player h2{color:#173d84;font-size:18px}
+.player-season{display:block;color:#7285a3;font-size:10px;font-weight:800;letter-spacing:1px;margin-top:5px}
+.development-milestones{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:18px 0 22px}
+.development-milestones>div{background:#fff;border:1px solid #dce6f3;border-radius:14px;padding:19px;display:flex;flex-direction:column;gap:7px}
+.development-milestones span{font-size:26px}.development-milestones strong{color:#163f88;font-size:15px}.development-milestones small{color:#61718c;line-height:1.5}
+.development-progress{display:flex;gap:3px;height:9px;overflow:hidden;border-radius:100px;background:#e7ecf4;margin:18px 0}
+.development-progress span{min-width:3px}.development-progress .wins{background:#1e7c5b}.development-progress .draws{background:#e4b535}.development-progress .losses{background:#c45d58}
+.staff-card,.sponsor-card{transition:transform .18s ease,box-shadow .18s ease}
+.staff-card:hover,.sponsor-card:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(20,54,104,.11)}
+@media(max-width:760px){.overview-season-ribbon{padding:19px}.overview-season-ribbon>span{display:none}.home-featured{flex-direction:column;align-items:stretch;padding:18px}.home-featured-button{width:100%}.scorers-podium{gap:7px}.podium-card{padding:15px 6px}.podium-card strong{font-size:12px}.podium-card b{font-size:20px}.development-milestones{grid-template-columns:1fr}.archive-filters{gap:6px}.archive-filters button{padding:9px 11px}}
+@media(prefers-reduced-motion:reduce){.match-reports-grid>button,.summary-card,.fixture-card,.staff-card,.sponsor-card{transition:none}}
