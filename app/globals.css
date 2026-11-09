@@ -115,3 +115,6 @@
 .staff-card:hover,.sponsor-card:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(20,54,104,.11)}
 @media(max-width:760px){.overview-season-ribbon{padding:19px}.overview-season-ribbon>span{display:none}.home-featured{flex-direction:column;align-items:stretch;padding:18px}.home-featured-button{width:100%}.scorers-podium{gap:7px}.podium-card{padding:15px 6px}.podium-card strong{font-size:12px}.podium-card b{font-size:20px}.development-milestones{grid-template-columns:1fr}.archive-filters{gap:6px}.archive-filters button{padding:9px 11px}}
 @media(prefers-reduced-motion:reduce){.match-reports-grid>button,.summary-card,.fixture-card,.staff-card,.sponsor-card{transition:none}}
+
+.podium-portrait{width:76px;height:76px;object-fit:cover;object-position:top;border-radius:50%;border:3px solid white;box-shadow:0 4px 14px rgba(18,55,110,.14)}
+@media(max-width:600px){.podium-portrait{width:52px;height:52px}}
