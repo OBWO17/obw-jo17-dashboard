@@ -1,5 +1,5 @@
-import {matchOutcome} from './match-outcome';
 'use client';
+import {matchOutcome} from './match-outcome';
 import { useEffect, useState } from 'react';
 import VideoWorkspace from './video-workspace';
 import CompetitionBoard from './competition-board';
