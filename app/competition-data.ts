@@ -14,9 +14,9 @@ const confirmedScorers:Record<string,[number,string][]>={
  '2026-10-03':[[15,'Tim'],[2,'Loek Prins']],
  '2026-10-24':[[7,'Luuk']],
  '2026-10-31':[[12,'Joep'],[15,'Tim']],
- '2026-11-07':[[15,'Tim'],[15,'Tim']]
+ '2026-11-07':[[15,'Tim']]
 };
-export function confirmedGoals(date:string){return confirmedScorers[date]?.map(([number,name])=>({playerId:`obw-player-${number}`,name,count:1}))}
+export function confirmedGoals(date:string){return confirmedScorers[date]?.map(([number,name])=>({playerId:`obw-player-${number}`,name,count:date==='2026-11-07'&&number===15?2:1}))}
 export function applyConfirmedGoals<T extends {date:string;opponent:string;id:string}>(matches:T[]):T[]{return matches.map(m=>{const fixture=fixtures.find(f=>f[0]===m.date&&(m.id===`obw-official-${m.date}`||m.id==='obw-skv-20261024'||m.id==='obw-bg-20261031'||m.opponent.toLowerCase().split(' ')[0]===f[1].toLowerCase().split(' ')[0]));const goals=fixture?confirmedGoals(m.date):undefined;return goals?{...m,goals}:m})}
 export const officialMatches=fixtures.map(([date,opponent,venue,score,kickoff,phase])=>({id:date==='2026-10-24'?'obw-skv-20261024':date==='2026-10-31'?'obw-bg-20261031':`obw-official-${date}`,date,opponent,venue,score,kickoff,phase,scoreScope:'Eindstand',notes:date==='2026-10-24'?'Alleen de eerste helft is gefilmd. Officiële eindstand: SKV 2–1 OBW.':'',veo:'',goals:confirmedGoals(date)||[],source:phases.find(p=>p.id===phase)!.url}));
 
