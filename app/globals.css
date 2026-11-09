@@ -756,3 +756,9 @@
 .obw-scorers-page .obw-goal-match-bottom>span:last-child{color:#174d9a;font-weight:850}
 @media(max-width:850px){.obw-scorers-page .obw-goal-match-grid{grid-template-columns:1fr}}
 @media(max-width:520px){.obw-scorers-page .obw-goal-match-heading{align-items:flex-start;flex-direction:column}.obw-scorers-page .obw-goal-match-card{padding:15px}.obw-scorers-page .obw-goal-match-title{gap:7px}.obw-scorers-page .obw-goal-match-title strong{font-size:13px}}
+
+
+/* Remember-me option in OBW login */
+.login-card .login-remember{display:flex!important;flex-direction:row!important;align-items:center!important;gap:10px!important;margin:13px 0 17px;cursor:pointer;color:#173d7d;font-size:14px;font-weight:650}
+.login-card .login-remember input[type=checkbox]{appearance:auto!important;width:18px!important;height:18px!important;min-width:18px;margin:0!important;accent-color:#174b9c;cursor:pointer}
+.login-card .login-remember span{line-height:1.35}
