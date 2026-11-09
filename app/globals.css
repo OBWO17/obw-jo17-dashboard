@@ -523,3 +523,12 @@
  .team-home-hero-copy .team-home-hero-lead{margin:0 0 6px}
  .team-home-hero-copy .team-home-hero-subline{margin:0 0 22px}
 }
+
+
+/* Shared blue view-all actions, matching the competition button. */
+.team-homepage .team-home-view-all{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:#174c9d;color:#fff;border:2px solid #174c9d;border-radius:10px;padding:11px 16px;font-size:13px;font-weight:850;box-shadow:0 3px 9px rgba(15,57,128,.12);cursor:pointer}
+.team-homepage .team-home-view-all:hover{background:#103a80;border-color:#103a80;color:#fff}
+.team-home-scorers li{display:flex;flex-wrap:wrap;align-items:center}
+.team-home-scorers .home-scorer-tie{flex-basis:100%;font-size:11px;color:#61758e;padding-left:4px}
+.team-home-scorers .home-scorer-tie button{display:inline-flex;align-items:center;gap:3px;color:#174c9d;background:transparent;border:0;padding:2px 0;font-weight:800;text-decoration:underline;text-underline-offset:2px}
+@media(max-width:650px){.team-homepage .team-home-view-all{font-size:11px;padding:9px 11px}}
