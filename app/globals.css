@@ -670,3 +670,16 @@
 .obw-viewer-scorers-page .podium-card{border-radius:15px;background:#f2f6ff;border:1px solid #dce5f5;padding:18px}
 .obw-viewer-scorers-page .podium-1{background:#fff8db;border-color:#e6ca65}
 @media(max-width:700px){.obw-stat-strip{gap:7px}.obw-stat-strip>div{padding:13px 9px}.obw-stat-strip strong{font-size:22px}.obw-stat-strip span{font-size:10px}.obw-stat-strip small{font-size:9px}.obw-scorers-leaders{grid-template-columns:1fr}.obw-scorers-showcase{padding:14px}.obw-matches-page .fixture-card{padding:13px!important;gap:9px;flex-wrap:wrap}.obw-matches-page .fixture-card>b{font-size:12px}.obw-scorer-bar{grid-template-columns:90px 1fr 22px;gap:8px}}
+
+
+/* Subtle result cues, consistent for admin, visitors and competition fixtures. */
+.obw-matches-page .fixture-card.obw-match-win{border-left:5px solid #32946b!important;background:linear-gradient(100deg,#f4fbf7,#fff)!important}
+.obw-matches-page .fixture-card.obw-match-loss{border-left:5px solid #d76a70!important;background:linear-gradient(100deg,#fff7f7,#fff)!important}
+.obw-matches-page .fixture-card.obw-match-draw{border-left:5px solid #e3b62f!important;background:linear-gradient(100deg,#fffcf1,#fff)!important}
+.obw-competition-page .fixture-row.obw-match-win{border-left:4px solid #32946b;background:#f5fbf7}
+.obw-competition-page .fixture-row.obw-match-loss{border-left:4px solid #d76a70;background:#fff7f7}
+.obw-competition-page .fixture-row.obw-match-draw{border-left:4px solid #e3b62f;background:#fffcf1}
+.obw-scorers-page .obw-scorers-leaders{align-items:stretch}
+.obw-scorers-page .obw-scorer-leader{min-width:0}
+.obw-scorers-page .obw-scorer-leader>div strong{line-height:1.5}
+.obw-scorers-page .obw-stat-strip>div:last-child strong{font-size:clamp(17px,2vw,25px)}
