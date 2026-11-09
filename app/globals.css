@@ -609,3 +609,64 @@
 .team-photo-page-caption h2{color:#ffda48;margin:0;text-align:center;font-size:22px}
 .team-photo-page-back{display:inline-flex;margin-top:20px;color:#ffda48;font-weight:700;text-decoration:underline;text-underline-offset:4px}
 @media(max-width:650px){.team-photo-page{padding:17px 10px 30px}.team-photo-page-caption{padding:14px 12px}.team-photo-page-caption h2{font-size:18px}}
+
+
+/* OBW 2026/27 — sport-inspired presentation for the three data pages.
+   Scoped to avoid changing the dashboard hero or player cards. */
+.obw-matches-page,.obw-competition-page,.obw-scorers-page,.obw-viewer-scorers-page{--obw-blue:#123d8d;--obw-gold:#f9ce37;border:1px solid #dce5f5!important;border-radius:19px!important;box-shadow:0 12px 35px rgba(15,44,103,.07)!important;padding:clamp(18px,2.4vw,34px)!important}
+.obw-matches-page .card-heading,.obw-competition-page .desk-toolbar,.obw-scorers-page .desk-toolbar{border-bottom:1px solid #e5eaf4;padding-bottom:20px;margin-bottom:22px}
+.obw-matches-page h2,.obw-competition-page h2,.obw-scorers-page h2,.obw-viewer-scorers-page h2{font-size:clamp(23px,2.5vw,30px)!important;font-weight:850!important;letter-spacing:-.6px;color:#102f6d}
+.obw-matches-page .archive-filters{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0 25px}
+.obw-matches-page .archive-filters button{border-radius:999px!important;padding:10px 18px!important;font-weight:750!important;border:1px solid #cbd9ef!important;transition:background .15s,transform .15s}
+.obw-matches-page .archive-filters button.selected{background:#123d8d!important;color:white!important;border-color:#123d8d!important;box-shadow:0 4px 12px #123d8d2c}
+.obw-matches-page .fixture-card{display:flex;align-items:center;gap:16px;border:1px solid #dce5f5!important;border-left:5px solid #d4deec!important;border-radius:13px!important;background:linear-gradient(100deg,#fff,#f7faff)!important;margin-bottom:11px;padding:18px 20px!important;min-height:82px;transition:box-shadow .2s,transform .2s}
+.obw-matches-page button.fixture-card:hover{transform:translateY(-2px);box-shadow:0 9px 20px #102d6620}
+.obw-matches-page .fixture-card.obw-match-upcoming{border-left-color:#f9ce37!important;background:linear-gradient(100deg,#fffdf4,#f8fbff)!important}
+.obw-matches-page .fixture-card.obw-match-played{border-left-color:#123d8d!important}
+.obw-matches-page .fixture-card>svg:first-child{color:#123d8d;flex-shrink:0}
+.obw-matches-page .fixture-card strong{font-size:15px;color:#102f6d;font-weight:800}
+.obw-matches-page .fixture-card small{display:block;margin-top:6px;color:#60718b;font-size:12px}
+.obw-matches-page .fixture-card>b{white-space:nowrap;border-radius:9px;background:#eaf0fc;color:#123d8d;padding:8px 12px;font-weight:850}
+.obw-matches-page .fixture-card.obw-match-upcoming>b{background:#fff1b8;color:#6e5000}
+.obw-stat-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:18px 0 23px}
+.obw-stat-strip>div{min-width:0;border-radius:14px;background:linear-gradient(135deg,#0d3478,#174b9c);padding:19px 20px;color:#fff;display:flex;flex-direction:column;gap:7px;box-shadow:0 7px 18px #0c347622}
+.obw-stat-strip>div:nth-child(2){background:linear-gradient(135deg,#123d8d,#2162bd)}
+.obw-stat-strip>div:nth-child(3){background:linear-gradient(135deg,#122e61,#0c408b)}
+.obw-stat-strip small{font-size:10px;letter-spacing:1.3px;font-weight:800;color:#f9ce37}
+.obw-stat-strip strong{font-size:clamp(23px,2.8vw,37px);line-height:1.15;overflow-wrap:anywhere}
+.obw-stat-strip span{font-size:12px;color:#dce8fb}
+.obw-section-kicker{margin-top:22px;color:#174a9b;letter-spacing:1.6px;font-size:11px;font-weight:900}
+.obw-competition-page .phase-cards{gap:13px}
+.obw-competition-page .phase-card{border-radius:14px!important;padding:22px!important;transition:transform .15s,box-shadow .15s}
+.obw-competition-page .phase-card.selected{box-shadow:inset 0 0 0 1px #123d8d,0 8px 20px #153f8720;background:#eaf1ff!important}
+.obw-competition-page .phase-card strong{font-size:25px!important}
+.obw-competition-page .table-scroll,.obw-scorers-page .table-scroll{border:1px solid #e0e8f5;border-radius:12px;overflow-x:auto}
+.obw-competition-page table,.obw-scorers-page table{border-collapse:collapse;width:100%}
+.obw-competition-page thead,.obw-scorers-page thead{background:#123d8d!important;color:#fff!important}
+.obw-competition-page thead th,.obw-scorers-page thead th{background:#123d8d!important;color:#fff!important;padding:13px 10px!important}
+.obw-competition-page tbody tr:nth-child(even),.obw-scorers-page tbody tr:nth-child(even){background:#f7f9fe}
+.obw-competition-page tbody tr.our-team{background:#fff1ba!important;color:#102f6d;font-weight:900}
+.obw-competition-page tbody td,.obw-competition-page tbody th,.obw-scorers-page tbody td,.obw-scorers-page tbody th{padding:12px 10px!important}
+.obw-competition-page .fixture-row{border:1px solid #e0e7f2;border-radius:10px;padding:13px 16px;margin:8px 0;background:#f9fbff}
+.obw-scorers-showcase{margin:20px 0 25px;padding:22px;border-radius:16px;background:#f5f8fe;border:1px solid #e0e9f8}
+.obw-scorers-showcase h3{font-size:23px;margin:7px 0 19px;color:#102f6d}
+.obw-scorers-leaders{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:23px}
+.obw-scorer-leader{display:flex;align-items:center;gap:10px;background:white;border:1px solid #dce6f5;border-top:4px solid #c6d2e5;border-radius:12px;padding:15px 12px;min-width:0}
+.obw-scorer-leader.obw-leader-1{border-top-color:#f9ce37;background:#fffdf4}
+.obw-scorer-leader.obw-leader-2{border-top-color:#b5c1d1}
+.obw-scorer-leader.obw-leader-3{border-top-color:#cd9463}
+.obw-scorer-leader>span{font-size:25px}
+.obw-scorer-leader>div{min-width:0;flex:1}
+.obw-scorer-leader strong{display:block;color:#102f6d;overflow-wrap:anywhere}
+.obw-scorer-leader small{display:block;font-size:11px;color:#687995;margin-top:3px}
+.obw-scorer-leader>b{font-size:23px;color:#123d8d}
+.obw-scorer-leader>b small{font-size:10px;white-space:nowrap}
+.obw-scorers-bars{display:grid;gap:12px}
+.obw-scorer-bar{display:grid;grid-template-columns:minmax(85px,160px) 1fr 30px;gap:13px;align-items:center;font-size:13px;color:#102f6d;font-weight:700}
+.obw-scorer-bar>div{height:13px;border-radius:20px;background:#e2e9f5;overflow:hidden}
+.obw-scorer-bar i{display:block;height:100%;border-radius:20px;background:linear-gradient(90deg,#164b9f,#f9ce37)}
+.obw-scorer-bar>b{text-align:right}
+.obw-viewer-scorers-page .scorers-podium{margin:22px 0;gap:14px}
+.obw-viewer-scorers-page .podium-card{border-radius:15px;background:#f2f6ff;border:1px solid #dce5f5;padding:18px}
+.obw-viewer-scorers-page .podium-1{background:#fff8db;border-color:#e6ca65}
+@media(max-width:700px){.obw-stat-strip{gap:7px}.obw-stat-strip>div{padding:13px 9px}.obw-stat-strip strong{font-size:22px}.obw-stat-strip span{font-size:10px}.obw-stat-strip small{font-size:9px}.obw-scorers-leaders{grid-template-columns:1fr}.obw-scorers-showcase{padding:14px}.obw-matches-page .fixture-card{padding:13px!important;gap:9px;flex-wrap:wrap}.obw-matches-page .fixture-card>b{font-size:12px}.obw-scorer-bar{grid-template-columns:90px 1fr 22px;gap:8px}}
