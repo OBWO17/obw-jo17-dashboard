@@ -692,3 +692,38 @@
 .obw-matches-page .card-heading{border-top:1px solid #e3eaf4;padding-top:19px}.obw-matches-page .archive-filters{margin-bottom:18px}
 .obw-scorers-page .obw-scorers-showcase{background:linear-gradient(135deg,#f5f8ff,#fffdf5);border-color:#dce5f5}.obw-scorers-page .obw-scorers-leaders{align-items:stretch}.obw-scorers-page .obw-scorer-leader{flex-direction:column;align-items:center;text-align:center;padding:20px 12px;gap:12px;box-shadow:0 5px 15px #102f6d0b}.obw-scorers-page .obw-scorer-leader>div{flex:initial}.obw-scorers-page .obw-scorer-leader>b{font-size:28px}.obw-podium-portraits{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:5px;min-height:65px}.obw-podium-portraits img,.obw-podium-portraits>span{width:55px;height:65px;object-fit:cover;object-position:top;border-radius:10px;background:#e5ecf8;border:2px solid #fff;box-shadow:0 2px 9px #173c7824}.obw-podium-portraits>span{display:flex;align-items:center;justify-content:center;color:#153d82;font-size:24px;font-weight:900}.obw-scorers-page .obw-scorer-leader strong{font-size:15px}.obw-viewer-scorers-page .scorers-podium{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.obw-viewer-scorers-page .podium-card{display:flex;flex-direction:column;align-items:center;text-align:center;gap:9px;min-width:0;padding:21px 12px}.obw-viewer-scorers-page .podium-card .podium-medal{font-size:27px}.obw-viewer-scorers-page .podium-card strong{overflow-wrap:anywhere;color:#123d80}.obw-viewer-scorers-page .table-scroll{border-radius:12px;overflow:auto;border:1px solid #dce5f5}.obw-viewer-scorers-page thead th{background:#123d8d;color:#fff}.obw-viewer-scorers-page .obw-scorer-metrics{grid-template-columns:repeat(3,minmax(0,1fr))}
 @media(max-width:700px){.obw-match-metrics{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.obw-match-metrics>div{padding:13px}.obw-match-highlights{grid-template-columns:1fr}.obw-match-highlight{padding:15px}.obw-match-highlight-score{gap:5px}.obw-match-highlight-score>strong{font-size:22px}.obw-scorers-page .obw-scorer-leader{padding:15px 10px}.obw-viewer-scorers-page .scorers-podium{grid-template-columns:1fr}.obw-viewer-scorers-page .podium-card{padding:14px}.obw-podium-portraits img,.obw-podium-portraits>span{width:47px;height:57px}.obw-viewer-scorers-page .obw-scorer-metrics{grid-template-columns:repeat(3,minmax(0,1fr))}.obw-viewer-scorers-page .obw-scorer-metrics>div{padding:10px 7px}.obw-viewer-scorers-page .obw-scorer-metrics small{font-size:8px}.obw-viewer-scorers-page .obw-scorer-metrics strong{font-size:23px}}
+
+
+/* Match centre v2: a stronger OBW identity and unambiguous fixture states */
+.obw-matches-page .obw-center-intro{position:relative;border-radius:18px;background:linear-gradient(115deg,#103777 0%,#174c9d 75%,#1b58a8 100%);padding:25px 28px 26px;margin-bottom:18px;overflow:hidden}
+.obw-matches-page .obw-center-intro:after{content:"OBW";position:absolute;right:-6px;bottom:-45px;font-size:140px;letter-spacing:-12px;font-weight:1000;color:#ffffff0a;pointer-events:none}
+.obw-matches-page .obw-center-intro .obw-section-kicker{color:#ffda4b;position:relative;z-index:1}
+.obw-matches-page .obw-center-intro h2{color:#fff!important;font-size:clamp(27px,3.1vw,39px)!important;position:relative;z-index:1}
+.obw-matches-page .obw-center-intro p{color:#d7e6ff;position:relative;z-index:1}
+.obw-matches-page .obw-match-metrics{gap:12px;margin:16px 0 19px}
+.obw-matches-page .obw-match-metrics>div{position:relative;min-height:116px;padding:18px 20px;border:1px solid #dce5f4;border-top:4px solid #174b98;background:#f6f9ff;box-shadow:0 4px 13px #123b8008}
+.obw-matches-page .obw-match-metrics>div.obw-metric-win{border-top-color:#2e9c6b;background:#f3faf6}
+.obw-matches-page .obw-match-metrics>div.obw-metric-draw{border-top-color:#e5b928;background:#fffcf0}
+.obw-matches-page .obw-match-metrics>div.obw-metric-loss{border-top-color:#d66a70;background:#fff6f6}
+.obw-matches-page .obw-match-metrics strong{font-size:clamp(30px,3vw,42px);font-weight:950}
+.obw-matches-page .obw-match-metrics .obw-metric-icon{position:absolute;right:16px;top:17px;font-size:23px;opacity:.7}
+.obw-matches-page .obw-match-highlights{gap:14px}
+.obw-matches-page .obw-match-highlight{padding:22px 24px;min-height:195px;display:flex;flex-direction:column;justify-content:space-between}
+.obw-matches-page .obw-match-featured{background:linear-gradient(130deg,#123879,#0e2d63)!important;border:1px solid #123b80!important;box-shadow:0 10px 22px #102e651c}
+.obw-matches-page .obw-match-featured>small{color:#ffdb57}
+.obw-matches-page .obw-match-featured .obw-match-highlight-score>span{color:#fff}
+.obw-matches-page .obw-match-featured .obw-match-highlight-score>strong{color:#ffda4b}
+.obw-matches-page .obw-match-featured .obw-match-highlight-score img{background:#fff;padding:5px;border-radius:9px}
+.obw-matches-page .obw-match-featured .obw-result-tag{align-self:flex-start}
+.obw-matches-page .obw-match-next{background:linear-gradient(125deg,#f5f9ff,#e9f1ff)!important;border:1px solid #cbdcf6!important;border-top:4px solid #2055a5!important}
+.obw-matches-page .obw-match-next>small{color:#164a97}
+.obw-matches-page .obw-match-next .obw-match-highlight-score>strong{color:#1c55a6}
+.obw-matches-page .obw-match-next .obw-result-tag{align-self:flex-start;background:#dce9ff;color:#16438a}
+.obw-matches-page .fixture-card.obw-match-upcoming{border-left:5px solid #2d64b3!important;background:linear-gradient(100deg,#f2f7ff,#fff)!important}
+.obw-matches-page .fixture-card.obw-match-upcoming>b{background:#e0ecff!important;color:#1b4d9c!important}
+.obw-matches-page .fixture-card.obw-match-draw{border-left:5px solid #e3b62f!important;background:linear-gradient(100deg,#fffcf1,#fff)!important}
+.obw-matches-page .fixture-card.obw-match-draw>b{background:#fff0b5;color:#775909}
+.obw-matches-page .fixture-card.obw-match-win>b{background:#e1f4e8;color:#20754a}
+.obw-matches-page .fixture-card.obw-match-loss>b{background:#fde8e8;color:#a43b45}
+.obw-competition-page .fixture-row:not(.obw-match-win):not(.obw-match-draw):not(.obw-match-loss){border-left:4px solid #2d64b3;background:#f2f7ff}
+@media(max-width:700px){.obw-matches-page .obw-center-intro{padding:21px 18px}.obw-matches-page .obw-center-intro:after{font-size:95px;bottom:-25px}.obw-matches-page .obw-match-metrics{gap:8px}.obw-matches-page .obw-match-metrics>div{padding:13px 12px;min-height:105px}.obw-matches-page .obw-match-metrics .obw-metric-icon{font-size:17px;right:9px;top:9px}.obw-matches-page .obw-match-highlight{padding:18px 15px;min-height:180px}.obw-matches-page .obw-match-highlight-score>span{font-size:12px}}
