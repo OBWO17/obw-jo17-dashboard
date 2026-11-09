@@ -62,3 +62,17 @@
 
 /* Four season cards: three league phases and the cup. */
 .season-phases{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.season-phase{padding:20px;min-width:0}.season-phase-3{grid-column:auto}.season-phase-cup{border-top:4px solid #b68a25;background:linear-gradient(160deg,#fffdf7,#fff 60%)}.season-phase-cup .season-phase-icon{color:#957018;background:#fff2cd}.cup-qualified{padding:22px 0 20px;display:flex;flex-direction:column;align-items:flex-start;gap:12px;color:#a17a20}.cup-qualified>strong{font-size:19px;line-height:1.4;color:#18366d}.cup-qualified p{font-size:12px;line-height:1.7;color:#6b7b90;margin:0}.cup-journey{display:flex;justify-content:space-between;align-items:center;gap:10px;background:#faf5e8;padding:14px;border-radius:8px}.cup-journey span{font-size:10px;color:#82734f}.cup-journey strong{display:block;color:#6e5314;font-size:12px;margin-top:5px}.cup-journey>b{color:#b69749}.cup-fixture .cup-date{display:flex;align-items:center;gap:8px;font-size:12px;line-height:1.5;color:#526c90;margin:15px 0 22px}.cup-teams{display:flex;align-items:center;gap:14px}.cup-teams img{object-fit:contain}.cup-teams>strong{font-size:15px;line-height:1.5;color:#18366d}.cup-teams span{display:block;color:#8a97a9;font-weight:400;font-size:10px;margin:5px 0}.cup-meta{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0}.cup-meta span{font-size:10px;color:#31548a;background:#edf2fc;padding:7px 10px;border-radius:5px}.cup-results p{font-size:12px;display:flex;justify-content:space-between}.season-phase-stats{grid-template-columns:repeat(2,minmax(0,1fr))}@media(max-width:1350px){.season-phases{grid-template-columns:repeat(2,minmax(0,1fr))}.season-phase-3{grid-column:auto}.season-phase-3 .season-phase-stats{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:650px){.season-phases{grid-template-columns:1fr}.season-phase{padding:22px}}
+
+/* Compact, matching three-column match stories and video summaries */
+.summaries-grid,.match-reports-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.summary-art{min-height:145px;padding:16px}
+.summary-label{left:16px;top:14px}
+.summary-play{right:14px;top:13px;width:38px;height:38px}
+.summary-caption{padding:15px 16px}
+.summary-result{gap:6px}
+.summary-result strong{font-size:12px;overflow-wrap:anywhere}
+.summary-result b{font-size:20px}
+.match-reports-grid .report-cover{min-height:145px;padding:16px}
+.match-reports-grid .report-body{padding:15px 16px}
+@media(max-width:1050px){.summaries-grid,.match-reports-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){.summaries-grid,.match-reports-grid{grid-template-columns:1fr}}
