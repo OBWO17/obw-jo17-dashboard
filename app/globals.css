@@ -479,3 +479,21 @@
  .team-home-hero-copy h1>strong{font-size:clamp(26px,6.4vw,42px);white-space:normal}
  .team-home-hero>img{width:100%;height:auto;object-fit:contain}
 }
+
+
+/* Final optical alignment of the left hero copy. */
+@media(min-width:800px){
+ .team-home-hero-copy{justify-content:center;align-items:flex-start;gap:0;padding:clamp(28px,3.2vw,52px)}
+ .team-home-hero-copy .team-home-hero-eyebrow{margin:0 0 24px;font-size:10px;letter-spacing:1.2px}
+ .team-home-hero-copy h1{gap:3px;margin:0 0 21px}
+ .team-home-hero-copy h1>span{font-size:13px;letter-spacing:2px;line-height:1.1}
+ .team-home-hero-copy h1>strong{font-size:clamp(30px,3.15vw,48px);letter-spacing:-1.4px;line-height:1.1}
+ .team-home-hero-copy p{font-size:clamp(14px,1.25vw,17px);line-height:1.45;margin:0 0 24px}
+ .team-home-hero-action{margin:0}
+}
+@media(max-width:799px){
+ .team-home-hero-copy{gap:0}
+ .team-home-hero-copy .team-home-hero-eyebrow{margin:0 0 18px}
+ .team-home-hero-copy h1{gap:3px;margin:0 0 16px}
+ .team-home-hero-copy p{margin:0 0 20px}
+}
