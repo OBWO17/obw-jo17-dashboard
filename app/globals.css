@@ -353,3 +353,14 @@
  .team-home-cup-panel>button{width:100%;justify-content:center}
  .team-home-stand-empty{flex-wrap:wrap;padding:17px}
 }
+
+
+/* Balanced hero: complete team photo at a useful size, no giant vertical scroll */
+@media(min-width:800px){
+ .team-home-hero{display:grid;grid-template-columns:minmax(300px,0.85fr) minmax(0,1.45fr);align-items:stretch;min-height:340px;max-height:460px}
+ .team-home-hero-copy{order:0;align-content:center;align-items:flex-start;display:flex;flex-direction:column;justify-content:center;padding:28px clamp(22px,3vw,45px);gap:12px}
+ .team-home-hero-copy>span{flex-basis:auto}
+ .team-home-hero-copy h1{font-size:clamp(34px,3.5vw,51px)}
+ .team-home-hero-copy p{margin:0 0 8px}
+ .team-home-hero>img{order:1;height:100%;width:100%;max-height:460px;object-fit:contain;object-position:center;background:#e6eef7}
+}
