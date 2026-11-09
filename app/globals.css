@@ -297,3 +297,59 @@
  .team-home-scorers li{padding:12px}
  .team-home-footer .sponsors{margin-bottom:0}
 }
+
+
+/* Team photo fully visible, without cropping players */
+.team-home-hero{height:auto;display:flex;flex-direction:column;overflow:hidden;background:#153b7f}
+.team-home-hero>img{width:100%;height:auto;max-height:none;aspect-ratio:auto;object-fit:contain;object-position:center;order:1}
+.team-home-hero:after{display:none}
+.team-home-hero-copy{position:relative;inset:auto;left:auto;right:auto;bottom:auto;max-width:none;width:100%;padding:18px 26px;order:0;display:flex;align-items:center;flex-wrap:wrap;column-gap:18px;row-gap:8px}
+.team-home-hero-copy>span{flex-basis:100%;font-size:11px}
+.team-home-hero-copy h1{font-size:clamp(26px,3.5vw,39px);letter-spacing:-1px;margin:0}
+.team-home-hero-copy p{margin:0 auto 0 0;font-size:15px}
+.team-home-hero-copy button{font-size:13px;padding:11px 17px}
+.team-homepage .team-home-section-heading>button{background:#174c9d;color:#fff;border:2px solid #174c9d;border-radius:10px;padding:11px 16px;font-size:13px;font-weight:850;box-shadow:0 3px 9px rgba(15,57,128,.12);white-space:normal}
+.team-homepage .team-home-section-heading>button:hover{background:#103a80;border-color:#103a80;color:#fff}
+.team-home-shortcuts>button{border:2px solid #d2dff0;box-shadow:0 3px 8px rgba(14,45,91,.06)}
+.team-home-shortcuts>button>svg:last-child{color:#174c9d}
+.team-home-stand{margin:20px 0 28px}
+.team-home-stand-panel{border:1px solid #d6e2f2;border-radius:15px;background:#fff;overflow:hidden;box-shadow:0 5px 20px rgba(19,54,104,.06)}
+.team-home-stand-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));background:#edf3fb;padding:8px;gap:8px}
+.team-home-stand-tabs button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:11px 8px;border-radius:9px;color:#204a8c;font-weight:850;font-size:14px}
+.team-home-stand-tabs button small{font-size:10px;color:#667b9b;font-weight:650}
+.team-home-stand-tabs button.selected{background:#164891;color:white;box-shadow:0 3px 10px rgba(12,51,109,.16)}
+.team-home-stand-tabs button.selected small{color:#ffe17c}
+.team-home-table-scroll{max-height:335px;overflow:auto}
+.team-home-table-scroll table{width:100%;border-collapse:collapse;font-size:13px}
+.team-home-table-scroll th,.team-home-table-scroll td{padding:11px 15px;border-bottom:1px solid #ebeff5;text-align:center}
+.team-home-table-scroll th:nth-child(2){text-align:left}
+.team-home-table-scroll thead th{position:sticky;top:0;background:#f6f8fc;color:#5b7090;font-size:11px;z-index:1}
+.team-home-table-scroll tbody th{font-weight:650;color:#2b446b}
+.team-home-table-scroll .home-stand-obw{background:#fff4c6;color:#143e84}
+.team-home-table-scroll .home-stand-obw th{color:#143e84;font-weight:900}
+.team-home-stand-note{margin:0;padding:10px 15px;font-size:11px;color:#667995}
+.team-home-stand-empty{display:flex;align-items:center;gap:15px;padding:28px;color:#174c94}
+.team-home-stand-empty p{color:#667995;margin:0}
+.team-home-cup-panel{display:flex;align-items:center;gap:17px;padding:26px;color:#174c94}
+.team-home-cup-panel>div{flex:1}
+.team-home-cup-panel strong{font-size:18px}
+.team-home-cup-panel p{margin:6px 0 0;color:#526887}
+.team-home-cup-panel>button{display:flex;align-items:center;gap:6px;background:#164891;color:#fff;padding:11px 14px;border-radius:9px;font-weight:800}
+@media(max-width:650px){
+ .team-home-hero{height:auto}
+ .team-home-hero>img{height:auto;object-fit:contain;object-position:center}
+ .team-home-hero-copy{padding:13px 15px;gap:7px}
+ .team-home-hero-copy>span{font-size:9px}
+ .team-home-hero-copy h1{font-size:27px}
+ .team-home-hero-copy p{font-size:12px}
+ .team-home-hero-copy button{width:100%;justify-content:center;font-size:12px}
+ .team-homepage .team-home-section-heading>button{font-size:11px;padding:9px 11px}
+ .team-home-stand-tabs{padding:5px;gap:3px}
+ .team-home-stand-tabs button{font-size:12px;padding:9px 4px}
+ .team-home-stand-tabs button small{font-size:8px}
+ .team-home-table-scroll table{font-size:11px}
+ .team-home-table-scroll th,.team-home-table-scroll td{padding:10px 7px}
+ .team-home-cup-panel{flex-wrap:wrap;padding:17px;gap:10px}
+ .team-home-cup-panel>button{width:100%;justify-content:center}
+ .team-home-stand-empty{flex-wrap:wrap;padding:17px}
+}
