@@ -1,5 +1,5 @@
-import {matchOutcome} from './match-outcome';
 'use client';
+import {matchOutcome} from './match-outcome';
 import {useEffect,useState} from 'react';
 import {checkedOn,officialMatches,phases} from './competition-data';
 export default function CompetitionBoard(){const [phase,setPhase]=useState('2');const [liveRows,setLiveRows]=useState<(string|number)[][]|null>(null);const [updated,setUpdated]=useState('');const [busy,setBusy]=useState(false);const [error,setError]=useState('');
