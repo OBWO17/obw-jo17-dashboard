@@ -562,3 +562,11 @@
 .collectible-player .captain-corner.captain-main{background:#ffe05c;color:#10376e}
 .collectible-player .captain-corner.captain-vice{background:#10376e;color:#ffe05c;font-size:15px}
 @media(max-width:650px){.collectible-player .captain-corner{width:31px;height:31px;font-size:17px;top:7px}.collectible-player .captain-corner.captain-vice{font-size:12px}}
+
+
+/* Captain insignia attached to portrait, not the outer card. */
+.collectible-player .captain-photo-wrap{position:relative;display:block;width:100%;min-width:0}
+.collectible-player .photo-captain-badge{position:absolute;z-index:9;right:22px;top:15px;display:flex;align-items:center;justify-content:center;width:37px;height:37px;border-radius:50%;border:2px solid #fff;box-shadow:0 3px 10px #0008;font-size:21px;font-weight:950;line-height:1;pointer-events:none}
+.collectible-player .photo-captain-badge.captain-main{background:#ffe05c;color:#10376e}
+.collectible-player .photo-captain-badge.captain-vice{background:#10376e;color:#ffe05c;font-size:15px}
+@media(max-width:650px){.collectible-player .photo-captain-badge{width:30px;height:30px;top:11px;right:14px;font-size:17px}.collectible-player .photo-captain-badge.captain-vice{font-size:12px}}
