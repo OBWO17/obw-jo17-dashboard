@@ -497,3 +497,29 @@
  .team-home-hero-copy h1{gap:3px;margin:0 0 16px}
  .team-home-hero-copy p{margin:0 0 20px}
 }
+
+
+/* Final simplified hero: club name first, no dot, no redundant 'Dit is'. */
+.team-home-hero-copy .team-home-hero-eyebrow{display:block;color:#f8d84e!important;letter-spacing:2px;font-size:11px;font-weight:850}
+.team-home-hero-copy h1{display:block;margin:0}
+.team-home-hero-copy h1>strong{display:block;font-size:clamp(36px,3.65vw,57px);font-weight:950;line-height:1.05;letter-spacing:-1.5px;color:#fff;white-space:nowrap}
+.team-home-hero-copy .team-home-hero-lead{font-size:clamp(19px,1.9vw,27px);font-weight:850;line-height:1.2;color:#fff;margin:0}
+.team-home-hero-copy .team-home-hero-subline{font-size:clamp(13px,1.15vw,16px);font-weight:500;line-height:1.45;color:#dce9ff;margin:0}
+@media(min-width:800px){
+ .team-home-hero-copy{gap:0;padding:clamp(25px,3.5vw,56px)}
+ .team-home-hero-copy .team-home-hero-eyebrow{margin:0 0 13px;font-size:10px}
+ .team-home-hero-copy h1{margin:0 0 23px}
+ .team-home-hero-copy .team-home-hero-lead{margin:0 0 7px}
+ .team-home-hero-copy .team-home-hero-subline{margin:0 0 28px}
+}
+@media(min-width:800px) and (max-width:1100px){
+ .team-home-hero-copy h1>strong{font-size:clamp(31px,3.4vw,43px)}
+}
+@media(max-width:799px){
+ .team-home-hero-copy{gap:0}
+ .team-home-hero-copy .team-home-hero-eyebrow{margin:0 0 11px}
+ .team-home-hero-copy h1{margin:0 0 19px}
+ .team-home-hero-copy h1>strong{font-size:clamp(30px,7.1vw,47px);white-space:normal}
+ .team-home-hero-copy .team-home-hero-lead{margin:0 0 6px}
+ .team-home-hero-copy .team-home-hero-subline{margin:0 0 22px}
+}
