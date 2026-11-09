@@ -532,3 +532,16 @@
 .team-home-scorers .home-scorer-tie{flex-basis:100%;font-size:11px;color:#61758e;padding-left:4px}
 .team-home-scorers .home-scorer-tie button{display:inline-flex;align-items:center;gap:3px;color:#174c9d;background:transparent;border:0;padding:2px 0;font-weight:800;text-decoration:underline;text-underline-offset:2px}
 @media(max-width:650px){.team-homepage .team-home-view-all{font-size:11px;padding:9px 11px}}
+
+
+/* Compact 4-3-3 position map within every collectible player card. */
+.collectible-player .player-formation{margin:12px 12px 15px;padding:10px 10px 12px;border:1px solid #f0d04c;border-radius:12px;background:#0b2d65;color:#fff}
+.player-formation-title{font-size:10px;font-weight:900;letter-spacing:1px;color:#f7d75b;text-align:center;margin:0 0 9px}
+.player-formation svg{display:block;width:100%;max-width:225px;height:auto;margin:0 auto;border-radius:6px;overflow:hidden}
+.player-formation-legend{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:10px 0 0}
+.player-formation-legend span{display:flex;align-items:center;gap:5px;font-size:9px;color:#dce9ff}
+.player-formation-legend i{display:inline-block;width:11px;height:11px;background:#f38b36;border:1px solid #ffd5a4;border-radius:50%}
+.player-formation-legend i.selected{background:#ffe14a;border-color:#fff}
+.player-formation-hint{font-size:10px;line-height:1.4;color:#e1eaf8;text-align:center;margin:10px 0 0}
+.player-formation-error{font-size:10px;color:#ffe14a;text-align:center;margin:8px 0 0}
+@media(max-width:650px){.collectible-player .player-formation{margin:8px 5px 10px;padding:7px 4px}.player-formation-title{font-size:8px}.player-formation-legend{gap:6px}.player-formation-legend span{font-size:8px}}
