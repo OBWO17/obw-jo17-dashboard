@@ -423,3 +423,36 @@
  .collectible-player .player-goals{font-size:9px;padding:6px 7px}
 }
 @media(prefers-reduced-motion:reduce){.collectible-player{transition:none}.collectible-player:hover{transform:none}}
+
+
+/* Editorial football hero: use the real complete team photo, no artificial cropping. */
+.team-home-hero{position:relative;border-radius:20px;overflow:hidden;background:#153b7e;box-shadow:0 12px 35px rgba(17,53,113,.16)}
+.team-home-hero-copy{background:radial-gradient(ellipse at 105% 110%,rgba(48,102,184,.52),transparent 65%),linear-gradient(135deg,#0c2c69,#174386 80%);color:white;isolation:isolate;overflow:hidden}
+.team-home-hero-copy:before{content:"17";position:absolute;z-index:-1;right:-18px;bottom:-58px;font-size:clamp(190px,24vw,340px);font-weight:1000;letter-spacing:-.13em;line-height:1;color:rgba(255,255,255,.045);pointer-events:none}
+.team-home-hero-copy:after{content:"";position:absolute;z-index:-1;inset:0;background:repeating-linear-gradient(135deg,transparent 0,transparent 28px,rgba(255,255,255,.015) 29px,rgba(255,255,255,.015) 30px);pointer-events:none}
+.team-home-hero-copy .team-home-hero-eyebrow{display:flex;align-items:center;gap:10px;color:#ffdb4c!important;font-size:11px;font-weight:900;letter-spacing:1.45px}
+.hero-live-dot{display:inline-block;flex:0 0 8px;width:8px;height:8px;border-radius:50%;background:#ffdb4c;box-shadow:0 0 0 4px rgba(255,219,76,.12)}
+.team-home-hero-copy h1{font-size:clamp(36px,4vw,61px);font-weight:950;line-height:1.03;letter-spacing:-2px;text-wrap:balance}
+.team-home-hero-copy h1>span{display:block;font-size:clamp(13px,1.4vw,19px);font-weight:850;letter-spacing:3px;color:#ffdb4c;margin-bottom:8px}
+.team-home-hero-copy p{font-size:clamp(14px,1.35vw,18px);font-weight:650;color:#e2edff}
+.team-home-hero-action{display:flex;align-items:center;gap:17px;flex-wrap:wrap}
+.team-home-hero-action button{display:inline-flex;align-items:center;justify-content:center;gap:12px;background:#ffdb4c;color:#103875;border:0;border-radius:10px;padding:14px 21px;font-size:14px;font-weight:900;box-shadow:0 5px 0 #c9a62a,0 10px 24px rgba(0,0,0,.13)}
+.team-home-hero-action button:hover{background:#ffe778;transform:translateY(-2px)}
+.team-home-hero-season{font-size:9px;font-weight:850;letter-spacing:1.3px;color:#b9cde9}
+@media(min-width:800px){
+ .team-home-hero{grid-template-columns:minmax(330px,.92fr) minmax(0,1.45fr);max-height:none;min-height:360px}
+ .team-home-hero-copy{padding:clamp(25px,4vw,62px);gap:18px}
+ .team-home-hero>img{height:100%;max-height:none;object-fit:contain;object-position:center;background:#dce7f3}
+}
+@media(max-width:799px){
+ .team-home-hero-copy{padding:23px 22px;display:flex;flex-direction:column;align-items:flex-start;gap:13px}
+ .team-home-hero-copy .team-home-hero-eyebrow{font-size:10px}
+ .team-home-hero-copy h1{font-size:clamp(33px,7vw,46px);margin:0}
+ .team-home-hero-copy h1>span{font-size:13px}
+ .team-home-hero-copy p{margin:0}
+ .team-home-hero-action{width:100%}
+ .team-home-hero-action button{width:auto;max-width:100%}
+ .team-home-hero-season{display:none}
+ .team-home-hero>img{display:block;width:100%;height:auto;object-fit:contain}
+}
+@media(max-width:450px){.team-home-hero-action button{width:100%}}
