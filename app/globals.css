@@ -762,3 +762,14 @@
 .login-card .login-remember{display:flex!important;flex-direction:row!important;align-items:center!important;gap:10px!important;margin:13px 0 17px;cursor:pointer;color:#173d7d;font-size:14px;font-weight:650}
 .login-card .login-remember input[type=checkbox]{appearance:auto!important;width:18px!important;height:18px!important;min-width:18px;margin:0!important;accent-color:#174b9c;cursor:pointer}
 .login-card .login-remember span{line-height:1.35}
+
+
+/* Team photo page: remove the inherited white dashboard header treatment. */
+.team-photo-page .team-photo-page-inner>.team-photo-page-header{box-sizing:border-box;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:20px!important;width:100%;min-height:100px;margin:0 0 16px!important;padding:18px 24px!important;background:linear-gradient(115deg,#103876,#174b98)!important;border:1px solid rgba(255,218,72,.45)!important;border-radius:14px!important;box-shadow:0 8px 25px #061a3b25!important;color:#fff!important}
+.team-photo-page .team-photo-page-header>div{min-width:0}
+.team-photo-page .team-photo-page-header .team-photo-page-eyebrow{display:block!important;position:static!important;color:#ffda48!important;font-size:11px!important;font-weight:900!important;letter-spacing:1.7px!important;margin:0 0 6px!important}
+.team-photo-page .team-photo-page-header h1{display:block!important;position:static!important;margin:0 0 4px!important;padding:0!important;color:#fff!important;background:transparent!important;font-size:clamp(24px,3vw,34px)!important;line-height:1.1!important}
+.team-photo-page .team-photo-page-header p{display:block!important;position:static!important;margin:0!important;color:#dbe8fc!important;font-size:13px!important}
+.team-photo-page .team-photo-page-header .team-photo-page-close{position:static!important;flex-shrink:0;width:44px;height:44px;background:#ffda48!important;border:2px solid #fff!important;color:#123b7d!important;border-radius:50%!important;box-shadow:0 4px 12px #061b3a55!important}
+.team-photo-page .team-photo-page-header .team-photo-page-close:hover{background:#fff!important}
+@media(max-width:650px){.team-photo-page .team-photo-page-inner>.team-photo-page-header{min-height:83px;padding:14px 15px!important}.team-photo-page .team-photo-page-header h1{font-size:24px!important}.team-photo-page .team-photo-page-header .team-photo-page-close{width:40px;height:40px}}
