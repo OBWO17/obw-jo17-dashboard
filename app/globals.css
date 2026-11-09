@@ -118,3 +118,15 @@
 
 .podium-portrait{width:76px;height:76px;object-fit:cover;object-position:top;border-radius:50%;border:3px solid white;box-shadow:0 4px 14px rgba(18,55,110,.14)}
 @media(max-width:600px){.podium-portrait{width:52px;height:52px}}
+
+
+/* Always-visible compact mobile navigation */
+.mobile-bottom-nav{display:none}
+@media(max-width:800px){
+ .mobile-bottom-nav{position:fixed;z-index:80;bottom:0;left:0;right:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));background:#fff;border-top:1px solid #dce6f3;box-shadow:0 -8px 28px rgba(13,42,94,.1);padding:7px 4px calc(7px + env(safe-area-inset-bottom));}
+ .mobile-bottom-nav button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;min-height:47px;color:#62718a;font-size:10px;font-weight:700;padding:3px 1px}
+ .mobile-bottom-nav button.active{color:#174a9a;background:#eef4ff;border-radius:9px}
+ .mobile-bottom-nav button span{white-space:nowrap;font-size:9px}
+ .shell main{padding-bottom:90px}
+ .sidebar.open{z-index:90;overflow-y:auto}
+}
