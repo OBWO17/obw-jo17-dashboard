@@ -554,3 +554,11 @@
 .collectible-player .player-captain-letter{display:inline-flex;align-items:center;justify-content:center;width:27px;height:27px;min-width:27px;border-radius:50%;font-size:15px;font-weight:950;letter-spacing:-.7px;background:#0a3574;color:#ffe46d;border:2px solid #fff}
 .collectible-player .captain-vice .player-captain-letter{font-size:11px;background:#ffda44;color:#10376e}
 @media(max-width:650px){.collectible-player .player-captain-badge{font-size:8px;letter-spacing:0;gap:4px;padding:4px 6px 4px 4px}.collectible-player .player-captain-letter{width:23px;height:23px;min-width:23px;font-size:13px}.collectible-player .captain-vice .player-captain-letter{font-size:10px}}
+
+
+/* Captain mark floats above the card: no extra height or layout shift. */
+.collectible-player{position:relative}
+.collectible-player .captain-corner{position:absolute;z-index:6;top:8px;left:50%;transform:translateX(-50%);display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;border:2px solid #fff;font-weight:950;font-size:21px;line-height:1;box-shadow:0 3px 12px #0005;pointer-events:none}
+.collectible-player .captain-corner.captain-main{background:#ffe05c;color:#10376e}
+.collectible-player .captain-corner.captain-vice{background:#10376e;color:#ffe05c;font-size:15px}
+@media(max-width:650px){.collectible-player .captain-corner{width:31px;height:31px;font-size:17px;top:7px}.collectible-player .captain-corner.captain-vice{font-size:12px}}
