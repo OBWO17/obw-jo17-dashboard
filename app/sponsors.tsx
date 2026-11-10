@@ -2,7 +2,7 @@ import {ExternalLink,HeartHandshake,Shirt,BriefcaseBusiness} from 'lucide-react'
 const sponsors=[
  {name:'Slagman',place:'Doetinchem',logo:'slagman',url:'https://www.slagmangroep.nl/'},
  {name:'Scheers Logistics',place:'Zevenaar',logo:'scheers-logistics',url:'https://www.scheerslogistics.nl/'},
- {name:"Kapsalon 't Slag",place:'Westervoort',logo:null,url:'https://www.kapsalonhetslag.nl/'}
+ {name:"Kapsalon 't Slag",place:'Westervoort',logo:'kapsalon-t-slag',url:'https://www.kapsalonhetslag.nl/'}
 ];
 const sponsored=[{name:'Wedstrijdshirts',icon:'shirt'},{name:'Warmloopshirts',icon:'shirt'},{name:'Trainingspakken',icon:'shirt'},{name:'Sporttassen',icon:'bag'}];
 export default function Sponsors({compact=false}:{compact?:boolean}){return <section className={compact?'obw-sponsors-page obw-sponsors-light obw-sponsors-compact':'obw-sponsors-page obw-sponsors-light'} aria-label="Sponsoren OBW JO17-1">
