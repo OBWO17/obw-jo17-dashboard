@@ -1,4 +1,4 @@
-# OBW JO17-1 · Teamdashboard 2026–2027
+# OBW O17-1 · Teamdashboard 2026–2027
 
 Werkende fase 1 met Next.js, TypeScript en Tailwind CSS. Gebruik Node.js 24 en npm 11.
 
