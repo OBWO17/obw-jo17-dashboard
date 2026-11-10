@@ -773,3 +773,27 @@
 .team-photo-page .team-photo-page-header .team-photo-page-close{position:static!important;flex-shrink:0;width:44px;height:44px;background:#ffda48!important;border:2px solid #fff!important;color:#123b7d!important;border-radius:50%!important;box-shadow:0 4px 12px #061b3a55!important}
 .team-photo-page .team-photo-page-header .team-photo-page-close:hover{background:#fff!important}
 @media(max-width:650px){.team-photo-page .team-photo-page-inner>.team-photo-page-header{min-height:83px;padding:14px 15px!important}.team-photo-page .team-photo-page-header h1{font-size:24px!important}.team-photo-page .team-photo-page-header .team-photo-page-close{width:40px;height:40px}}
+
+
+/* Staff page: unified OBW blue-and-gold sports presentation */
+.obw-staff-page{width:100%;display:flex;flex-direction:column;gap:22px}
+.obw-staff-hero{position:relative;overflow:hidden;background:linear-gradient(115deg,#0d2c60,#174b97);border-radius:18px;padding:32px 34px;color:#fff;border:1px solid #315b99}
+.obw-staff-kicker{color:#ffda48;font-size:11px;letter-spacing:1.5px;font-weight:900;margin-bottom:12px;position:relative;z-index:1}
+.obw-staff-hero h2{font-size:clamp(29px,4vw,44px);font-weight:900;color:#fff!important;line-height:1.1;margin:0 0 10px;position:relative;z-index:1}
+.obw-staff-hero p{color:#d9e7fa;font-size:15px;margin:0;position:relative;z-index:1}
+.obw-staff-hero-mark{position:absolute;right:-12px;bottom:-47px;font-size:clamp(95px,15vw,175px);font-weight:1000;letter-spacing:-10px;color:#ffffff0b;pointer-events:none}
+.obw-staff-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.obw-staff-card{min-width:0;overflow:hidden;border-radius:17px;background:#102f65;border:1px solid #294f8a;box-shadow:0 9px 24px #092d651c;transition:transform .18s,box-shadow .18s}
+.obw-staff-card:hover{transform:translateY(-3px);box-shadow:0 13px 30px #092d652b}
+.obw-staff-portrait{position:relative;aspect-ratio:3/3.5;background:linear-gradient(145deg,#e8effb,#a5bee4);overflow:hidden}
+.obw-staff-portrait img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+.obw-staff-caption{padding:20px 21px 23px;border-top:4px solid #ffda48;color:#fff}
+.obw-staff-caption>span{display:block;font-size:10px;letter-spacing:1.3px;text-transform:uppercase;font-weight:900;color:#ffda48;margin-bottom:8px}
+.obw-staff-caption h3{font-size:clamp(19px,2.3vw,27px);font-weight:900;color:#fff!important;margin:0 0 7px;line-height:1.15}
+.obw-staff-caption p{color:#c8daf3;font-size:12px;margin:0}
+.obw-staff-footer{display:flex;align-items:center;gap:17px;border:1px solid #d9e4f5;border-left:5px solid #ffda48;border-radius:14px;padding:21px 25px;background:linear-gradient(110deg,#f4f8ff,#fff)}
+.obw-staff-footer-icon{font-size:30px;flex-shrink:0}
+.obw-staff-footer h3{color:#153e81;font-size:19px;font-weight:900;margin:0 0 5px}
+.obw-staff-footer p{color:#526b90;font-size:13px;line-height:1.6;margin:0}
+@media(max-width:700px){.obw-staff-hero{padding:25px 21px}.obw-staff-grid{gap:11px}.obw-staff-caption{padding:12px 10px 15px}.obw-staff-caption h3{font-size:16px}.obw-staff-caption>span{font-size:9px;letter-spacing:.6px}.obw-staff-caption p{font-size:10px}.obw-staff-portrait{aspect-ratio:3/4}.obw-staff-footer{padding:17px;gap:12px}}
+@media(max-width:480px){.obw-staff-grid{grid-template-columns:1fr;gap:15px}.obw-staff-card{display:grid;grid-template-columns:42% 58%;align-items:stretch}.obw-staff-portrait{aspect-ratio:auto;min-height:185px}.obw-staff-caption{display:flex;flex-direction:column;justify-content:center;border-top:0;border-left:4px solid #ffda48;padding:15px}.obw-staff-caption h3{font-size:20px}.obw-staff-caption>span{font-size:10px}.obw-staff-caption p{font-size:11px}}
