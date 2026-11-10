@@ -940,3 +940,30 @@
 .obw-sponsors-compact .obw-sponsor-name-logo>span{font-size:13px}
 @media(max-width:800px){.obw-sponsors-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.obw-sponsor-kit-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:650px){.obw-sponsors-grid{grid-template-columns:1fr}.obw-sponsor-kit-item strong{font-size:12px}.obw-sponsors-compact .obw-sponsors-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.obw-sponsors-compact .obw-sponsor-details h3{font-size:12px}.obw-sponsors-compact .obw-sponsor-logo{min-height:80px}.obw-sponsors-compact .obw-sponsor-name-logo strong{font-size:18px}.obw-sponsors-compact .obw-sponsor-name-logo>span{font-size:11px}}
+
+
+/* Sponsor page refinement: light editorial layout with one meaningful OBW-blue thank-you */
+.obw-sponsors-light{background:#f4f7fc;border:1px solid #dce5f3;color:#173d79;gap:24px;padding:clamp(18px,2.6vw,30px)}
+.obw-sponsors-light .obw-sponsors-intro{max-width:none;background:linear-gradient(110deg,#113672,#1c4d98);border-radius:15px;padding:clamp(20px,3vw,30px);color:#fff}
+.obw-sponsors-light .obw-sponsors-intro h2{font-size:clamp(27px,3.2vw,37px)}
+.obw-sponsors-light .obw-sponsors-intro p{max-width:760px;color:#e4ecfb;font-size:14px;line-height:1.65}
+.obw-sponsors-light .obw-sponsors-grid{gap:15px}
+.obw-sponsors-light .obw-sponsor-card{border:1px solid #dce4f0;box-shadow:0 4px 16px #173b7310}
+.obw-sponsors-light .obw-sponsor-logo{min-height:150px;background:#fff}
+.obw-sponsors-light .obw-sponsor-details{background:#fff;border-top:1px solid #e9edf4}
+.obw-sponsors-light .obw-sponsor-card:hover,.obw-sponsors-light .obw-sponsor-card:focus-visible{border-color:#d8b53b;box-shadow:0 8px 22px #123c7924}
+.obw-sponsors-light .obw-sponsor-kit{padding:6px 0 0;border-top:0}
+.obw-sponsors-light .obw-sponsor-kit h3{color:#153f81;font-size:clamp(19px,2.2vw,24px);font-weight:850}
+.obw-sponsors-light .obw-sponsor-kit>p{color:#5c6f8d}
+.obw-sponsors-light .obw-sponsor-kit-grid{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:12px 24px}
+.obw-sponsors-light .obw-sponsor-kit-item{flex-direction:row;gap:8px;padding:5px 0;background:transparent;border:0;color:#244a83}
+.obw-sponsors-light .obw-sponsor-kit-item svg{width:20px;height:20px;color:#c49b17}
+.obw-sponsors-light .obw-sponsor-kit-item strong{font-size:13px;font-weight:750}
+.obw-sponsors-light .obw-sponsors-thanks{margin-top:0;border-top:0;border-radius:15px;padding:26px 20px 28px;background:linear-gradient(110deg,#123773,#1c4c96);color:#fff}
+.obw-sponsors-light .obw-sponsors-thanks strong{font-size:clamp(22px,2.7vw,29px);color:#fff}
+.obw-sponsors-light .obw-sponsors-thanks p{color:#edf3ff;font-size:14px}
+.obw-sponsors-light .obw-sponsors-thanks b{color:#ffda48;font-size:13px}
+.obw-sponsors-light.obw-sponsors-compact{gap:13px;padding:14px}
+.obw-sponsors-light.obw-sponsors-compact .obw-sponsors-intro{padding:16px}
+.obw-sponsors-light.obw-sponsors-compact .obw-sponsors-intro h2{font-size:23px}
+@media(max-width:650px){.obw-sponsors-light{gap:18px}.obw-sponsors-light .obw-sponsor-kit-grid{gap:12px 18px}.obw-sponsors-light .obw-sponsor-kit-item{flex:0 1 calc(50% - 12px);justify-content:center}.obw-sponsors-light .obw-sponsors-thanks{padding:22px 16px}.obw-sponsors-light .obw-sponsors-intro{padding:20px}}
