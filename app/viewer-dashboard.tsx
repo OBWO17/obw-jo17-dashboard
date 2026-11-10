@@ -1,7 +1,7 @@
 'use client';
 import {matchOutcome} from './match-outcome';
 import MatchCenter from './match-center';
-import {useState} from 'react';
+import {useEffect,useState} from 'react';
 import {BookOpen,LayoutDashboard,Users,Trophy,Video,Flag,Target,Shield,Menu,ChevronRight,ArrowUpRight,ChartNoAxesCombined} from 'lucide-react';
 import CompetitionBoard from './competition-board';
 import {useDashboardNavigation} from './use-dashboard-navigation';
@@ -18,10 +18,11 @@ import {officialMatches,friendlyMatches,cupMatches} from './competition-data';
 import {playerPortraits} from './team-portraits';
 type Match={id:string;date:string;opponent:string;venue:string;score:string;kickoff?:string;phase?:string;kind?:string;scoreScope?:string;goals?:Goal[]};
 const roster:[number,string][]=[[1,'Loek Ploum'],[2,'Loek Prins'],[3,'Koen'],[4,'Jip'],[5,'Collin'],[6,'Boaz'],[7,'Luuk'],[8,'Daan'],[9,'Finn'],[10,'Jurre'],[11,'Chris'],[12,'Joep'],[14,'Jens'],[15,'Tim'],[16,'Dustin'],[25,'Coen Schut']];
-const matches:Match[]=[...officialMatches,...friendlyMatches,...cupMatches].sort((a,b)=>b.date.localeCompare(a.date));
+const initialMatches:Match[]=[...officialMatches,...friendlyMatches,...cupMatches].sort((a,b)=>b.date.localeCompare(a.date));
 const nav=[['Overzicht',LayoutDashboard],['Wedstrijden',Trophy],['Competitie',Flag],['Topscorers',Target],['Spelers',Users],['Staf',Users],['Wedstrijdverslagen',BookOpen],['Samenvattingen',Video],['Teamontwikkeling',ChartNoAxesCombined],['Sponsoren',Shield]] as const;
 const validTabs=nav.map(([name])=>name);
 export default function ViewerDashboard(){
+ const [matches,setMatches]=useState<Match[]>(initialMatches);useEffect(()=>{let active=true;async function refresh(){try{const r=await fetch('/api/team-matches',{cache:'no-store'});if(!r.ok)return;const data=await r.json();if(active&&Array.isArray(data.matches)&&data.matches.length)setMatches(data.matches.sort((a:Match,b:Match)=>b.date.localeCompare(a.date)))}catch{/* Keep bundled match data if offline. */}}void refresh();const timer=setInterval(()=>void refresh(),60000);return()=>{active=false;clearInterval(timer)}},[]);
  const [tab,navigateTab]=useDashboardNavigation(validTabs);const [matchFilter,setMatchFilter]=useState('alles');const [reportId,setReportId]=useState<string|null>(null);const [mobile,setMobile]=useState(false);const [selected,setSelected]=useState<Match|null>(null);
  const data={matches};const latest=matches.find(m=>m.score);const next=[...matches].reverse().find(m=>!m.score&&m.date>=new Date().toISOString().slice(0,10));const scorers=goalTotals(matches);const scorerPodium=[...new Set(scorers.map(p=>p.count))].slice(0,3).map((count,i)=>({rank:i+1,count,players:scorers.filter(p=>p.count===count)}));
  return <div className="shell"><aside className={mobile?'sidebar open':'sidebar'}><div className="brand"><div className="crest">OBW<span>JO17</span></div><div>OBW <b>JO17-1</b><small>TEAM DASHBOARD</small></div></div><div className="season">SEIZOEN 2026 – 2027</div><div className="navlabel">ONS TEAM</div><nav>{nav.map(([name,Icon])=><button key={name} className={tab===name?'active':''} onClick={()=>{navigateTab(name);setMobile(false)}}><Icon size={19}/>{name}{tab===name&&<span className="navdot"/>}</button>)}</nav><div className="sidebar-bottom"><div className="team-note"><Shield size={21}/><strong>Samen beter worden.</strong><p>Eén team. Eén ambitie.</p></div><div className="profile"><div className="avatar">OBW</div><div><strong>Spelers en ouders</strong><small>Bezoekersweergave</small></div></div></div></aside>
