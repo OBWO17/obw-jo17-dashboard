@@ -1,7 +1,7 @@
 import {ExternalLink,HeartHandshake} from 'lucide-react';
 const sponsors=[{name:'Slagman',place:'Doetinchem',logo:'slagman',url:'https://www.slagmangroep.nl/'},{name:'Scheers Logistics',place:'Zevenaar',logo:'scheers-logistics',url:'https://www.scheerslogistics.nl/'}];
 export default function Sponsors({compact=false}:{compact?:boolean}){return <section className={compact?'obw-sponsors-page obw-sponsors-compact':'obw-sponsors-page'} aria-label="Sponsoren OBW JO17-1">
- <header className="obw-sponsors-intro"><span className="obw-sponsors-eyebrow">SAMEN STERK VOOR OBW JO17-1</span><h2>Onze sponsoren</h2><p>Dankzij de betrokkenheid van onze sponsoren kunnen we samen blijven bouwen aan een mooi voetbalseizoen.</p></header>
+ <div className="obw-sponsors-intro"><span className="obw-sponsors-eyebrow">SAMEN STERK VOOR OBW JO17-1</span><h2>Onze sponsoren</h2><p>Dankzij de betrokkenheid van onze sponsoren kunnen we samen blijven bouwen aan een mooi voetbalseizoen.</p></div>
  <div className="obw-sponsors-grid">{sponsors.map(s=><a className="obw-sponsor-card" href={s.url} key={s.name} target="_blank" rel="noopener noreferrer" aria-label={`Bezoek de website van ${s.name} (opent in een nieuw tabblad)`}><div className="obw-sponsor-logo"><img src={`/sponsors/${s.logo}.svg`} alt={`Logo ${s.name}`} width={320} height={130} loading="lazy"/></div><div className="obw-sponsor-details"><div><h3>{s.name}</h3><p>{s.place}</p><span>Partner OBW JO17-1</span></div><span className="obw-sponsor-link">Website <ExternalLink size={15}/></span></div></a>)}</div>
  {!compact&&<footer className="obw-sponsors-thanks"><HeartHandshake size={27} aria-hidden="true"/><strong>Samen maken we het verschil</strong><p>Op en naast het veld.</p></footer>}
  </section>}
