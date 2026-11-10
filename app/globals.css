@@ -898,3 +898,18 @@
  .season-phase-bottom{display:flex;flex-wrap:wrap;gap:8px 14px}
 }
 @media(max-width:360px){.obw-featured-club-logo{width:60px;height:60px}.obw-featured-fixture{grid-template-columns:minmax(0,1fr) 55px minmax(0,1fr)}.obw-featured-versus strong{font-size:23px}}
+
+
+/* Video cards share the report-card visual language while preserving large video previews */
+.match-summaries .summary-card{display:flex;flex-direction:column;border-radius:14px;border:1px solid #d9e3f3;box-shadow:0 8px 24px #103c7510;text-decoration:none;overflow:hidden}
+.match-summaries .summary-card-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;min-height:112px;padding:20px 22px 18px;background:linear-gradient(110deg,#143b83,#1c509d);border-bottom:4px solid #ffda48;color:#fff}
+.match-summaries .summary-card-heading>div{display:flex;flex-direction:column;gap:7px}
+.match-summaries .summary-card-heading span{font-size:11px;letter-spacing:.7px;font-weight:900;color:#ffda48}
+.match-summaries .summary-card-heading small{font-size:12px;color:#e2ebff;font-weight:650}
+.match-summaries .summary-card-heading strong{font-size:26px;line-height:1.1;color:#fff;font-weight:900}
+.match-summaries .summary-card-heading>svg{flex-shrink:0;color:#fff}
+.match-summaries .summary-art.summary-photo{border-bottom:0}
+.match-summaries .summary-caption{flex:1;background:#fff;padding:18px 22px 20px}
+.match-summaries .summary-open{font-weight:850;color:#164b96}
+.match-summaries .summary-card:focus-visible{outline:3px solid #ffda48;outline-offset:3px}
+@media(max-width:650px){.match-summaries .summary-card-heading{padding:16px 17px;min-height:100px}.match-summaries .summary-caption{padding:16px 17px}}
