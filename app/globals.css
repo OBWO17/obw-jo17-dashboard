@@ -851,3 +851,28 @@
 .obw-sponsors-thanks svg{color:#ffda48}.obw-sponsors-thanks strong{color:#fff;font-size:19px}.obw-sponsors-thanks p{color:#d9e7fa;margin:0;font-size:13px}
 .obw-sponsors-compact{padding:20px;gap:15px}.obw-sponsors-compact .obw-sponsors-intro h2{font-size:26px}.obw-sponsors-compact .obw-sponsor-logo{min-height:105px;padding:13px}.obw-sponsors-compact .obw-sponsor-logo img{height:78px}.obw-sponsors-compact .obw-sponsor-details{padding:13px}.obw-sponsors-compact .obw-sponsor-details h3{font-size:16px}
 @media(max-width:650px){.obw-sponsors-grid{grid-template-columns:1fr}.obw-sponsor-logo{min-height:150px}.obw-sponsor-logo img{height:105px}.obw-sponsor-details{padding:16px}.obw-sponsors-compact .obw-sponsors-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.obw-sponsors-compact .obw-sponsor-details{display:block}.obw-sponsors-compact .obw-sponsor-link{margin-top:8px}.obw-sponsors-compact .obw-sponsor-details h3{font-size:13px}.obw-sponsors-compact .obw-sponsor-logo{min-height:85px}.obw-sponsors-compact .obw-sponsor-logo img{height:60px}}
+
+
+/* Featured fixture of the week */
+.obw-featured-match{margin:22px 0 26px;padding:clamp(18px,3vw,30px);border-radius:20px;background:linear-gradient(130deg,#0b2b62,#174b99);border:1px solid #2d5da6;border-top:5px solid #ffda48;color:#fff;box-shadow:0 12px 28px #0a2e6b24}
+.obw-featured-match-top{display:flex;align-items:flex-start;justify-content:space-between;gap:14px}
+.obw-featured-kicker{display:block;font-size:11px;letter-spacing:1.3px;color:#ffda48;font-weight:900;margin-bottom:6px}
+.obw-featured-match-top h2{color:#fff!important;font-size:clamp(25px,3.4vw,37px);line-height:1.15;margin:0;font-weight:900}
+.obw-featured-type{background:#ffffff1a;border:1px solid #ffffff38;padding:8px 12px;border-radius:100px;color:#e2edff;font-size:12px;font-weight:750;white-space:nowrap}
+.obw-featured-fixture{display:grid;grid-template-columns:minmax(0,1fr) 140px minmax(0,1fr);align-items:center;gap:16px;margin:23px 0}
+.obw-featured-club{display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;min-width:0}
+.obw-featured-club-logo{display:flex;align-items:center;justify-content:center;width:112px;height:112px;padding:15px;border-radius:20px;background:#fff;box-shadow:0 7px 15px #061d4633}
+.obw-featured-club-logo img{width:100%;height:100%;object-fit:contain}
+.obw-featured-club-logo span{font-size:27px;font-weight:900;color:#12418b}
+.obw-featured-club strong{font-size:clamp(15px,2vw,22px);line-height:1.25;color:#fff;overflow-wrap:anywhere}
+.obw-featured-versus{display:flex;flex-direction:column;align-items:center;gap:6px}
+.obw-featured-versus strong{font-size:clamp(30px,5vw,54px);font-weight:950;color:#ffda48;white-space:nowrap}
+.obw-featured-versus span{font-size:13px;font-weight:800;color:#d9e8ff}
+.obw-featured-bottom{border-top:1px solid #ffffff36;padding-top:18px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.obw-featured-details{display:flex;align-items:center;flex-wrap:wrap;gap:12px 20px}
+.obw-featured-details span{display:flex;align-items:center;gap:7px;color:#e1ebfb;font-size:13px;font-weight:700}
+.obw-featured-bottom button,.obw-featured-empty button{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:10px;background:#ffda48;color:#0e3572;padding:12px 16px;font-size:13px;font-weight:900;cursor:pointer;white-space:nowrap}
+.obw-featured-bottom button:hover,.obw-featured-empty button:hover{background:#fff}
+.obw-featured-empty{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:25px 0 5px;color:#e0eaff}
+.obw-featured-empty p{flex:1;min-width:160px}
+@media(max-width:650px){.obw-featured-match-top{flex-direction:column}.obw-featured-type{font-size:11px}.obw-featured-fixture{grid-template-columns:minmax(0,1fr) 72px minmax(0,1fr);gap:5px;margin:20px 0}.obw-featured-club-logo{width:78px;height:78px;padding:11px;border-radius:14px}.obw-featured-club{gap:8px}.obw-featured-club strong{font-size:13px}.obw-featured-versus strong{font-size:29px}.obw-featured-versus span{font-size:10px}.obw-featured-bottom{flex-direction:column;align-items:stretch}.obw-featured-bottom button{width:100%}.obw-featured-details{gap:9px 15px}.obw-featured-details span{font-size:12px}}
