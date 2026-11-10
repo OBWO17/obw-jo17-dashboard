@@ -913,3 +913,30 @@
 .match-summaries .summary-open{font-weight:850;color:#164b96}
 .match-summaries .summary-card:focus-visible{outline:3px solid #ffda48;outline-offset:3px}
 @media(max-width:650px){.match-summaries .summary-card-heading{padding:16px 17px;min-height:100px}.match-summaries .summary-caption{padding:16px 17px}}
+
+
+/* Three equal clothing sponsors and visible appreciation */
+.obw-sponsors-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.obw-sponsor-logo{min-height:155px;padding:20px 15px}
+.obw-sponsor-logo img{height:108px}
+.obw-sponsor-details{padding:16px 17px;gap:8px}
+.obw-sponsor-details h3{font-size:18px}
+.obw-sponsor-name-logo{display:flex;flex-direction:column;align-items:center;justify-content:center;color:#153f81;text-align:center;line-height:1.1}
+.obw-sponsor-name-logo>span{font-size:clamp(15px,2vw,24px);font-weight:650;letter-spacing:1px}
+.obw-sponsor-name-logo strong{font-size:clamp(27px,3vw,44px);font-weight:900;letter-spacing:-1px}
+.obw-sponsor-kit{padding:21px 0 5px;border-top:1px solid #ffffff35;text-align:center}
+.obw-sponsor-kit h3{color:#fff;font-size:clamp(19px,2.5vw,25px);margin:0 0 8px}
+.obw-sponsor-kit>p{color:#d9e7fa;font-size:14px;margin:0 0 17px}
+.obw-sponsor-kit-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px}
+.obw-sponsor-kit-item{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:9px;border-radius:12px;background:#ffffff14;border:1px solid #ffffff30;padding:17px 8px;color:#fff}
+.obw-sponsor-kit-item svg{color:#ffda48}
+.obw-sponsor-kit-item strong{font-size:13px}
+.obw-sponsors-thanks{padding-top:25px;gap:11px}
+.obw-sponsors-thanks strong{font-size:clamp(22px,3vw,30px)}
+.obw-sponsors-thanks p{max-width:720px;font-size:15px;line-height:1.6}
+.obw-sponsors-thanks b{color:#ffda48;font-size:14px;line-height:1.5}
+.obw-sponsors-compact .obw-sponsor-details h3{font-size:14px}
+.obw-sponsors-compact .obw-sponsor-name-logo strong{font-size:24px}
+.obw-sponsors-compact .obw-sponsor-name-logo>span{font-size:13px}
+@media(max-width:800px){.obw-sponsors-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.obw-sponsor-kit-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){.obw-sponsors-grid{grid-template-columns:1fr}.obw-sponsor-kit-item strong{font-size:12px}.obw-sponsors-compact .obw-sponsors-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.obw-sponsors-compact .obw-sponsor-details h3{font-size:12px}.obw-sponsors-compact .obw-sponsor-logo{min-height:80px}.obw-sponsors-compact .obw-sponsor-name-logo strong{font-size:18px}.obw-sponsors-compact .obw-sponsor-name-logo>span{font-size:11px}}
