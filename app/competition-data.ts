@@ -1,9 +1,9 @@
 // Public OBW competition pages, checked 4 November 2026. This is a dated snapshot.
-export const checkedOn='9 november 2026';
-export const phases=[{id:'1',name:'1e klasse Zwaluwen Jeugd (1e fase) 07',url:'https://www.obw.nl/857/5039/competitie/',rows:[['OBW O17-1',5,4,1,0,13,14,7],["GSV '38 O17-1JM",5,3,0,2,9,20,12],["DVC '26 O17-1",5,2,2,1,8,10,5],['Concordia-W O17-1',5,2,1,2,7,10,9],['Angerlo Vooruit O17-1',5,2,0,3,6,16,14],['DCS O17-2',5,0,0,5,0,3,26]]},{id:'2',name:'Hoofdklasse (2e fase) D',url:'https://www.voetbal.nl/team/T47549040/stand',rows:[["AVW '66 O17-1",3,3,0,0,9,15,2],["De Bataven O17-1",3,2,0,1,6,8,8],["OBW O17-1",3,1,1,1,4,5,5],["Blauw Geel '55 O17-1",3,1,1,1,4,10,11],["Woezik O17-1",3,1,0,2,3,11,7],["SKV O17-1",3,1,0,2,3,5,7],["DCS O17-1",3,1,0,2,3,4,7],["Quick 1888 O17-1",3,1,0,2,3,5,16]]}];
+export const checkedOn='15 november 2026';
+export const phases=[{id:'1',name:'1e klasse Zwaluwen Jeugd (1e fase) 07',url:'https://www.obw.nl/857/5039/competitie/',rows:[['OBW O17-1',5,4,1,0,13,14,7],["GSV '38 O17-1JM",5,3,0,2,9,20,12],["DVC '26 O17-1",5,2,2,1,8,10,5],['Concordia-W O17-1',5,2,1,2,7,10,9],['Angerlo Vooruit O17-1',5,2,0,3,6,16,14],['DCS O17-2',5,0,0,5,0,3,26]]},{id:'2',name:'Hoofdklasse (2e fase) D',url:'https://www.voetbal.nl/team/T47549040/stand',rows:[["AVW '66 O17-1",4,4,0,0,12,20,2],["De Bataven O17-1",3,2,0,1,6,8,8],["Woezik O17-1",4,2,0,2,6,18,8],["SKV O17-1",4,2,0,2,6,9,7],["Blauw Geel '55 O17-1",4,1,1,2,4,10,15],["OBW O17-1",4,1,1,2,4,6,12],["Quick 1888 O17-1",3,1,0,2,3,5,16],["DCS O17-1",4,1,0,3,3,4,12]]}];
 type Fixture=[string,string,string,string,string,string];
 // date, opponent, home/away, OBW score first, kickoff, phase
-const fixtures:Fixture[]=[['2026-09-05','Concordia-W O17-1','Uit','3-0','','1'],['2026-09-12','DCS O17-2','Thuis','3-1','','1'],['2026-09-19',"GSV '38 O17-1JM",'Uit','4-3','','1'],['2026-09-26','Angerlo Vooruit O17-1','Uit','2-1','','1'],['2026-10-03',"DVC '26 O17-1",'Thuis','2-2','','1'],['2026-10-24','SKV O17-1','Uit','1-2','14:45','2'],['2026-10-31',"Blauw Geel '55 O17-1",'Thuis','2-2','','2'],['2026-11-07','DCS O17-1','Uit','2-1','12:00','2'],['2026-11-14','Woezik O17-1','Thuis','','17:15','2'],['2026-11-21','Quick 1888 O17-1','Uit','','13:45','2'],['2026-11-28','De Bataven O17-1','Uit','','13:30','2'],['2026-12-05',"AVW '66 O17-1",'Thuis','','15:45','2']];
+const fixtures:Fixture[]=[['2026-09-05','Concordia-W O17-1','Uit','3-0','','1'],['2026-09-12','DCS O17-2','Thuis','3-1','','1'],['2026-09-19',"GSV '38 O17-1JM",'Uit','4-3','','1'],['2026-09-26','Angerlo Vooruit O17-1','Uit','2-1','','1'],['2026-10-03',"DVC '26 O17-1",'Thuis','2-2','','1'],['2026-10-24','SKV O17-1','Uit','1-2','14:45','2'],['2026-10-31',"Blauw Geel '55 O17-1",'Thuis','2-2','','2'],['2026-11-07','DCS O17-1','Uit','2-1','12:00','2'],['2026-11-14','Woezik O17-1','Thuis','1-7','17:15','2'],['2026-11-21','Quick 1888 O17-1','Uit','','13:45','2'],['2026-11-28','De Bataven O17-1','Uit','','13:30','2'],['2026-12-05',"AVW '66 O17-1",'Thuis','','15:45','2']];
 // Goal allocations transcribed from the trainer's seven Voetbal.nl screenshots.
 // Store the existing dashboard display names, without expanding player profiles.
 const confirmedScorers:Record<string,[number,string][]>={
@@ -14,7 +14,8 @@ const confirmedScorers:Record<string,[number,string][]>={
  '2026-10-03':[[15,'Tim'],[2,'Loek Prins']],
  '2026-10-24':[[7,'Luuk']],
  '2026-10-31':[[12,'Joep'],[15,'Tim']],
- '2026-11-07':[[15,'Tim']]
+ '2026-11-07':[[15,'Tim']],
+ '2026-11-14':[[11,'Chris']]
 };
 export function confirmedGoals(date:string){return confirmedScorers[date]?.map(([number,name])=>({playerId:`obw-player-${number}`,name,count:date==='2026-11-07'&&number===15?2:1}))}
 export function applyConfirmedGoals<T extends {date:string;opponent:string;id:string}>(matches:T[]):T[]{return matches.map(m=>{const fixture=fixtures.find(f=>f[0]===m.date&&(m.id===`obw-official-${m.date}`||m.id==='obw-skv-20261024'||m.id==='obw-bg-20261031'||m.opponent.toLowerCase().split(' ')[0]===f[1].toLowerCase().split(' ')[0]));const goals=fixture?confirmedGoals(m.date):undefined;return goals?{...m,goals}:m})}
