@@ -972,3 +972,36 @@
 .obw-sponsors-light .obw-sponsor-card:nth-child(3) .obw-sponsor-logo{background:#090909;padding:8px 12px}
 .obw-sponsors-light .obw-sponsor-card:nth-child(3) .obw-sponsor-logo img{height:130px;max-height:100%;object-fit:contain}
 .obw-sponsors-light.obw-sponsors-compact .obw-sponsor-card:nth-child(3) .obw-sponsor-logo img{height:75px}
+
+
+/* Homepage: premium, compact latest-result card and full visible standings */
+.team-homepage .match-highlights.obw-single-highlight .match-highlight.recent{
+ background:linear-gradient(135deg,#ffffff 0%,#f4f8ff 100%);
+ border:1px solid #d6e3f5;border-top:4px solid #f2c93b;border-radius:18px;
+ box-shadow:0 12px 30px rgba(18,55,112,.09);padding:22px 28px 18px;
+}
+.team-homepage .obw-single-highlight .highlight-label{font-size:11px;font-weight:850;letter-spacing:1.1px}
+.team-homepage .obw-single-highlight .highlight-badge{border-radius:999px;background:#e8effb;color:#17458c;font-weight:800;padding:7px 13px}
+.team-homepage .obw-single-highlight .highlight-date{font-size:13px;font-weight:650;color:#617595;margin:10px 0 0}
+.team-homepage .obw-single-highlight .fixture-teams{margin:12px auto 18px;max-width:850px;align-items:center}
+.team-homepage .obw-single-highlight .fixture-team{gap:8px}
+.team-homepage .obw-single-highlight .fixture-club-badge{width:86px;height:86px;border-radius:17px;background:#fff;border:1px solid #dbe5f4;box-shadow:0 5px 16px #173b7310}
+.team-homepage .obw-single-highlight .fixture-club-badge img{max-width:70px;max-height:70px}
+.team-homepage .obw-single-highlight .fixture-team strong{font-size:clamp(15px,1.5vw,19px);color:#123c7e;font-weight:850}
+.team-homepage .obw-single-highlight .fixture-centre b{font-size:clamp(38px,4.5vw,58px);font-weight:950;color:#173f87;letter-spacing:-2px}
+.team-homepage .obw-single-highlight .fixture-centre small{color:#607696;font-weight:750}
+.team-homepage .obw-single-highlight .highlight-footer{border-top:1px solid #dfe8f4;padding-top:14px}
+.team-homepage .obw-single-highlight .highlight-footer button{background:#173f87;color:#fff;border-radius:9px;padding:9px 13px;font-weight:800}
+.team-homepage .obw-single-highlight .highlight-footer button:hover{background:#0e2d65}
+.team-home-table-scroll{max-height:none;overflow-x:auto;overflow-y:visible}
+.team-home-table-scroll thead th{position:static}
+.team-home-table-scroll th,.team-home-table-scroll td{padding-top:10px;padding-bottom:10px}
+@media(max-width:650px){
+ .team-homepage .match-highlights.obw-single-highlight .match-highlight.recent{padding:16px 13px}
+ .team-homepage .obw-single-highlight .fixture-teams{margin:16px 0}
+ .team-homepage .obw-single-highlight .fixture-club-badge{width:64px;height:64px}
+ .team-homepage .obw-single-highlight .fixture-club-badge img{max-width:52px;max-height:52px}
+ .team-homepage .obw-single-highlight .fixture-centre b{font-size:32px}
+ .team-homepage .obw-single-highlight .highlight-footer button{padding:8px 10px}
+ .team-home-table-scroll th,.team-home-table-scroll td{padding:9px 6px}
+}
