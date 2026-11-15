@@ -1,5 +1,5 @@
 export const summaryCatalog = [
- {slug:'dcs-obw-20261107',home:'DCS O17-1',away:'OBW O17-1',score:'1–2',date:'7 november 2026',detail:'Competitiefase 2 · wedstrijdklok · volledige laatste kans',filename:'DCS-OBW-klok-afspeelbaar-compact.mp4',size:78214906,sha256:'2d1e613c366ff9d65e42e458a6094368155d1a50fec9e41f972f5bf17316e9b3',frame:165},
+ {slug:'dcs-obw-20261107',home:'DCS O17-1',away:'OBW O17-1',score:'1–2',date:'7 november 2026',detail:'Competitiefase 2 · wedstrijdklok · volledige laatste kans',filename:'DCS-OBW-upload-kleiner-dan-50MB.mp4',size:35584423,sha256:'7eff67678031f0d3d4db4bcc78bc742b89ee70d42ac5cbba0d718b7df289e104',frame:165},
 
  {slug:'obw-dvc-20261003',home:'OBW O17-1',away:'DVC ’26 O17-1',score:'2–2',date:'3 oktober 2026',detail:'Competitiefase 1 · wedstrijdklok',filename:'20261003-samenvatting-gecorrigeerd.mp4',size:45530794,sha256:'02c97afe88352f81204a6c4c63659bbd46967438e1702ea38cc37ada83ec472c',frame:135},
  {slug:'angerlo-obw-20260926',home:'Angerlo Vooruit O17-1',away:'OBW O17-1',score:'1–2',date:'26 september 2026',detail:'Competitiefase 1 · wedstrijdklok',filename:'20260926-samenvatting-gecorrigeerd.mp4',size:42864602,sha256:'3a82598aaa903892e55d3d05103d9ae03b5bf9a48661478a2e1b86b6773e0e6e',frame:170},
