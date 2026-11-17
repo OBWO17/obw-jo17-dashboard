@@ -2,6 +2,7 @@
 import {useEffect,useState} from 'react';
 import {summaryCatalog} from '../lib/summary-catalog';
 import ShareSummary from './share-summary';
+import SummaryDuration from './summary-duration';
 import {reportPreviews} from '../lib/match-reports-data';
 import {Play,ArrowUpRight} from 'lucide-react';
 const summaries=[
@@ -30,7 +31,7 @@ export default function MatchSummaries({privatePlayback=false,limit,onViewAll}:{
  const phase=phaseOf(s)==='oefen'?'Oefenwedstrijd':'Fase '+phaseOf(s);const rawDate=s.slug.match(/\d{8}$/)?.[0]||'';const report=reportPreviews.find(r=>r.date.replaceAll('-','')===rawDate);
  return <article className="summary-card" key={s.slug}>
  <a className="summary-visual" href={href} aria-label={`Bekijk ${s.home} – ${s.away}, ${s.score}`}><div className="summary-art summary-photo"><img src={extraSummaries.some(x=>x.slug===s.slug)?`/api/summary-posters/${s.slug}`:`/summary-posters/${s.poster}.jpg`} alt={`Wedstrijdbeeld: ${s.home} tegen ${s.away}`} width={960} height={540} loading="lazy"/><span className="summary-kind">{s.label==='Alleen eerste helft'?'Eerste helft':'Samenvatting'}</span><span className="summary-play" aria-hidden="true"><Play size={26}/></span>{duration&&<span className="summary-duration">{duration}</span>}</div></a>
- <div className="summary-caption"><div className="summary-result"><strong>{s.home}</strong><b>{s.score}</b><strong>{s.away}</strong></div><p className="summary-meta">{s.date}{phase&&` · ${phase}`} · {duration||'Speelduur bij afspelen'}</p>{report&&<a className="summary-report-link" href={`/verslag/${report.id}`}>Lees ook het verslag <ArrowUpRight size={14} aria-hidden="true"/></a>}<div className="summary-actions"><a className="summary-open" href={href}>Bekijk samenvatting <ArrowUpRight size={16}/></a>{privatePlayback&&<ShareSummary slug={s.slug} title={`${s.home} – ${s.away} (${s.score})`}/>}</div></div>
+ <div className="summary-caption"><div className="summary-result"><strong>{s.home}</strong><b>{s.score}</b><strong>{s.away}</strong></div><p className="summary-meta">{s.date}{phase&&` · ${phase}`} · <SummaryDuration slug={s.slug} known={duration}/></p>{report&&<a className="summary-report-link" href={`/verslag/${report.id}`}>Lees ook het verslag <ArrowUpRight size={14} aria-hidden="true"/></a>}<div className="summary-actions"><a className="summary-open" href={href}>Bekijk samenvatting <ArrowUpRight size={16}/></a>{privatePlayback&&<ShareSummary slug={s.slug} title={`${s.home} – ${s.away} (${s.score})`}/>}</div></div>
  </article>})}</div>}
  {available!==null&&visible.length>0&&displayed.length===0&&<p>Geen samenvattingen in deze selectie.</p>}
  {privatePlayback&&available?.length===0&&<p>Er zijn op dit moment geen samenvattingen beschikbaar. Probeer de pagina opnieuw te laden.</p>}

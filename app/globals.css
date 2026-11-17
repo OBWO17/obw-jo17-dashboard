@@ -1140,3 +1140,13 @@ button:focus-visible,a:focus-visible,select:focus-visible,[role=button]:focus-vi
 .report-sharing{margin-top:0;gap:10px}
 .report-sharing .match-related-links{margin-block:0}
 @media(max-width:600px){.match-detail-header{padding:24px 20px}.match-detail-crest{width:48px;height:48px;padding:5px;margin-left:12px}.match-detail-header h1{font-size:25px;clear:both;padding-top:12px}.match-detail-body{padding:8px 20px 20px}.match-detail-body .match-goals{padding:16px}.report-sharing{align-items:stretch;flex-direction:column}.report-sharing>a{justify-content:center}}
+
+/* Keep the whole original match frame, including its clock, in video previews. */
+.summary-photo>img,.latest-match-video img{object-fit:contain;object-position:center;background:#0b2147}
+.summary-card:hover .summary-photo>img{transform:none}
+.summary-photo .summary-kind{top:auto;bottom:12px;left:12px}
+.summary-photo .summary-duration{top:12px;bottom:auto;right:12px}
+.latest-match-video{background:#0b2147;aspect-ratio:16/9;align-self:center;min-height:0}
+@media(max-width:650px){.latest-match-video{width:100%;aspect-ratio:16/9}}
+
+.stand-source-notice{border-left:3px solid #d8b72e;background:#fffbeb;color:#655624;line-height:1.6}.stand-fallback-note{font-size:inherit;color:#64748b}

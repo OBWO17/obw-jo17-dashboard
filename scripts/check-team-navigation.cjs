@@ -27,5 +27,5 @@ const order=['aria-label="Laatste wedstrijd"','Wedstrijd van de week','Onze weds
 for(let i=1;i<order.length;i++)assert.ok(home.indexOf(order[i])>home.indexOf(order[i-1]),`Home order ${order[i]}`);
 assert.ok(home.includes('width="1440" height="960"'));assert.equal((home.match(/href="\/verslag\//g)||[]).length,3);
 const noNext=render(React.createElement(Home,{matches:matches.filter(m=>m.score),onNavigate:()=>{},onMatch:()=>{},onReport:()=>{}}));assert.ok(noNext.includes('Er is nog geen volgende wedstrijd ingepland.'));
-const videos=render(React.createElement(Summaries,{}));assert.ok(videos.includes('Filter samenvattingen'));assert.ok(videos.includes('3:29'));assert.ok(videos.includes('Speelduur bij afspelen'));assert.ok(videos.includes('/verslag/woezik-20261114'));
+const videos=render(React.createElement(Summaries,{}));assert.ok(videos.includes('Filter samenvattingen'));assert.ok(videos.includes('3:29'));assert.ok(videos.includes('Speelduur laden'));assert.ok(videos.includes('/verslag/woezik-20261114'));
 console.log('PASS: report permalinks, selected report, WhatsApp, away score, scorer, practical data and route fallback, home hierarchy, full photo dimensions, no-next-match state, summary filters');
