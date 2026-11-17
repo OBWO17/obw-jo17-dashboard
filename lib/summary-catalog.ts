@@ -1,4 +1,5 @@
 export const summaryCatalog = [
+ {slug:'obw-woezik-20261114',home:'OBW O17-1',away:'Woezik O17-1',score:'1–7',date:'14 november 2026',detail:'Competitiefase 2 · Full HD · wedstrijdklok · 3:29',filename:'OBW-Woezik-1-7-FullHD-wedstrijdklok.mp4',size:47837035,sha256:'8a3d07a6c9b9ee3029ee85f41c5b4657d2f99ce6e04a1a8cc16bcac2ae5cd5ad',frame:36},
  {slug:'dcs-obw-20261107',home:'DCS O17-1',away:'OBW O17-1',score:'1–2',date:'7 november 2026',detail:'Competitiefase 2 · wedstrijdklok · volledige laatste kans',filename:'DCS-OBW-upload-kleiner-dan-50MB.mp4',size:35584423,sha256:'7eff67678031f0d3d4db4bcc78bc742b89ee70d42ac5cbba0d718b7df289e104',frame:165},
 
  {slug:'obw-dvc-20261003',home:'OBW O17-1',away:'DVC ’26 O17-1',score:'2–2',date:'3 oktober 2026',detail:'Competitiefase 1 · wedstrijdklok',filename:'20261003-samenvatting-gecorrigeerd.mp4',size:45530794,sha256:'02c97afe88352f81204a6c4c63659bbd46967438e1702ea38cc37ada83ec472c',frame:135},
