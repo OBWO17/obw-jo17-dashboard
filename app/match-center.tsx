@@ -7,7 +7,7 @@ export default function MatchCenter({matches}:{matches:Match[]}){
  const draws=played.filter(m=>matchOutcome(m.score,m.scoreScope)==='draw').length;
  const losses=played.filter(m=>matchOutcome(m.score,m.scoreScope)==='loss').length;
  const latest=[...played].sort((a,b)=>b.date.localeCompare(a.date))[0];
- const next=[...matches].filter(m=>!m.score).sort((a,b)=>a.date.localeCompare(b.date))[0];
+ const next=matches.filter(m=>!m.score&&m.date>=new Date().toLocaleDateString('sv-SE',{timeZone:'Europe/Amsterdam'})).sort((a,b)=>a.date.localeCompare(b.date))[0];
  const date=(s:string)=>new Date(s+'T12:00:00').toLocaleDateString('nl-NL',{day:'numeric',month:'long'});
  return <div className="obw-match-center">
   <div className="obw-center-intro"><span className="obw-section-kicker">SEIZOEN 2026–2027</span><h2>Ons wedstrijdcentrum</h2><p>Alle uitslagen, het programma en onze prestaties op één plek.</p></div>

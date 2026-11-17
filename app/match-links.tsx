@@ -1,0 +1,4 @@
+'use client';
+import {reportPreviews} from '../lib/match-reports-data';
+import {summaryEntries,useSummaryAvailability} from './match-summaries';
+export default function MatchLinks({date,exclude}:{date:string;exclude?:'report'|'video'|'details'}){const available=useSummaryAvailability();const report=reportPreviews.find(r=>r.date===date);const summary=summaryEntries.find(s=>s.slug.endsWith(date.replaceAll('-',''))&&available?.includes(s.slug));return <div className="match-related-links" aria-label="Meer van deze wedstrijd">{report&&exclude!=='report'&&<a className="secondary" href={`/verslag/${report.id}`}>Lees het wedstrijdverslag ↗</a>}{summary&&exclude!=='video'&&<a className="primary" href={`/watch/${summary.slug}`}>Bekijk de samenvatting ↗</a>}{exclude!=='details'&&<a className="secondary" href={`/wedstrijd/datum-${date}`}>Alle wedstrijddetails ↗</a>}</div>}
