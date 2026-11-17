@@ -1011,3 +1011,14 @@
  .team-homepage .obw-single-highlight .highlight-footer button{padding:8px 10px}
  .team-home-table-scroll th,.team-home-table-scroll td{padding:9px 6px}
 }
+
+/* OBW homepage shortcuts: club colours */
+.team-home-shortcuts>button{background:linear-gradient(135deg,#174c9d 0%,#102f65 100%);border:1px solid #245ba8;color:#fff;box-shadow:0 7px 20px rgba(13,43,93,.16);overflow:hidden}
+.team-home-shortcuts>button:after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:#f0ce3f}
+.team-home-shortcuts>button:nth-child(even){background:linear-gradient(135deg,#123d80 0%,#09234e 100%)}
+.team-home-shortcuts>button:hover{border-color:#f0ce3f;box-shadow:0 12px 28px rgba(13,43,93,.25)}
+.team-home-shortcuts>button>svg:first-child{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.16);color:#f6d34c}
+.team-home-shortcuts>button>svg:last-child{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.18);color:#fff}
+.team-home-shortcuts>button:hover>svg:last-child{background:#f0ce3f;border-color:#f0ce3f;color:#102f65}
+.team-home-shortcuts strong{color:#fff}
+.team-home-shortcuts small{color:#d2e1f7}
