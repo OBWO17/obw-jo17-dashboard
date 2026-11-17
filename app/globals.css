@@ -231,12 +231,18 @@
 .team-home-videos .summary-caption{padding:14px 17px}
 .team-home-videos .summary-result strong{font-size:14px}
 .team-home-videos .match-summaries>div:last-of-type:has(>button){display:none}
-.team-home-shortcuts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:20px 0 30px}
-.team-home-shortcuts>button{display:flex;align-items:center;text-align:left;gap:10px;padding:18px 14px;background:#fff;border:1px solid #dbe5f2;border-radius:12px;color:#1c4c98;min-width:0}
-.team-home-shortcuts>button:hover{border-color:#e5c447;background:#f8fbff}
-.team-home-shortcuts>button>span{flex:1;min-width:0}
-.team-home-shortcuts strong{display:block;font-size:14px}
-.team-home-shortcuts small{display:block;color:#687994;font-size:11px;margin-top:4px}
+.team-home-shortcuts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin:26px 0 34px}
+.team-home-shortcuts>button{position:relative;display:grid;grid-template-columns:1fr auto;grid-template-rows:44px 1fr;align-items:start;text-align:left;gap:22px 12px;padding:22px;background:linear-gradient(145deg,#fff 45%,#f3f7fe);border:1px solid #d9e4f3;border-radius:18px;color:#143e7b;min-width:0;min-height:166px;box-shadow:0 5px 18px rgba(17,49,95,.045);transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+.team-home-shortcuts>button:hover{transform:translateY(-3px);border-color:#94b0db;box-shadow:0 12px 26px rgba(17,49,95,.11)}
+.team-home-shortcuts>button:focus-visible{outline:3px solid #e8c43b;outline-offset:4px}
+.team-home-shortcuts>button>svg:first-child{box-sizing:content-box;width:23px;height:23px;padding:11px;background:#eaf1fd;border:1px solid #dbe7fa;border-radius:13px;color:#2458a5;grid-column:1;grid-row:1}
+.team-home-shortcuts>button>svg:last-child{box-sizing:content-box;width:16px;height:16px;padding:8px;background:#fff;border:1px solid #e2eaf5;border-radius:50%;color:#52709a;grid-column:2;grid-row:1;align-self:start;transition:background .18s ease,color .18s ease}
+.team-home-shortcuts>button:hover>svg:last-child{background:#174c9d;color:#fff;border-color:#174c9d}
+.team-home-shortcuts>button>span{grid-column:1/-1;grid-row:2;min-width:0}
+.team-home-shortcuts strong{display:block;font-size:16px;font-weight:750;line-height:1.35;letter-spacing:-.2px}
+.team-home-shortcuts small{display:block;color:#6b7d96;font-size:12px;line-height:1.5;margin-top:5px}
+@media(prefers-reduced-motion:reduce){.team-home-shortcuts>button,.team-home-shortcuts>button>svg:last-child{transition:none}.team-home-shortcuts>button:hover{transform:none}}
+
 .team-home-season{margin:22px 0 26px}
 .team-home-season-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
 .team-home-season-card{background:#fff;border:1px solid #dae4f1;border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:8px;min-height:165px}
@@ -281,12 +287,12 @@
  .team-home-videos .summaries-grid{grid-template-columns:1fr}
  .team-home-videos .summary-art{aspect-ratio:16/9}
  .team-home-videos .summary-card:nth-child(n+2){display:none}
- .team-home-shortcuts{gap:8px;margin:15px 0 24px}
- .team-home-shortcuts>button{padding:12px 9px;gap:7px}
- .team-home-shortcuts>button>svg:first-child{width:19px}
- .team-home-shortcuts>button>svg:last-child{display:none}
- .team-home-shortcuts strong{font-size:12px}
- .team-home-shortcuts small{font-size:10px}
+ .team-home-shortcuts{gap:10px;margin:20px 0 26px}
+ .team-home-shortcuts>button{padding:16px 13px;gap:18px 8px;min-height:148px;border-radius:15px}
+ .team-home-shortcuts>button>svg:first-child{width:20px;height:20px;padding:9px;border-radius:11px}
+ .team-home-shortcuts>button>svg:last-child{display:block;width:13px;height:13px;padding:6px}
+ .team-home-shortcuts strong{font-size:12.5px;letter-spacing:-.25px}
+ .team-home-shortcuts small{font-size:11px}
  .team-home-season-grid{grid-template-columns:1fr;gap:9px}
  .team-home-season-card{min-height:0;padding:14px;display:grid;grid-template-columns:34px 1fr;column-gap:10px}
  .team-home-season-card .season-symbol{grid-row:1/4}
@@ -310,8 +316,8 @@
 .team-home-hero-copy button{font-size:13px;padding:11px 17px}
 .team-homepage .team-home-section-heading>button{background:#174c9d;color:#fff;border:2px solid #174c9d;border-radius:10px;padding:11px 16px;font-size:13px;font-weight:850;box-shadow:0 3px 9px rgba(15,57,128,.12);white-space:normal}
 .team-homepage .team-home-section-heading>button:hover{background:#103a80;border-color:#103a80;color:#fff}
-.team-home-shortcuts>button{border:2px solid #d2dff0;box-shadow:0 3px 8px rgba(14,45,91,.06)}
-.team-home-shortcuts>button>svg:last-child{color:#174c9d}
+
+
 .team-home-stand{margin:20px 0 28px}
 .team-home-stand-panel{border:1px solid #d6e2f2;border-radius:15px;background:#fff;overflow:hidden;box-shadow:0 5px 20px rgba(19,54,104,.06)}
 .team-home-stand-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));background:#edf3fb;padding:8px;gap:8px}
