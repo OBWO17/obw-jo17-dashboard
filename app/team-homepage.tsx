@@ -2,10 +2,9 @@
 import {ArrowUpRight,BookOpen,Flag,Target,Trophy,Users,Video} from 'lucide-react';
 import {useEffect,useState} from 'react';
 import {phases,checkedOn} from './competition-data';
-import MatchHighlights from './match-highlights';
+import LatestMatch from './latest-match';
 import FeaturedMatch from './featured-match';
 import MatchSummaries from './match-summaries';
-import MatchReports from './match-reports';
 import Sponsors from './sponsors';
 import {phaseResults} from './phase-overview';
 import {goalTotals,type Goal} from './goal-scorers';
@@ -18,7 +17,6 @@ export default function TeamHomepage({matches,onNavigate,onMatch,onReport}:{matc
  const standRows=standPhase==='2'?(liveRows||phases.find(p=>p.id==='2')?.rows):phases.find(p=>p.id===standPhase)?.rows;
  const ordered=[...matches].sort((a,b)=>b.date.localeCompare(a.date));
  const latest=ordered.find(m=>m.score);
- const next=[...ordered].reverse().find(m=>!m.score&&m.date>=new Date().toISOString().slice(0,10));
  const first=phaseResults(matches,'1'),second=phaseResults(matches,'2');
  const allScorers=goalTotals(matches);
  const scorerGroups=[...new Set(allScorers.map(p=>p.count))].slice(0,3).map((count,i)=>({rank:i+1,count,players:allScorers.filter(p=>p.count===count)}));
@@ -28,9 +26,8 @@ export default function TeamHomepage({matches,onNavigate,onMatch,onReport}:{matc
    <img src="/obw-jo17-team.webp" alt="Teamfoto OBW O17-1 — klik om te vergroten" width={1440} height={960} fetchPriority="high" onClick={()=>{window.location.href="/teamfoto"}} onKeyDown={e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();window.location.href="/teamfoto"}}} role="button" tabIndex={0} className="team-photo-clickable" title="Open de teamfoto op een aparte pagina met spelersnamen"/>
    <div className="team-home-hero-copy"><span className="team-home-hero-eyebrow">SEIZOEN 2026–2027</span><h1><strong>OBW O17-1</strong></h1><p className="team-home-hero-lead">Eén team. Eén doel.</p><p className="team-home-hero-subline">Samen het verschil maken, op en naast het veld.</p><div className="team-home-hero-action"><button onClick={()=>onNavigate('Spelers')}>Ontmoet onze selectie <ArrowUpRight size={18}/></button></div></div>
   </section>
+  {latest&&<LatestMatch match={latest} onMatch={onMatch} onReport={onReport}/>}
   <FeaturedMatch matches={matches} onOpen={onMatch} onMatches={()=>onNavigate('Wedstrijden')}/>
-  {next&&latest&&<MatchHighlights latest={latest} hideUpcoming onOpen={onMatch} onMatches={()=>onNavigate('Wedstrijden')}/>}
-  <section className="team-home-report team-home-report-featured"><div className="team-home-section-heading"><div><span className="eyebrow">HET VERHAAL ACHTER DE WEDSTRIJD</span><h2>Het laatste wedstrijdverslag</h2></div><button onClick={()=>onNavigate('Wedstrijdverslagen')}>Alle wedstrijdverslagen <ArrowUpRight size={16}/></button></div><MatchReports limit={1} onViewAll={()=>onNavigate('Wedstrijdverslagen')} onOpenReport={onReport}/></section>
   <section className="team-home-videos"><div className="team-home-section-heading"><div><span className="eyebrow">BELEEF DE WEDSTRIJD</span><h2>De laatste wedstrijdbeelden</h2></div><button onClick={()=>onNavigate('Samenvattingen')}>Alle video's <ArrowUpRight size={17}/></button></div><MatchSummaries privatePlayback limit={2} onViewAll={()=>onNavigate('Samenvattingen')}/></section>
   <div className="team-home-shortcuts" aria-label="Ontdek ons team">{([['Competitie','Stand en programma',Trophy],['Spelers','De selectie',Users],['Wedstrijdverslagen','Wedstrijdverhalen',BookOpen],['Topscorers','Doelpuntenmakers',Target]] as const).map(([name,desc,Icon])=><button key={name} onClick={()=>onNavigate(name)}><Icon size={23}/><span><strong>{name}</strong><small>{desc}</small></span><ArrowUpRight size={17}/></button>)}</div>
   <section className="team-home-stand" aria-label="Competitiestand"><div className="team-home-section-heading"><div><span className="eyebrow">ONZE COMPETITIE</span><h2>Stand &amp; seizoen</h2></div><button onClick={()=>onNavigate('Competitie')}>Volledige stand en programma <ArrowUpRight size={17}/></button></div><div className="team-home-stand-panel"><div className="team-home-stand-tabs" role="group" aria-label="Kies competitie of beker">{[['1','Fase 1'],['2','Fase 2'],['3','Fase 3'],['beker','Beker']].map(([id,label])=><button key={id} type="button" className={standPhase===id?'selected':''} aria-pressed={standPhase===id} onClick={()=>setStandPhase(id)}>{label}{id==='1'&&<small>Kampioen</small>}{id==='2'&&<small>Hoofdklasse</small>}</button>)}</div>{standPhase==='beker'?<div className="team-home-cup-panel"><Trophy size={28}/><div><strong>Zwaluwen Jeugdbeker O17</strong><p>{cup?'OBW O17-1 – '+cup.opponent+' · '+new Date(cup.date+'T12:00:00').toLocaleDateString('nl-NL',{day:'numeric',month:'long'})+' · '+(cup.kickoff||'Tijd volgt'):'Bekijk het bekerprogramma'}</p></div><button onClick={()=>onNavigate('Wedstrijden')}>Bekerprogramma <ArrowUpRight size={16}/></button></div>:standRows?.length?<><div className="team-home-table-scroll"><table><thead><tr><th>#</th><th>Team</th><th>G</th><th>P</th><th>+/-</th></tr></thead><tbody>{standRows.map((r,i)=><tr key={String(r[0])} className={String(r[0]).startsWith('OBW ')?'home-stand-obw':''}><td>{i+1}</td><th>{String(r[0])}</th><td>{r[1]}</td><td><strong>{r[5]}</strong></td><td>{Number(r[6])-Number(r[7])>0?'+':''}{Number(r[6])-Number(r[7])}</td></tr>)}</tbody></table></div><p className="team-home-stand-note">{standPhase==='1'?'Definitieve eindstand · kampioen':liveRows&&standPhase==='2'?'Stand volgens de bestaande competitiegegevens':'Handmatig gecontroleerd op '+checkedOn}</p></>:<div className="team-home-stand-empty"><Flag size={25}/><strong>Fase 3 komt na de winterstop</strong><p>De stand verschijnt zodra de indeling bekend is.</p></div>}</div></section>

@@ -1,0 +1,3 @@
+const assert=require('node:assert/strict');const fs=require('node:fs');const ts=require('typescript');const vm=require('node:vm');
+const code=ts.transpileModule(fs.readFileSync('lib/watch-destination.ts','utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS}}).outputText;const moduleExports={};vm.runInNewContext(code,{exports:moduleExports});const safe=moduleExports.watchDestination;
+assert.equal(safe('/watch/obw-woezik-20261114'),'/watch/obw-woezik-20261114');for(const v of [null,'https://example.com','//example.com','/watch/../beheer','/watch/a?next=https://example.com','/beheer','/watch/a%2fb','/watch/'+ 'a'.repeat(81)])assert.equal(safe(v),'/');console.log('PASS: shared match return path; external and malformed destinations rejected');

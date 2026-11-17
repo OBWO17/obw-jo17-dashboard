@@ -1,11 +1,12 @@
 import {createServerClient} from '@supabase/ssr';
 import {NextResponse,type NextRequest} from 'next/server';
+import {watchDestination} from './lib/watch-destination';
 import {authConfig} from './lib/supabase/config';
 export async function proxy(request:NextRequest){
  const path=request.nextUrl.pathname;
  if(path==='/login'||path==='/auth/sign-in'||path==='/auth/sign-out'||path.startsWith('/_next/static/')||path==='/favicon.ico'||path.startsWith('/sponsors/'))return NextResponse.next();
  let response=NextResponse.next({request});
- const deny=()=>{const denied=path.startsWith('/api/')?NextResponse.json({error:'Inloggen met een toegelaten account is vereist.'},{status:401}):NextResponse.redirect(new URL('/login',request.url));for(const c of response.cookies.getAll())denied.cookies.set(c);denied.headers.set('Cache-Control','private, no-store');return denied};
+ const deny=()=>{const login=new URL('/login',request.url);const next=watchDestination(path);if(next!=='/'){login.searchParams.set('next',next);login.searchParams.set('team','1')}const denied=path.startsWith('/api/')?NextResponse.json({error:'Inloggen met een toegelaten account is vereist.'},{status:401}):NextResponse.redirect(login);for(const c of response.cookies.getAll())denied.cookies.set(c);denied.headers.set('Cache-Control','private, no-store');return denied};
  const config=authConfig();if(!config)return deny();
  try{const client=createServerClient(config.url,config.key,{cookies:{getAll:()=>request.cookies.getAll(),setAll:items=>{items.forEach(({name,value})=>request.cookies.set(name,value));response=NextResponse.next({request});items.forEach(({name,value,options})=>response.cookies.set(name,value,{...options,httpOnly:true,secure:process.env.NODE_ENV==='production',sameSite:'lax',path:'/',...(request.cookies.get('obw-session-only')?.value==='1'&&name.startsWith('sb-')&&name.includes('auth-token')?{maxAge:undefined,expires:undefined}:{})}))}}});
  const {data:{user},error}=await client.auth.getUser();if(error||!user)return deny();
