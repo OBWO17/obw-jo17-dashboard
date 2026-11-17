@@ -3,6 +3,7 @@ import {ArrowUpRight,BookOpen,Flag,Target,Trophy,Users,Video} from 'lucide-react
 import {useEffect,useState} from 'react';
 import {phases,checkedOn} from './competition-data';
 import LatestMatch from './latest-match';
+import MatchReports from './match-reports';
 import FeaturedMatch from './featured-match';
 import MatchSummaries from './match-summaries';
 import Sponsors from './sponsors';
@@ -27,6 +28,7 @@ export default function TeamHomepage({matches,onNavigate,onMatch,onReport}:{matc
    <div className="team-home-hero-copy"><span className="team-home-hero-eyebrow">SEIZOEN 2026–2027</span><h1><strong>OBW O17-1</strong></h1><p className="team-home-hero-lead">Eén team. Eén doel.</p><p className="team-home-hero-subline">Samen het verschil maken, op en naast het veld.</p><div className="team-home-hero-action"><button onClick={()=>onNavigate('Spelers')}>Ontmoet onze selectie <ArrowUpRight size={18}/></button></div></div>
   </section>
   {latest&&<LatestMatch match={latest} onMatch={onMatch} onReport={onReport}/>}
+  <section className="home-reports-discovery" aria-labelledby="home-reports-title"><div className="home-reports-heading"><div><span className="eyebrow"><BookOpen size={17}/> HET VERHAAL ACHTER DE WEDSTRIJD</span><h2 id="home-reports-title">Onze wedstrijdverslagen</h2><p>De wedstrijden, de strijd en de mooie momenten. Lees de nieuwste verslagen van ons team.</p></div><button onClick={()=>onNavigate('Wedstrijdverslagen')}>Bekijk alle wedstrijdverslagen <ArrowUpRight size={17}/></button></div><MatchReports limit={3} onOpenReport={onReport}/></section>
   <FeaturedMatch matches={matches} onOpen={onMatch} onMatches={()=>onNavigate('Wedstrijden')}/>
   <section className="team-home-videos"><div className="team-home-section-heading"><div><span className="eyebrow">BELEEF DE WEDSTRIJD</span><h2>De laatste wedstrijdbeelden</h2></div><button onClick={()=>onNavigate('Samenvattingen')}>Alle video's <ArrowUpRight size={17}/></button></div><MatchSummaries privatePlayback limit={2} onViewAll={()=>onNavigate('Samenvattingen')}/></section>
   <div className="team-home-shortcuts" aria-label="Ontdek ons team">{([['Competitie','Stand en programma',Trophy],['Spelers','De selectie',Users],['Wedstrijdverslagen','Wedstrijdverhalen',BookOpen],['Topscorers','Doelpuntenmakers',Target]] as const).map(([name,desc,Icon])=><button key={name} onClick={()=>onNavigate(name)}><Icon size={23}/><span><strong>{name}</strong><small>{desc}</small></span><ArrowUpRight size={17}/></button>)}</div>
