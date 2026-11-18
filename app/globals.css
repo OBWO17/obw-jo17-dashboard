@@ -1164,3 +1164,23 @@ button:focus-visible,a:focus-visible,select:focus-visible,[role=button]:focus-vi
  .obw-viewer-scorers-page .obw-scorer-metrics small{overflow-wrap:anywhere;line-height:1.5;letter-spacing:.4px}
  .obw-competition-page .table-scroll-hint{display:block;font-size:12px;color:#42638e;margin:0 0 10px}
 }
+
+/* Final layout polish: consistent section titles, readable notes and tighter video cards. */
+:root{--muted:#586879}
+.team-home-section-heading h2,.home-reports-heading h2{font-size:clamp(22px,2.4vw,28px);font-weight:850;letter-spacing:-.6px;line-height:1.25;color:#153b7f}
+.sidebar nav button:not(.active){color:#536579}
+.breadcrumb,.header-right,.notice,.profile small,.team-note p{color:#526579}
+.team-home-stand-note,.summary-caption .summary-meta,.summary-access,.latest-match-date,.latest-match-sharing,.home-reports-heading p,.team-home-season-card p{color:#526579}
+.main main>footer{color:#607084}
+.match-summaries .summary-caption{display:flex;flex-direction:column;gap:8px;padding:16px 18px}
+.match-summaries .summary-caption .summary-meta{margin:0;line-height:1.5}
+.match-summaries .summary-report-link{margin:0;min-height:32px}
+.match-summaries .summary-actions{margin-top:4px;padding-top:10px;gap:8px}
+.match-summaries .summary-actions a{min-height:40px}
+@media(max-width:600px){
+ .team-homepage .team-home-section-heading{flex-direction:column;align-items:stretch;gap:12px}
+ .team-homepage .team-home-section-heading>button{width:100%;justify-content:center;min-height:44px;text-align:center}
+ .team-home-section-heading h2,.home-reports-heading h2{font-size:22px}
+ .match-summaries .summary-caption{padding:15px}
+ .match-summaries .summary-actions a{min-height:44px}
+}
