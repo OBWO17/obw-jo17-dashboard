@@ -1150,3 +1150,17 @@ button:focus-visible,a:focus-visible,select:focus-visible,[role=button]:focus-vi
 @media(max-width:650px){.latest-match-video{width:100%;aspect-ratio:16/9}}
 
 .stand-source-notice{border-left:3px solid #d8b72e;background:#fffbeb;color:#655624;line-height:1.6}.stand-fallback-note{font-size:inherit;color:#64748b}
+
+/* Corrections found during the phone-width visual review. */
+.obw-staff-hero{display:block;height:auto}
+.obw-viewer-scorers-page table{width:100%;border-collapse:collapse}
+.obw-viewer-scorers-page :is(th,td){padding:12px 14px;text-align:left;border-bottom:1px solid #e4eaf3}
+.obw-viewer-scorers-page :is(th,td):last-child{text-align:right}
+.obw-viewer-scorers-page tbody tr:nth-child(even){background:#f5f8fd}
+.table-scroll-hint{display:none}
+@media(max-width:700px){
+ .home-reports-discovery .report-cover>div:first-child{min-width:0}
+ .home-reports-discovery .report-cover>div:first-child>span{white-space:normal;overflow-wrap:anywhere;line-height:1.45}
+ .obw-viewer-scorers-page .obw-scorer-metrics small{overflow-wrap:anywhere;line-height:1.5;letter-spacing:.4px}
+ .obw-competition-page .table-scroll-hint{display:block;font-size:12px;color:#42638e;margin:0 0 10px}
+}
