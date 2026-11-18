@@ -2,7 +2,7 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('nod
 const compile=path=>ts.transpileModule(fs.readFileSync(path,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022}}).outputText;
 const display={};vm.runInNewContext(compile('lib/match-display.ts'),{exports:display,Date});
 const ordered=[{date:'2026-12-12',score:''},{date:'2026-11-14',score:'1-7'},{date:'2026-11-21',score:''},{date:'2026-11-07',score:'2-1'}].sort(display.compareMatchDisplay);
-assert.deepEqual(ordered.map(m=>m.date),['2026-11-21','2026-12-12','2026-11-14','2026-11-07']);assert.equal(display.formatMatchDate('2026-11-21'),'21 november 2026');
+assert.deepEqual(ordered.map(m=>m.date),['2026-12-12','2026-11-21','2026-11-14','2026-11-07']);assert.equal(display.formatMatchDate('2026-11-21'),'21 november 2026');
 const stand={};vm.runInNewContext(compile('app/voetbal-stand.ts'),{exports:stand});
 assert.equal(stand.voetbalStandRows.length,8);assert.equal(stand.standSource,'https://www.voetbal.nl/team/T47549040/stand');
 const obw=stand.voetbalStandRows[5];assert.equal(obw[0],'OBW O17-1');assert.equal(obw[1],4);assert.equal(obw[5],4);assert.equal(obw[6],6);assert.equal(obw[7],12);
