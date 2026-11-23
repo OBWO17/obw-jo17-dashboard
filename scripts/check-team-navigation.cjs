@@ -21,7 +21,7 @@ assert.ok(detail.includes('DCS O17-1 – OBW O17-1'));assert.ok(detail.includes(
 const upcoming=officialMatches.find(m=>m.date==='2026-11-21');
 const practical=render(React.createElement(Detail,{match:{...upcoming,address:'Sportpark 1, Nijmegen',field:'Veld 2'}}));
 assert.ok(practical.includes('13:45 uur'));assert.ok(practical.includes('Veld 2'));assert.ok(practical.includes('destination=Sportpark%201%2C%20Nijmegen'));
-const unknown=render(React.createElement(Detail,{match:upcoming}));assert.ok(!unknown.includes('google.com/maps'));assert.ok(unknown.includes('Het exacte adres'));
+const unknown=render(React.createElement(Detail,{match:{...upcoming,date:"2026-12-19",score:""}}));assert.ok(!unknown.includes('google.com/maps'));assert.ok(unknown.includes('Het exacte adres'));
 const home=render(React.createElement(Home,{matches,onNavigate:()=>{},onMatch:()=>{},onReport:()=>{}}));
 const order=['aria-label="Laatste wedstrijd"','Wedstrijd van de week','Onze wedstrijdverslagen','De laatste wedstrijdbeelden'];
 for(let i=1;i<order.length;i++)assert.ok(home.indexOf(order[i])>home.indexOf(order[i-1]),`Home order ${order[i]}`);
