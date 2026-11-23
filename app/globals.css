@@ -1184,3 +1184,10 @@ button:focus-visible,a:focus-visible,select:focus-visible,[role=button]:focus-vi
  .match-summaries .summary-caption{padding:15px}
  .match-summaries .summary-actions a{min-height:44px}
 }
+
+/* Match goals use the same home/away order as their result. */
+.obw-scorers-page .obw-goal-match-meta{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.obw-scorers-page .obw-goal-match-result{display:inline-flex;align-items:center;gap:9px;border:1px solid #cbdcf4;background:#eaf2ff;border-radius:9px;padding:7px 11px;font-size:12px;font-weight:650;color:#36577f;white-space:nowrap}
+.obw-scorers-page .obw-goal-match-result b{font-size:20px;line-height:1.2;font-weight:850;color:#123a7d}
+.obw-scorers-page .obw-goal-none{font-size:12px;color:#526579}
+@media(max-width:520px){.obw-scorers-page .obw-goal-match-title{flex-wrap:wrap}.obw-scorers-page .obw-goal-match-title strong{flex-basis:calc(100% - 50px)}.obw-scorers-page .obw-goal-match-edit{margin-left:auto}.obw-scorers-page .obw-goal-match-bottom{flex-wrap:wrap}}

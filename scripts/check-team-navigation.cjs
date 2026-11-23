@@ -28,4 +28,8 @@ for(let i=1;i<order.length;i++)assert.ok(home.indexOf(order[i])>home.indexOf(ord
 assert.ok(home.includes('width="1440" height="960"'));assert.equal((home.match(/href="\/verslag\//g)||[]).length,3);
 const noNext=render(React.createElement(Home,{matches:matches.filter(m=>m.score),onNavigate:()=>{},onMatch:()=>{},onReport:()=>{}}));assert.ok(noNext.includes('Er is nog geen volgende wedstrijd ingepland.'));
 const videos=render(React.createElement(Summaries,{}));assert.ok(videos.includes('Filter samenvattingen'));assert.ok(videos.includes('3:29'));assert.ok(videos.includes('Speelduur laden'));assert.ok(videos.includes('/verslag/woezik-20261114'));
+const Goals=require('../app/goal-scorers.tsx').default;
+const quickGoals=render(React.createElement(Goals,{matches:[officialMatches.find(m=>m.date==='2026-11-21')],onOpen:()=>{}}));assert.ok(quickGoals.includes('Quick 1888 O17-1'));assert.ok(quickGoals.includes('Eindstand <b>0–6</b>'));assert.ok(!quickGoals.includes('obw-goal-missing'));
+const dovo=render(React.createElement(Goals,{matches:[friendlyMatches.find(m=>m.date==='2026-10-17')],onOpen:()=>{}}));assert.ok(dovo.includes('Eindstand <b>4–0</b>'));assert.ok(dovo.includes('Geen OBW-doelpunten'));assert.ok(!dovo.includes('obw-goal-missing'));
+const partial=render(React.createElement(Goals,{matches:[{id:'partial',date:'2026-11-21',opponent:'Test',venue:'Thuis',score:'2-1',goals:[{playerId:'test',name:'Testspeler',count:1}]}],onOpen:()=>{}}));assert.ok(partial.includes('Eindstand <b>2–1</b>'));assert.ok(partial.includes('1 doelpunt nog zonder maker'));
 console.log('PASS: report permalinks, selected report, WhatsApp, away score, scorer, practical data and route fallback, home hierarchy, full photo dimensions, no-next-match state, summary filters');
