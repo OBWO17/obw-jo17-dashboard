@@ -1191,3 +1191,50 @@ button:focus-visible,a:focus-visible,select:focus-visible,[role=button]:focus-vi
 .obw-scorers-page .obw-goal-match-result b{font-size:20px;line-height:1.2;font-weight:850;color:#123a7d}
 .obw-scorers-page .obw-goal-none{font-size:12px;color:#526579}
 @media(max-width:520px){.obw-scorers-page .obw-goal-match-title{flex-wrap:wrap}.obw-scorers-page .obw-goal-match-title strong{flex-basis:calc(100% - 50px)}.obw-scorers-page .obw-goal-match-edit{margin-left:auto}.obw-scorers-page .obw-goal-match-bottom{flex-wrap:wrap}}
+
+/* Scorers: a clear hierarchy from season totals to the story of each match. */
+.obw-scorers-page .desk-toolbar,.obw-viewer-scorers-page .obw-center-intro{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:center;background:linear-gradient(120deg,#10366f,#1b519e);border:0;border-bottom:4px solid #f4cf3d;border-radius:16px;padding:26px;margin-bottom:24px;color:#fff}
+.obw-viewer-scorers-page .obw-center-intro{display:block}
+.obw-scorers-page .desk-toolbar h2,.obw-viewer-scorers-page .obw-center-intro h2{color:#fff!important;font-weight:850;margin:8px 0}
+.obw-scorers-page .desk-toolbar p,.obw-viewer-scorers-page .obw-center-intro p{color:#dfebff;margin:0;font-size:14px}
+.obw-scorers-page .desk-toolbar .obw-section-kicker,.obw-viewer-scorers-page .obw-center-intro .obw-section-kicker{color:#ffdf65;margin:0;font-size:11px}
+.obw-scorers-page .desk-toolbar label{color:#e4eeff;font-size:13px;min-width:220px}
+.obw-scorers-page .desk-toolbar select{color:#143b7a;min-height:44px}
+.obw-scorers-page .obw-stat-strip>div{background:#fff;border:1px solid #d9e4f3;border-top:4px solid #1d519c;box-shadow:0 4px 14px #163d7410;gap:8px;padding:20px}
+.obw-scorers-page .obw-stat-strip>div:first-child{border-top-color:#e3ba21}
+.obw-scorers-page .obw-stat-strip small{color:#526986;font-size:11px;line-height:1.5;letter-spacing:.8px}
+.obw-scorers-page .obw-stat-strip strong{color:#143d7e}
+.obw-scorers-page .obw-stat-strip span{color:#526579;font-size:13px}
+.obw-scorers-page .obw-scorers-showcase{background:#f5f8fe;padding:24px;border-radius:16px}
+.obw-scorers-page .obw-scorers-showcase h3,.obw-scorers-page .obw-goal-match-heading h3{font-weight:850;line-height:1.25}
+.obw-scorers-page .obw-scorer-leader{border-top-width:4px;box-shadow:none;padding:20px 14px;background:#fff}
+.obw-scorers-page .obw-leader-1{background:#fff9df;border-color:#e6cb65}
+.obw-scorers-page .obw-podium-portraits{gap:6px}
+.obw-scorers-page .obw-scorer-bar{background:#fff;border:1px solid #e1e8f3;border-radius:10px;padding:10px 12px;font-size:14px;grid-template-columns:minmax(85px,145px) minmax(0,1fr) 32px}
+.obw-scorers-page .obw-scorer-bar>div{height:10px}
+.obw-scorers-page .obw-scorer-bar i{background:#245aa7}
+.obw-scorers-page .obw-scorer-bar>b{display:grid;place-items:center;text-align:center;min-height:30px;border-radius:8px;background:#eaf1fc;color:#143d7e}
+.obw-scorers-page .obw-goal-match-grid{gap:18px}
+.obw-scorers-page .obw-goal-match-card{--result-color:#24559a;--result-bg:#edf3fc;border-left-width:4px;padding:20px;gap:14px;background:#fff;box-shadow:0 3px 12px #163d7409}
+.obw-scorers-page .obw-goal-win{--result-color:#25724d;--result-bg:#edf8f1;border-left-color:#32946a}
+.obw-scorers-page .obw-goal-loss{--result-color:#a43c49;--result-bg:#fff0f1;border-left-color:#ce6873}
+.obw-scorers-page .obw-goal-draw{--result-color:#806014;--result-bg:#fff7db;border-left-color:#dcba43}
+.obw-scorers-page .obw-goal-match-topline{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.obw-scorers-page .obw-goal-match-date{font-size:12px;color:#526986;letter-spacing:.4px}
+.obw-scorers-page .obw-goal-match-status{color:var(--result-color);background:var(--result-bg);font-size:12px;font-weight:750;padding:5px 9px;border-radius:6px}
+.obw-scorers-page .obw-goal-match-title strong{font-size:16px;line-height:1.5}
+.obw-scorers-page .obw-goal-match-type{font-size:12px;color:#526579}
+.obw-scorers-page .obw-goal-match-result{background:var(--result-bg);border:1px solid color-mix(in srgb,var(--result-color) 20%,white);color:var(--result-color);padding:8px 12px}
+.obw-scorers-page .obw-goal-match-result b{color:var(--result-color);font-size:24px}
+.obw-scorers-page .obw-goal-scorer-pill{background:#f2f6fd;border-color:#dce7f7;font-size:13px;padding:7px 10px}
+.obw-scorers-page .obw-goal-match-bottom{font-size:12px;color:#526579;padding-top:14px}
+@media(max-width:700px){
+ .obw-scorers-page .desk-toolbar{grid-template-columns:1fr;gap:18px;padding:21px 18px}
+ .obw-viewer-scorers-page .obw-center-intro{padding:21px 18px}
+ .obw-scorers-page .desk-toolbar label{min-width:0}
+ .obw-scorers-page .obw-scorers-showcase{padding:15px}
+ .obw-scorers-page .obw-scorer-bar{grid-template-columns:80px minmax(0,1fr) 30px;gap:8px;padding:9px;font-size:13px}
+ .obw-scorers-page .obw-goal-match-card{padding:16px;gap:12px}
+ .obw-scorers-page .obw-goal-match-title strong{font-size:14px}
+}
+@media(max-width:480px){.obw-scorers-page .obw-stat-strip{grid-template-columns:repeat(2,minmax(0,1fr))}.obw-scorers-page .obw-stat-strip>div{padding:15px}.obw-scorers-page .obw-stat-strip>div:last-child{grid-column:1/-1}.obw-scorers-page .obw-goal-match-result{padding:7px 10px}}
