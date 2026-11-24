@@ -1,3 +1,4 @@
+import './homepage-actions.css';
 import type { Metadata } from 'next';
 import './globals.css';
 export const metadata: Metadata = { title: 'OBW O17-1 | Teamdashboard', robots:{index:false,follow:false}, description: 'De werkruimte voor OBW O17-1, seizoen 2026–2027' };

@@ -1,0 +1,18 @@
+.team-homepage .home-section-footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+.team-homepage .home-section-footer .team-home-view-all {
+  min-height: 44px;
+  font-size: 14px;
+  padding: 12px 20px;
+}
+.team-homepage .home-section-footer .team-home-view-all:focus-visible {
+  outline: 3px solid #dfba2e;
+  outline-offset: 3px;
+}
+@media (max-width: 650px) {
+  .team-homepage .home-section-footer { margin-top: 20px; }
+  .team-homepage .home-section-footer .team-home-view-all { width: 100%; }
+}
