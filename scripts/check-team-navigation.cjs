@@ -23,7 +23,7 @@ const practical=render(React.createElement(Detail,{match:{...upcoming,address:'S
 assert.ok(practical.includes('13:45 uur'));assert.ok(practical.includes('Veld 2'));assert.ok(practical.includes('destination=Sportpark%201%2C%20Nijmegen'));
 const unknown=render(React.createElement(Detail,{match:{...upcoming,date:"2026-12-19",score:""}}));assert.ok(!unknown.includes('google.com/maps'));assert.ok(unknown.includes('Het exacte adres'));
 const home=render(React.createElement(Home,{matches,onNavigate:()=>{},onMatch:()=>{},onReport:()=>{}}));
-const order=['aria-label="Laatste wedstrijd"','Wedstrijd van de week','Huidige stand','Onze topscorers','Onze wedstrijdverslagen','Onze samenvattingen','Van kampioen naar de hoofdklasse','Verder naar'];
+const order=['aria-label="Laatste wedstrijd"','Wedstrijd van de week','Huidige stand','Van kampioen naar de hoofdklasse','Onze topscorers','Onze wedstrijdverslagen','Onze samenvattingen','Verder naar'];
 for(let i=1;i<order.length;i++)assert.ok(home.indexOf(order[i])>home.indexOf(order[i-1]),`Home order ${order[i]}`);
 assert.ok(home.includes('width="1440" height="960"'));assert.equal((home.match(/href="\/verslag\//g)||[]).length,3);
 const noNext=render(React.createElement(Home,{matches:matches.filter(m=>m.score),onNavigate:()=>{},onMatch:()=>{},onReport:()=>{}}));assert.ok(noNext.includes('Er is nog geen volgende wedstrijd ingepland.'));

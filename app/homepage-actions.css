@@ -32,3 +32,12 @@
  .team-homepage .home-quicklinks .team-home-shortcuts strong{font-size:14px}
  .team-homepage .home-stand-summary{flex-direction:column;gap:3px}
 }
+
+/* Compact season context immediately below the standings. */
+.team-homepage .team-home-season.home-reports-discovery{padding-top:20px;padding-bottom:20px}
+.team-homepage .team-home-season .home-reports-heading{margin-bottom:14px}
+.team-homepage .team-home-season .team-home-season-card{padding:16px 18px;min-height:0}
+.team-homepage .team-home-season .season-symbol{font-size:23px;margin-bottom:8px}
+.team-homepage .team-home-season .team-home-season-card strong{font-size:23px;margin-block:6px}
+.team-homepage .team-home-season .team-home-season-card p{margin-bottom:0}
+.team-homepage .team-home-season .home-section-footer{margin-top:18px}
