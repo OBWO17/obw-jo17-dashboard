@@ -16,3 +16,19 @@
   .team-homepage .home-section-footer { margin-top: 20px; }
   .team-homepage .home-section-footer .team-home-view-all { width: 100%; }
 }
+
+.team-homepage .home-stand-summary{display:flex;flex-wrap:wrap;gap:6px 16px;max-width:none}
+.team-homepage .home-stand-summary strong{color:#143f80}
+.team-homepage .home-quicklinks h2{font-size:20px;color:#143f80;margin:0 0 14px}
+.team-homepage .home-quicklinks .team-home-shortcuts{margin:0 0 26px;gap:14px}
+.team-homepage .home-quicklinks .team-home-shortcuts>button{display:flex;align-items:center;gap:12px;padding:18px 16px;min-height:100px;border-radius:14px}
+.team-homepage .home-quicklinks .team-home-shortcuts>button>svg:first-child{flex-shrink:0;width:21px;height:21px;padding:8px}
+.team-homepage .home-quicklinks .team-home-shortcuts>button>svg:last-child{display:none}
+.team-homepage .home-quicklinks .team-home-shortcuts strong{font-size:14px;overflow-wrap:anywhere}
+.team-homepage .home-quicklinks .team-home-shortcuts small{font-size:12px}
+@media(max-width:650px){
+ .team-homepage .home-quicklinks .team-home-shortcuts{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+ .team-homepage .home-quicklinks .team-home-shortcuts>button{align-items:flex-start;flex-direction:column;padding:14px;gap:10px;min-height:132px}
+ .team-homepage .home-quicklinks .team-home-shortcuts strong{font-size:14px}
+ .team-homepage .home-stand-summary{flex-direction:column;gap:3px}
+}
