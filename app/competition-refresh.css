@@ -1,0 +1,36 @@
+/* Match the competition overview to the refreshed team dashboard. */
+.obw-competition-page.card{padding:24px;background:#edf3fc;border:1px solid #d5e1f2;border-top:4px solid #efce42;border-radius:18px}
+.obw-competition-page>.desk-toolbar{padding:0 0 20px;margin:0 0 18px;align-items:center;gap:24px}
+.obw-competition-page .desk-toolbar h1{font-size:clamp(28px,3vw,36px);color:#143f80;font-weight:900;line-height:1.2;margin:7px 0 8px}
+.obw-competition-page .desk-toolbar p{font-size:15px;line-height:1.6;color:#526b90;margin:0}
+.obw-competition-page .desk-toolbar>label{width:320px;max-width:100%;flex-shrink:0;font-size:13px}
+.obw-competition-page .phase-cards{gap:14px;margin:0 0 18px}
+.obw-competition-page .phase-card{padding:16px 18px!important;gap:7px;background:#fff;box-shadow:none;border:1px solid #d5e1f2;position:relative}
+.obw-competition-page .phase-card.selected{border:1px solid #5980ba;border-left:5px solid #efce42;box-shadow:none;background:#e4edfc!important;padding-left:14px!important}
+.obw-competition-page .phase-card:focus-visible{outline:3px solid #b99106;outline-offset:3px}
+.obw-competition-page .phase-card strong{font-size:22px!important;color:#143f80}
+.obw-competition-page .phase-card small{font-size:11px;color:#526b90}
+.obw-competition-page .phase-card span{font-size:13px;line-height:1.5}
+.obw-competition-page .phase-card .competition-champion{display:inline-block;border-radius:999px;background:#fff1b8;color:#143f80;padding:5px 10px;font-size:12px;line-height:1.4}
+.obw-competition-page .obw-stat-strip{margin:18px 0}
+.obw-competition-page .obw-stat-strip>div{background:#16438a;padding:16px 18px;gap:5px;box-shadow:0 4px 12px #123f7b10}
+.obw-competition-page .obw-stat-strip strong{font-size:32px}
+.obw-competition-page .obw-stat-strip small{font-size:11px;line-height:1.4}
+.obw-competition-page .obw-stat-strip span{font-size:13px;line-height:1.5}
+.obw-competition-page>.table-scroll{background:#fff;border:1px solid #d5e1f2;border-radius:12px}
+.obw-competition-page .table-scroll>p{padding:0 14px;font-size:13px;color:#526b90}
+.obw-competition-page .fixture-row{background:#fff;padding:14px;border:1px solid #d5e1f2;border-radius:10px;margin-bottom:8px}
+.obw-competition-page .fixture-row:hover{border-color:#8ba9d3}
+@media(max-width:700px){
+ .obw-competition-page.card{padding:18px 14px}
+ .obw-competition-page>.desk-toolbar{align-items:stretch;flex-direction:column;gap:16px}
+ .obw-competition-page .desk-toolbar>label{width:100%}
+ .obw-competition-page .phase-cards{grid-template-columns:1fr;gap:10px}
+ .obw-competition-page .phase-card{padding:14px!important}
+ .obw-competition-page .phase-card.selected{padding-left:10px!important}
+ .obw-competition-page .obw-stat-strip{gap:7px}
+ .obw-competition-page .obw-stat-strip>div{padding:13px 9px}
+ .obw-competition-page .obw-stat-strip small{font-size:10px;letter-spacing:.4px}
+ .obw-competition-page .obw-stat-strip strong{font-size:26px}
+ .obw-competition-page .obw-stat-strip span{font-size:11px}
+}
