@@ -1,0 +1,29 @@
+/* A lighter, consistent presentation of the coaching team. */
+.obw-staff-page{gap:20px}
+.obw-staff-page .obw-staff-hero{background:#edf3fc;color:#143f80;border:1px solid #d5e1f2;border-top:4px solid #efce42;padding:24px 28px}
+.obw-staff-page .obw-staff-kicker{color:#345f9b;font-size:11px;line-height:1.6;margin-bottom:8px}
+.obw-staff-page .obw-staff-hero :is(h1,h2){font-size:clamp(28px,3vw,36px);font-weight:900;color:#143f80!important;line-height:1.15;margin:0 0 10px}
+.obw-staff-page .obw-staff-hero p{color:#526b90;font-size:15px;line-height:1.6}
+.obw-staff-page .obw-staff-card{background:#fff;border-color:#d5e1f2;box-shadow:0 5px 18px #123f7b0a}
+.obw-staff-page .obw-staff-portrait{aspect-ratio:1/1;min-height:0}
+.obw-staff-page .obw-staff-portrait img{object-position:center 27%}
+.obw-staff-page .obw-staff-caption{background:#fff;color:#143f80;padding:20px;border-top:4px solid #efce42}
+.obw-staff-page .obw-staff-caption>span{display:inline-block;color:#143f80;background:#fff1b8;border:1px solid #f3de80;border-radius:999px;padding:5px 10px;font-size:11px;letter-spacing:.5px;margin:0 0 12px}
+.obw-staff-page .obw-staff-caption h3{color:#143f80!important;font-size:25px;line-height:1.2;margin:0 0 8px}
+.obw-staff-page .obw-staff-caption p{color:#61758f;font-size:13px;line-height:1.5}
+.obw-staff-page .obw-staff-footer{justify-content:flex-start;gap:16px;padding:18px 22px}
+.obw-staff-page .obw-staff-footer>div{flex:1;min-width:0}
+.obw-staff-page .obw-staff-footer h3{font-size:18px}
+.obw-staff-page .obw-staff-footer p{font-size:14px}
+@media(max-width:700px){
+ .obw-staff-page .obw-staff-hero{padding:20px}
+ .obw-staff-page .obw-staff-grid{grid-template-columns:1fr;gap:14px}
+ .obw-staff-page .obw-staff-card{display:grid;grid-template-columns:34% minmax(0,1fr);align-items:stretch}
+ .obw-staff-page .obw-staff-portrait{aspect-ratio:auto;min-height:170px}
+ .obw-staff-page .obw-staff-portrait img{object-position:center 28%}
+ .obw-staff-page .obw-staff-caption{display:flex;align-items:flex-start;flex-direction:column;justify-content:center;border-top:0;border-left:4px solid #efce42;padding:16px}
+ .obw-staff-page .obw-staff-caption h3{font-size:22px}
+ .obw-staff-page .obw-staff-caption>span{font-size:10px;padding:5px 8px;margin-bottom:10px}
+ .obw-staff-page .obw-staff-caption p{font-size:12px}
+ .obw-staff-page .obw-staff-footer{align-items:flex-start;padding:16px}
+}
