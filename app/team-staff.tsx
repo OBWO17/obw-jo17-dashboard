@@ -1,6 +1,6 @@
 const staff=[
  {name:'Jos Boonman',role:'Trainer / coach',image:'jos',description:'Is verantwoordelijk voor de inhoud van de trainingen en de opstelling tijdens de wedstrijden. Verzorgt de wedstrijdbespreking en de coaching van het team.'},
- {name:'Ralph Wolters',role:'Assistent-trainer',image:'ralph',description:'Ondersteunt bij de trainingen en de coaching tijdens de wedstrijden en heeft aandacht voor de individuele begeleiding van spelers. Biedt ondersteuning bij pijnklachten, onder meer door spieren los te maken en mee te kijken naar de klachten.'},
+ {name:'Ralph Wolters',role:'Assistent-trainer',image:'ralph',description:'Ondersteunt bij de trainingen en de coaching tijdens de wedstrijden en heeft aandacht voor de individuele begeleiding van spelers. Heeft daarnaast aandacht voor de fysieke gesteldheid van de spelers en helpt waar nodig bij spier- en pijnklachten.'},
  {name:'Rene Zweers',role:'Assistent-trainer',image:'rene',description:'Ondersteunt bij de trainingen en is verantwoordelijk voor de loop- en conditietraining. Verzorgt het inschieten van de keeper voorafgaand aan de wedstrijden en ondersteunt het team met praktische hand- en spandiensten.'}
 ];
 export default function TeamStaff({standalone=false}:{standalone?:boolean}){return <section className="obw-staff-page">
