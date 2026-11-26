@@ -27,3 +27,15 @@
  .obw-staff-page .obw-staff-caption p{font-size:12px}
  .obw-staff-page .obw-staff-footer{align-items:flex-start;padding:16px}
 }
+
+.obw-staff-page .obw-staff-caption .obw-staff-description{font-size:14px;line-height:1.7;margin-top:12px}
+@media(max-width:700px){
+ .obw-staff-page .obw-staff-card{grid-template-columns:110px minmax(0,1fr)}
+ .obw-staff-page .obw-staff-portrait{min-height:185px}
+ .obw-staff-page .obw-staff-caption h3{font-size:20px}
+ .obw-staff-page .obw-staff-caption .obw-staff-description{font-size:13px;line-height:1.6;margin-top:8px}
+}
+@media(max-width:380px){
+ .obw-staff-page .obw-staff-card{grid-template-columns:88px minmax(0,1fr)}
+ .obw-staff-page .obw-staff-caption{padding:13px}
+}
