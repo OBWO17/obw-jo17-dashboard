@@ -39,3 +39,21 @@
  .obw-staff-page .obw-staff-card{grid-template-columns:88px minmax(0,1fr)}
  .obw-staff-page .obw-staff-caption{padding:13px}
 }
+
+.obw-staff-page .obw-assistants{display:grid;grid-template-columns:240px minmax(0,1fr);background:#edf3fc;border:1px solid #d5e1f2;border-top:4px solid #efce42;border-radius:18px;overflow:hidden}
+.obw-assistants-image{background:#dcecf8;display:flex;align-items:center}
+.obw-assistants-image img{display:block;width:100%;height:auto;object-fit:contain}
+.obw-assistants-copy{padding:26px}
+.obw-assistants-copy h2{color:#143f80;font-size:25px;font-weight:850;line-height:1.25;margin:8px 0 12px}
+.obw-assistants-copy p{color:#526b90;font-size:15px;line-height:1.7;margin:0}
+.obw-assistants-copy ul{display:flex;flex-wrap:wrap;gap:8px;padding:0;margin:18px 0;list-style:none}
+.obw-assistants-copy li{background:#fff;border:1px solid #d3e0f1;border-radius:999px;padding:6px 12px;color:#143f80;font-size:14px;font-weight:700}
+.obw-assistants-copy>strong{color:#143f80;font-size:15px}
+@media(max-width:700px){
+ .obw-staff-page .obw-assistants{grid-template-columns:1fr}
+ .obw-assistants-image{justify-content:center}
+ .obw-assistants-image img{width:180px}
+ .obw-assistants-copy{padding:20px}
+ .obw-assistants-copy h2{font-size:23px}
+ .obw-assistants-copy p{font-size:14px}
+}
