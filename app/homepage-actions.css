@@ -41,3 +41,18 @@
 .team-homepage .team-home-season .team-home-season-card strong{font-size:23px;margin-block:6px}
 .team-homepage .team-home-season .team-home-season-card p{margin-bottom:0}
 .team-homepage .team-home-season .home-section-footer{margin-top:18px}
+
+/* Personal, compact scorer cards with the existing squad portraits. */
+.team-homepage .team-home-scorers li{display:grid;grid-template-columns:32px minmax(0,1fr) auto;gap:10px 12px;padding:18px;align-items:center;min-height:142px;box-shadow:0 4px 14px #123f7b08}
+.team-homepage .team-home-scorers .home-scorer-rank{grid-column:1;grid-row:1}
+.team-homepage .team-home-scorers .home-scorer-portraits{grid-column:2;grid-row:1;display:flex;align-items:center;min-width:0;padding-left:0}
+.team-homepage .home-scorer-portraits img,.team-homepage .home-scorer-portraits>span{width:52px;height:52px;flex-shrink:0;border:3px solid #fff;border-radius:50%;object-fit:cover;object-position:center 25%;background:#eaf1fc;box-shadow:0 0 0 1px #d6e2f3}
+.team-homepage .home-scorer-portraits>*+*{margin-left:-19px}
+.team-homepage .home-scorer-portraits>span{display:grid;place-items:center;font-size:14px;font-weight:800;color:#16417e}
+.team-homepage .home-scorer-portraits .home-scorer-more{background:#eaf1fc;width:36px;height:36px}
+.team-homepage .team-home-scorers li>strong{grid-column:1/3;grid-row:2;font-size:17px}
+.team-homepage .team-home-scorers li>b{grid-column:3;grid-row:1/3;display:flex;flex-direction:column;align-items:center;font-size:32px;line-height:1.1;color:#143f80}
+.team-homepage .team-home-scorers li>b small{font-size:11px;margin-top:4px;font-weight:500}
+.team-homepage .team-home-scorers .home-scorer-tie{grid-column:1/-1;margin:0;padding:0;line-height:1.5}
+@media(max-width:1100px) and (min-width:651px){.team-homepage .team-home-scorers ol{grid-template-columns:1fr}}
+@media(max-width:650px){.team-homepage .team-home-scorers li{padding:16px;min-height:130px}}
