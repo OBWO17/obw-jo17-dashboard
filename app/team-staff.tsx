@@ -1,7 +1,7 @@
 const staff=[
- {name:'Jos Boonman',role:'Trainer / coach',image:'jos',description:'Verzorgt de trainingen en bepaalt de opstelling. Bereidt het team voor met de wedstrijdbespreking en coacht de jongens tijdens de wedstrijden.'},
- {name:'Ralph Wolters',role:'Assistent-trainer',image:'ralph',description:'Assisteert bij de trainingen en coaching, met extra aandacht voor individuele spelers. Helpt bij het losmaken van spieren en denkt bij pijnklachten mee over wat een speler op dat moment nodig heeft.'},
- {name:'René Zweers',role:'Assistent-trainer',image:'rene',description:'Assisteert bij de trainingen en verzorgt de loop- en conditietraining. Schiet de keeper voor de wedstrijden in en ondersteunt het team met allerlei praktische hand- en spandiensten.'}
+ {name:'Jos Boonman',role:'Trainer / coach',image:'jos',description:'Is verantwoordelijk voor de inhoud van de trainingen en de opstelling tijdens de wedstrijden. Verzorgt de wedstrijdbespreking en de coaching van het team.'},
+ {name:'Ralph Wolters',role:'Assistent-trainer',image:'ralph',description:'Ondersteunt bij de trainingen en de coaching tijdens de wedstrijden en heeft aandacht voor de individuele begeleiding van spelers. Biedt ondersteuning bij pijnklachten, onder meer door spieren los te maken en mee te kijken naar de klachten.'},
+ {name:'Rene Zweers',role:'Assistent-trainer',image:'rene',description:'Ondersteunt bij de trainingen en is verantwoordelijk voor de loop- en conditietraining. Verzorgt het inschieten van de keeper voorafgaand aan de wedstrijden en ondersteunt het team met praktische hand- en spandiensten.'}
 ];
 export default function TeamStaff({standalone=false}:{standalone?:boolean}){return <section className="obw-staff-page">
  <header className="obw-staff-hero"><div className="obw-staff-kicker">DE MENSEN ACHTER HET TEAM · SEIZOEN 2026–2027</div>{standalone?<h1>Onze staf</h1>:<h2>Onze staf</h2>}<p>Samen werken aan ontwikkeling, plezier en prestaties.</p></header>
