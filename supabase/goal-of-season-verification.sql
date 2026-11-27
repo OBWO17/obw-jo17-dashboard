@@ -1,0 +1,64 @@
+-- Transactional integration checks: all fixtures and ballots are rolled back.
+begin;
+do $$
+declare adm uuid; viewer uuid; c1 uuid; c2 uuid; snapshot jsonb; denied boolean; r integer; rev integer;
+begin
+ select user_id into adm from public.app_members where active and role='admin' limit 1;
+ select user_id into viewer from public.app_members where active and role='viewer' limit 1;
+ if adm is null or viewer is null then raise exception 'Test accounts missing'; end if;
+ if exists(select 1 from goal_vote_private.candidates) then raise exception 'Only run fixture test before adding real candidates'; end if;
+ insert into goal_vote_private.candidates(slot,player,opponent,match_date,video_path,poster_path)
+ select n,'Test speler '||n,'Test tegenstander',current_date,'2026-2027/test-'||n||'.mp4','2026-2027/test-'||n||'.jpg' from generate_series(1,6)n;
+ select id into c1 from goal_vote_private.candidates where slot=1;
+ select id into c2 from goal_vote_private.candidates where slot=2;
+ select round,revision into r,rev from goal_vote_private.election;
+ perform set_config('request.jwt.claim.sub',adm::text,true);
+ execute 'set local role authenticated';
+ perform public.goal_election_manage('open',rev,'{}');
+ perform set_config('request.jwt.claim.sub',viewer::text,true);
+ perform public.goal_election_vote(repeat('a',64),c1,r);
+ perform public.goal_election_vote(repeat('a',64),c2,r);
+ snapshot:=public.goal_election_state(repeat('a',64));
+ if snapshot->>'myVote'<>c2::text then raise exception 'Vote change failed'; end if;
+ if (snapshot->'candidates'->0) ? 'votes' then raise exception 'Viewer tally exposed'; end if;
+ denied:=false;begin perform public.goal_election_manage('close',rev+1,'{}');exception when others then denied:=true;end;
+ if not denied then raise exception 'Viewer changed election'; end if;
+ denied:=false;begin perform public.goal_election_vote(repeat('a',64),c1,r+99);exception when others then denied:=true;end;
+ if not denied then raise exception 'Stale vote accepted'; end if;
+ denied:=false;begin perform 1 from goal_vote_private.ballots;exception when insufficient_privilege then denied:=true;end;
+ if not denied then raise exception 'Direct ballots readable'; end if;
+ perform set_config('request.jwt.claim.sub',adm::text,true);
+ snapshot:=public.goal_election_state(repeat('a',64));
+ if (snapshot->'candidates'->0->>'votes')::integer<>0 or (snapshot->'candidates'->1->>'votes')::integer<>1 then raise exception 'Multiple votes per browser'; end if;
+ denied:=false;begin perform public.goal_election_manage('candidate',rev+1,jsonb_build_object('slot',2,'expectedId',c2,'video_path','2026-2027/missing.mp4','poster_path','2026-2027/missing.jpg'));exception when others then if sqlerrm like '%laagste%' then denied:=true;else raise;end if;end;
+ if not denied then raise exception 'Non-lowest replacement accepted'; end if;
+ -- Archive the voted candidate (replacement) and ensure its browser may choose again.
+ execute 'reset role';
+ update goal_vote_private.candidates set active=false where id=c2;
+ insert into goal_vote_private.candidates(slot,player,opponent,match_date,video_path,poster_path) values(2,'Test vervanger','Test',current_date,'2026-2027/replacement.mp4','2026-2027/replacement.jpg');
+ execute 'set local role authenticated';
+ perform set_config('request.jwt.claim.sub',viewer::text,true);
+ snapshot:=public.goal_election_state(repeat('a',64));
+ if snapshot->>'myVote' is not null then raise exception 'Archived vote still selected'; end if;
+ denied:=false;begin perform public.goal_election_vote(repeat('a',64),c2,r);exception when others then denied:=true;end;
+ if not denied then raise exception 'Archived candidate accepted'; end if;
+ perform public.goal_election_vote(repeat('a',64),c1,r);
+ perform set_config('request.jwt.claim.sub',adm::text,true);
+ perform public.goal_election_manage('final',rev+1,'{}');
+ snapshot:=public.goal_election_state(repeat('a',64));
+ if snapshot->>'stage'<>'final' or (snapshot->>'round')::integer<>r+1 or snapshot->>'myVote' is not null then raise exception 'Final reset failed'; end if;
+ if exists(select 1 from jsonb_array_elements(snapshot->'candidates') c where (c->>'votes')::integer<>0) then raise exception 'Final tally not empty'; end if;
+ perform public.goal_election_vote(repeat('a',64),c1,r+1);
+ perform public.goal_election_manage('close',rev+2,'{}');
+ perform set_config('request.jwt.claim.sub',viewer::text,true);
+ snapshot:=public.goal_election_state(repeat('a',64));
+ if (snapshot->'candidates'->0->>'votes')::integer<>1 then raise exception 'Final results hidden'; end if;
+ denied:=false;begin perform public.goal_election_vote(repeat('a',64),c1,r+1);exception when others then denied:=true;end;
+ if not denied then raise exception 'Closed vote accepted'; end if;
+ perform set_config('request.jwt.claim.sub','',true);
+ denied:=false;begin perform public.goal_election_state(repeat('a',64));exception when others then denied:=true;end;
+ if not denied then raise exception 'Unauthenticated election access'; end if;
+ execute 'reset role';
+end $$;
+rollback;
+select 'PASS: vote changes, hidden counts, authorization, stale rounds, replacement, final reset, final results, closed voting' as result;

@@ -3,5 +3,6 @@ import type { Metadata } from 'next';
 import './globals.css';
 import './staff-refresh.css';
 import './competition-refresh.css';
+import './goal-election.css';
 export const metadata: Metadata = { title: 'OBW O17-1 | Teamdashboard', robots:{index:false,follow:false}, description: 'De werkruimte voor OBW O17-1, seizoen 2026–2027' };
 export default function Layout({children}:Readonly<{children:React.ReactNode}>){return <html lang="nl"><body>{children}</body></html>}
